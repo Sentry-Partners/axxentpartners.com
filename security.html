@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script>
+      window.PAGE_META = {
+        title: "Security – Axxent Partners",
+        description: "We take Security and Compliance Seriously.",
+        image: "/assets/img/og-image.svg",
+        version: "8",
+      };
+    </script>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+  </head>
+
+  <!-- keep your global body classes so background/typography match the site -->
+  <body class="bg-[var(--brand-bg)] text-white">
+    <!-- header injected by your site script/build -->
+    <div id="site-header"></div>
+
+    <!-- main content only -->
+    <main class="max-w-5xl mx-auto px-6 py-16 text-lg leading-relaxed text-white/90">
+      <h1 class="text-4xl font-bold mb-6">Security &amp; Compliance</h1>
+      <p class="mb-6"><strong>Last updated:</strong> [Insert Date]</p>
+
+      <p class="mb-6">
+        At <strong>Axxent Partners, Inc.</strong> we take security and compliance seriously.
+        Protecting customer data, maintaining trust, and meeting regulatory obligations are core
+        principles guiding the design and operation of our Services.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">1. Security Practices</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>
+          <strong>Encryption:</strong> Data in transit is protected with TLS 1.2+; sensitive data at
+          rest is encrypted with AES-256.
+        </li>
+        <li>
+          <strong>Access Controls:</strong> Role-based access controls (RBAC) and principle of least
+          privilege applied across systems.
+        </li>
+        <li>
+          <strong>Authentication:</strong> Support for MFA, strong password policies, and secure
+          session management.
+        </li>
+        <li>
+          <strong>Monitoring:</strong> Continuous logging, anomaly detection, and automated alerts
+          for suspicious activity.
+        </li>
+        <li>
+          <strong>Testing:</strong> Regular vulnerability scanning, code reviews, and periodic
+          third-party penetration tests.
+        </li>
+        <li>
+          <strong>Backups &amp; Recovery:</strong> Encrypted backups with defined retention periods
+          and tested recovery procedures.
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">2. Compliance Frameworks</h2>
+      <p class="mb-6">
+        We align our policies and controls with recognized standards and regulatory requirements
+        relevant to our operations, including:
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>GDPR:</strong> European Union General Data Protection Regulation.</li>
+        <li><strong>CCPA/CPRA:</strong> California Consumer Privacy Act / Privacy Rights Act.</li>
+        <li>
+          <strong>PCI DSS:</strong> Payment Card Industry Data Security Standard (for applicable
+          payment features).
+        </li>
+        <li>
+          <strong>SOC 2:</strong> Service Organization Controls for Security, Availability, and
+          Confidentiality (where applicable).
+        </li>
+        <li>
+          <strong>HIPAA:</strong> Health Insurance Portability and Accountability Act safeguards, if
+          handling protected health information.
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">3. Data Governance</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>
+          Data classification and handling procedures for sensitive, confidential, and public
+          information.
+        </li>
+        <li>Retention schedules aligned with regulatory and contractual obligations.</li>
+        <li>Data minimization to collect and store only what is necessary.</li>
+        <li>Vendor and third-party due diligence for security and compliance practices.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">4. Incident Response</h2>
+      <p class="mb-6">
+        We maintain a formal Incident Response Plan. In the event of a security incident, we will:
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Identify, contain, and remediate the incident promptly.</li>
+        <li>Notify affected customers and regulators as required by law.</li>
+        <li>Conduct post-incident reviews and implement corrective actions.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">5. Employee Training &amp; Awareness</h2>
+      <p class="mb-6">
+        All employees undergo security and compliance training, including secure coding practices,
+        phishing awareness, and data handling obligations.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">6. Customer Responsibilities</h2>
+      <p class="mb-6">
+        Customers also play an important role in protecting their accounts and data. We encourage
+        the use of strong, unique passwords, enabling multi-factor authentication, and promptly
+        notifying us of suspicious activity.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">7. Continuous Improvement</h2>
+      <p class="mb-6">
+        Security and compliance are ongoing processes. We regularly review and update our policies,
+        practices, and controls to adapt to evolving threats and regulatory changes.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">8. Contact Us</h2>
+      <p>Questions or concerns about security or compliance can be directed to:</p>
+      <p>
+        <strong>Axxent Partners, Inc.</strong><br />
+        1912 Capitol Ave<br />
+        Ste. 500<br />
+        Cheyenne, WY 82001<br />
+        United States<br />
+        <a href="mailto:admin@sentry.partners" class="link">admin@sentry.partners</a><br />
+        [Phone Placeholder]
+      </p>
+    </main>
+
+    <!-- footer injected by your site script/build -->
+    <div id="site-footer"></div>
+    <!-- optional footer injection -->
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>

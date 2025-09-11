@@ -1,0 +1,14 @@
+{
+  "name": "axxentpartners-site",
+  "private": true,
+  "scripts": {
+    "dev:css": "./node_modules/.bin/tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch",
+    "build:css": "./node_modules/.bin/tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.13"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13"
+  }
+}

@@ -1,0 +1,97 @@
+<!-- Axxent "Under Construction" / Placeholder SVG -->
+<svg viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Page in Progress – Axxent Platform</title>
+  <desc id="d">A minimal engineering graphic: a bridge beam being installed with subtle animated flow, plus respectful placeholder text.</desc>
+
+  <defs>
+    <!-- Brand gradient (tweak stops to match your palette) -->
+    <linearGradient id="uv" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Subtle glow -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Gentle dash animation -->
+    <style>
+      .panel { fill: rgba(255,255,255,.03); stroke: rgba(255,255,255,.15); }
+      .rule  { stroke: rgba(255,255,255,.12); }
+      .line  { stroke: url(#uv); stroke-width: 3; stroke-linecap: round; }
+      .dot   { fill: url(#uv); opacity: .9; }
+      .txt-1 { fill: #fff; opacity:.92; font: 600 22px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; }
+      .txt-2 { fill: #fff; opacity:.75; font: 400 14px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; }
+      .chip  { fill: rgba(255,255,255,.06); stroke: rgba(255,255,255,.15); }
+      .chip-t{ fill: #fff; opacity:.72; font: 500 12px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; letter-spacing:.02em; }
+
+      @keyframes flow { from { stroke-dashoffset: 0 } to { stroke-dashoffset: -200 } }
+      .flow { stroke-dasharray: 60 180; animation: flow 2.6s linear infinite; }
+
+      @keyframes pulse { 0%,100% { opacity:.6 } 50% { opacity:1 } }
+      .pulse { animation: pulse 2.2s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .flow { animation: none }
+        .pulse { animation: none }
+      }
+    </style>
+  </defs>
+
+  <!-- Backdrop panel -->
+  <g transform="translate(24,24)">
+    <rect x="0" y="0" width="1152" height="372" rx="20" class="panel"/>
+    <line x1="0" y1="80" x2="1152" y2="80" class="rule" />
+    <line x1="0" y1="300" x2="1152" y2="300" class="rule" />
+  </g>
+
+  <!-- Copy block -->
+  <g transform="translate(80,120)">
+    <rect x="0" y="-30" width="132" height="28" rx="8" class="chip"/>
+    <text x="16" y="-12" class="chip-t">IN PROGRESS</text>
+
+    <text x="0" y="20" class="txt-1">We’re wiring up this page</text>
+    <text x="0" y="52" class="txt-2">
+      Pardon the dust—this section is being connected to the Universal Value Platform.
+      Everything else is live and ready for review.
+    </text>
+
+    <text x="0" y="84" class="txt-2">
+      Need something specific?
+      <tspan fill="#fff" opacity=".95">contact@sentry.partners</tspan>
+    </text>
+  </g>
+
+  <!-- Bridge motif: beam being installed -->
+  <g transform="translate(640,70)">
+    <!-- Arch -->
+    <path d="M0,240 C140,60 420,60 560,240" fill="none" class="line" stroke-opacity=".25"/>
+    <!-- Deck -->
+    <line x1="0" y1="240" x2="560" y2="240" class="line" stroke-opacity=".35"/>
+    <!-- Cables (static) -->
+    <g stroke="url(#uv)" stroke-opacity=".25" stroke-width="2">
+      <line x1="80"  y1="120" x2="80"  y2="240"/>
+      <line x1="160" y1="100" x2="160" y2="240"/>
+      <line x1="240" y1="88"  x2="240" y2="240"/>
+      <line x1="320" y1="88"  x2="320" y2="240"/>
+      <line x1="400" y1="100" x2="400" y2="240"/>
+      <line x1="480" y1="120" x2="480" y2="240"/>
+    </g>
+
+    <!-- “Beam being placed” with subtle flow -->
+    <g filter="url(#glow)">
+      <line x1="140" y1="160" x2="420" y2="160" class="line flow"/>
+      <!-- Guide dots -->
+      <circle cx="140" cy="160" r="4" class="dot pulse"/>
+      <circle cx="420" cy="160" r="4" class="dot pulse"/>
+    </g>
+
+    <!-- Activity note -->
+    <text x="280" y="200" text-anchor="middle" class="txt-2" opacity=".85">
+      Connecting modules • Policies • Webhooks
+    </text>
+  </g>
+</svg>

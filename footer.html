@@ -1,0 +1,193 @@
+<footer class="border-t border-white/10 bg-black/40">
+  <div class="mx-auto max-w-7xl px-6 py-12 grid gap-8 sm:grid-cols-4">
+    <!-- Brand -->
+    <div>
+      <h4 class="text-sm font-semibold text-white">Axxent Partners</h4>
+      <p class="mt-3 text-sm text-white/70">
+        Prism Platform : points, cash, and digital tender that simply work.
+      </p>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <h5 class="text-xs uppercase tracking-widest text-white/60">Legal</h5>
+      <ul class="mt-3 space-y-2 text-sm text-white/80">
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="/accessibility.html">Accessibility</a></li>
+        <li><a href="/security.html">Security &amp; Compliance</a></li>
+        <li><a href="/sitemap.html">Sitemap</a></li>
+      </ul>
+    </div>
+
+    <!-- Connect -->
+    <div>
+      <h5 class="text-xs uppercase tracking-widest text-white/60">Connect</h5>
+      <ul class="mt-3 space-y-2 text-sm text-white/80">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/assets/brand/presskit.html">Press Kit</a></li>
+        <li><a href="mailto:admin@axxentpartners.com">admin@axxentpartners.com</a></li>
+        <!-- Optional socials -->
+      </ul>
+    </div>
+
+    <!-- Logo -->
+    <div class="flex justify-end">
+      <a href="/index.html" class="flex items-center gap-1 min-w-0">
+        <span class="relative block h-[216px] w-[216px] shrink-0 -translate-y-1">
+          <span
+            class="absolute left-1/2 top-1/2 h-[70px] w-[90px] -translate-x-1/2 -translate-y-[54%] rounded-[10px] bg-white/90 shadow-sm"
+          ></span>
+          <img
+            src="/assets/img/axxent-icon-transparent.png"
+            alt="Axxent Icon"
+            class="absolute left-1/2 top-1/2 h-[216px] w-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          />
+        </span>
+        <span class="leading-none shrink-0 -translate-y-1">
+          <span class="block text-2xl font-extrabold tracking-tight">AXXENT</span>
+          <span class="block text-xs tracking-[0.18em] opacity-80">PARTNERS</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 py-6 text-center text-xs text-white/60">
+    © 2025 Axxent Partners. All rights reserved. Apple® is a registered trademark of Apple Inc.
+    Axxent is not affiliated with Apple Inc.
+  </div>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://axxentpartners.com/#org",
+      "name": "Axxent Partners",
+      "url": "https://axxentpartners.com/",
+      "logo": "https://axxentpartners.com/assets/img/og-image.svg",
+      "brand": {
+        "@type": "Brand",
+        "name": "Axxent",
+        "url": "https://axxentpartners.com/"
+      },
+      "description": "Axxent Partners blends enterprise-grade loyalty commerce with a modern Universal Value layer—acceptance, wallet payouts, and governed exchange—delivered as hosted, components, or headless APIs.",
+      "email": "admin@sentry.partners",
+      "telephone": "+1-8444-AXXENTP (299-3687)",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1912 Capitol Ave, Ste. 500",
+        "addressLocality": "Cheyenne",
+        "addressRegion": "WY",
+        "postalCode": "82001",
+        "addressCountry": "US"
+      },
+      "areaServed": "Global",
+      "sameAs": [
+        "https://www.linkedin.com/company/axxent-partners",
+        "https://twitter.com/axxentpartners"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Partnerships",
+          "email": "admin@sentry.partners",
+          "telephone": "+1-844-AXXENTP (299-3687)",
+          "url": "https://axxentpartners.com/contact.html",
+          "areaServed": "Global",
+          "availableLanguage": ["en"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Sales",
+          "email": "admin@sentry.partners",
+          "telephone": "+1-844-AXXENTP (299-3687)",
+          "url": "https://axxentpartners.com/contact.html",
+          "areaServed": "Global",
+          "availableLanguage": ["en"]
+        }
+      ],
+      "knowsAbout": [
+        "loyalty acceptance",
+        "split-pay",
+        "wallet payouts",
+        "universal exchange",
+        "program-to-program settlement",
+        "issuer & brand programs",
+        "OAuth 2.0 / OIDC",
+        "signed webhooks",
+        "headless APIs",
+        "enterprise SLAs",
+        "retail & ecommerce",
+        "banking & issuers",
+        "travel & hospitality",
+        "marketplaces & platforms",
+        "technology partners",
+        "channel partners",
+        "program partners"
+      ]
+    }
+  </script>
+  <script>
+    // Handle back/forward cache restoring without styles or includes
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) {
+        // Ensure CSS file is attached
+        if (!document.getElementById("brand-css")) {
+          const link = document.createElement("link");
+          link.id = "brand-css";
+          link.rel = "stylesheet";
+          link.href = "/assets/css/brand.css?v=5";
+          document.head.appendChild(link);
+        }
+
+        // Re-run header/footer injection if DOM is empty
+        if (typeof window.SiteIncludes?.mount === "function") {
+          const headerEmpty = !document.querySelector("#site-header *");
+          const footerEmpty = !document.querySelector("#site-footer *");
+          if (headerEmpty || footerEmpty) {
+            window.SiteIncludes.mount();
+          }
+        }
+      }
+    });
+  </script>
+  <!-- Cookie/Privacy Notice -->
+  <div id="consent-bar" class="fixed inset-x-0 bottom-0 z-50 hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <div
+        class="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-4 flex items-center justify-between gap-4"
+      >
+        <p class="text-sm text-white/90">
+          We use essential cookies and reCAPTCHA to prevent spam. See our
+          <a href="/privacy-policy.html" class="underline underline-offset-4">Privacy Policy</a>.
+        </p>
+        <button
+          id="consent-accept"
+          class="px-4 py-2 rounded-xl bg-white text-black text-sm font-semibold hover:opacity-90"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      try {
+        const KEY = "axxent_consent_v1";
+        const bar = document.getElementById("consent-bar");
+        const btn = document.getElementById("consent-accept");
+        if (!localStorage.getItem(KEY)) {
+          bar.classList.remove("hidden");
+        }
+        btn?.addEventListener("click", () => {
+          localStorage.setItem(KEY, JSON.stringify({ acceptedAt: new Date().toISOString() }));
+          bar.classList.add("hidden");
+        });
+      } catch (_) {
+        /* no-op */
+      }
+    })();
+  </script>
+</footer>

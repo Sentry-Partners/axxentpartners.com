@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+# Allow everything else
+Allow: /
+
+Sitemap: https://axxentpartners.com/sitemap.xml

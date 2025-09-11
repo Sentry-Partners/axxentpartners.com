@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Not Found – Axxent Partners</title>
+  <meta name="description" content="The page you are looking for doesn't exist."/>
+  <meta property="og:title" content="Not Found – Axxent Partners"/>
+  <meta property="og:description" content="The page you are looking for doesn't exist."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/assets/img/og-image.svg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" href="/assets/img/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+
+  <style>
+    html,body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.25rem .75rem;border-radius:9999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
+  </style>
+</head>
+<body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
+
+<section class="min-h-[70vh] grid place-items-center">
+  <div class="text-center p-8">
+    <div class="text-7xl font-extrabold">404</div>
+    <p class="mt-3 text-white/80">Oops—this page wandered off.</p>
+    <a href="/index.html" class="mt-6 inline-block px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90">Back home</a>
+  </div>
+</section>
+
+<footer class="mt-24 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-2 gap-8">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-8 h-8 rounded-lg brand-gradient"></div>
+        <div class="font-semibold">Axxent Partners</div>
+      </div>
+      <p class="text-white/70 max-w-md">We turn every point into purchasing power. Travel, Apple®, a million-plus products, and flexible split-pay—on one platform.</p>
+      <div class="mt-2 text-xs opacity-60">Design ref: <a class="underline underline-offset-4" href="/brand-guide.html">Brand Guide</a></div>
+    </div>
+    <div class="md:text-right space-y-2">
+      <div>© <span id="year"></span> Axxent Partners. All rights reserved.</div>
+      <div><a class="link" href="mailto:admin@axxentpartners.com">admin@axxentpartners.com</a></div>
+    </div>
+  </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear()</script>
+</footer>
+</body>
+</html>

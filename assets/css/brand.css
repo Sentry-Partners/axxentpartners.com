@@ -1,0 +1,148 @@
+:root {
+  --brand-bg: #0b1020;
+  --brand-fg: #e6f2ff;
+  --brand-accent: #6366f1;
+  --brand-accent-2: #22d3ee;
+  --brand-muted: #94a3b8;
+
+  /* Neon accent for glows (sky-400-ish) */
+  --uv-glow-accent: 96, 165, 250;
+}
+
+/* Accent gradient */
+.brand-gradient {
+  background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-accent-2) 100%);
+}
+
+/* --- Black-glass card primitives --- */
+.uv-card {
+  border-radius: 1rem; /* ~rounded-2xl */
+  padding: 1.5rem; /* ~p-6 */
+  background: rgba(255, 255, 255, 0.06); /* “dark glass” */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* neutral; glow comes from .uv-glow* */
+  transition:
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+  will-change: box-shadow, transform;
+}
+.uv-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* “Clickable” card convenience: stronger glow + tiny lift */
+.uv-card-link {
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.uv-card-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Smaller card rounding (if needed on some strips) */
+.uv-card-sm {
+  border-radius: 0.75rem; /* ~rounded-xl */
+  padding: 1.25rem; /* ~p-5 */
+}
+
+/* --- Buttons (to match Solutions/Index CTAs) --- */
+.uv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+.uv-btn-primary {
+  background: #fff;
+  color: #000;
+}
+.uv-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.uv-btn-outline {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--brand-fg);
+  background: transparent;
+}
+.uv-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- “Link” styling utility (no Tailwind @apply) --- */
+.link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.link:hover {
+  text-decoration: none;
+}
+
+/* --- Media fullscreen bits you already had --- */
+.uv-media {
+  position: relative;
+}
+.uv-fs {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+.uv-fs:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.uv-media:fullscreen,
+.uv-media.is-fullscreen {
+  background: #000;
+}
+.uv-media:fullscreen video,
+.uv-media.is-fullscreen video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+}
+
+/* Base font (kept consistent site-wide) */
+html,
+body {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+}
+
+/* Reusable pill */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}

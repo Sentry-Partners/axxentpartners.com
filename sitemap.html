@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solutions – Axxent Partners</title>
+    <meta name="description" content="Travel, Merchandise, and Apple Rewards with split-pay." />
+    <meta property="og:title" content="Solutions – Axxent Partners" />
+    <meta
+      property="og:description"
+      content="Travel, Merchandise, and Apple Rewards with split-pay."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+    <style>
+      html,
+      body {
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
+    <div id="site-header"></div>
+    <main id="sitemap">
+      <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-4xl md:text-5xl font-semibold text-center">Sitemap</h1>
+          <p class="mt-4 text-lg text-white/80 text-center max-w-3xl mx-auto">
+            All pages in one place. Browse by category or use it to verify links for SEO.
+          </p>
+
+          <!-- Core -->
+          <h2 class="mt-16 text-2xl font-semibold">Core</h2>
+          <div class="mt-6 grid md:grid-cols-3 gap-6">
+            <a href="/index.html" class="uv-card uv-card-link uv-glow-strong">
+              <h3 class="text-xl font-medium text-white">Home</h3>
+              <p class="mt-2 text-white/80">Universal Value for loyalty commerce.</p>
+            </a>
+            <a href="/solutions.html" class="uv-card uv-card-link uv-glow-strong">
+              <h3 class="text-xl font-medium text-white">Solutions Overview</h3>
+              <p class="mt-2 text-white/80">
+                Acceptance, Wallet &amp; Payouts, Universal Exchange.
+              </p>
+            </a>
+            <a href="/platform.html" class="uv-card uv-card-link uv-glow-strong">
+              <h3 class="text-xl font-medium text-white">Platform</h3>
+              <p class="mt-2 text-white/80">Hosted, Components, or Headless APIs.</p>
+            </a>
+            <a href="/developers.html" class="uv-card uv-card-link uv-glow-strong">
+              <h3 class="text-xl font-medium text-white">Developers</h3>
+              <p class="mt-2 text-white/80">Sandbox, APIs, and sample apps.</p>
+            </a>
+            <a href="/results.html" class="uv-card uv-card-link uv-glow-strong">
+              <h3 class="text-xl font-medium text-white">Results</h3>
+              <p class="mt-2 text-white/80">Conversion, AOV, and satisfaction lifts.</p>
+            </a>
+            <a href="/faq.html" class="uv-card uv-card-link uv-glow-strong">
+              <h3 class="text-xl font-medium text-white">FAQ</h3>
+              <p class="mt-2 text-white/80">Answers to common questions.</p>
+            </a>
+          </div>
+
+          <!-- Solution details -->
+          <h2 class="mt-16 text-2xl font-semibold">Solution Details</h2>
+          <div class="mt-6 grid md:grid-cols-3 gap-6">
+            <a href="/solutions/travel.html" class="uv-card uv-card-link uv-glow-strong"
+              >Travel Rewards</a
+            >
+            <a href="/solutions/merchandise.html" class="uv-card uv-card-link uv-glow-strong"
+              >Merchandise Rewards</a
+            >
+            <a href="/solutions/gift-cards.html" class="uv-card uv-card-link uv-glow-strong"
+              >Gift Card Rewards</a
+            >
+            <a href="/solutions/apple.html" class="uv-card uv-card-link uv-glow-strong"
+              >Apple® Rewards</a
+            >
+          </div>
+
+          <!-- Company -->
+          <h2 class="mt-16 text-2xl font-semibold">Company</h2>
+          <div class="mt-6 grid md:grid-cols-3 gap-6">
+            <a href="/partners.html" class="uv-card uv-card-link uv-glow-strong"
+              >Partners &amp; Industries</a
+            >
+            <a href="/about.html" class="uv-card uv-card-link uv-glow-strong">About Axxent</a>
+            <a href="/contact.html" class="uv-card uv-card-link uv-glow-strong">Contact</a>
+          </div>
+
+          <!-- Case studies -->
+          <h2 class="mt-16 text-2xl font-semibold">Case Studies</h2>
+          <div class="mt-6 grid md:grid-cols-3 gap-6">
+            <a
+              href="/case-studies/exclusive-offers.html"
+              class="uv-card uv-card-link uv-glow-strong"
+              >Exclusive Offers</a
+            >
+            <a href="/case-studies/apple-promo.html" class="uv-card uv-card-link uv-glow-strong"
+              >Apple Promo</a
+            >
+          </div>
+
+          <!-- Legal -->
+          <h2 class="mt-16 text-2xl font-semibold">Legal &amp; Compliance</h2>
+          <div class="mt-6 grid md:grid-cols-3 gap-6">
+            <a href="/privacy-policy.html" class="uv-card uv-card-link uv-glow-strong"
+              >Privacy Policy</a
+            >
+            <a href="/terms-of-service.html" class="uv-card uv-card-link uv-glow-strong"
+              >Terms of Service</a
+            >
+            <a href="/cookie-policy.html" class="uv-card uv-card-link uv-glow-strong"
+              >Cookie Policy</a
+            >
+            <a href="/accessibility.html" class="uv-card uv-card-link uv-glow-strong"
+              >Accessibility Statement</a
+            >
+            <a href="/security.html" class="uv-card uv-card-link uv-glow-strong"
+              >Security &amp; Compliance</a
+            >
+            <a href="/sitemap.html" aria-current="page" class="uv-card uv-card-link uv-glow-strong"
+              >Sitemap</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>

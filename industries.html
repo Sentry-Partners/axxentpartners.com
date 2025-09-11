@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style id="uv-preload-hero">
+      :root {
+        --header-h: 128px;
+      } /* matches h-32 */
+      #site-header {
+        min-height: var(--header-h);
+      } /* reserve space so header injection doesn't push content */
+      /* hide hero until we finish injecting header/footer (no layout shift) */
+      [data-defer-hero] {
+        opacity: 0;
+        transform: translateY(4px);
+        transition:
+          opacity 0.18s ease,
+          transform 0.18s ease;
+        will-change: opacity, transform;
+      }
+      html.uv-hydrated [data-defer-hero] {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+    <script>
+      window.PAGE_META = {
+        title: "Industries – Axxent Partners",
+        description: "Built for all industry and commerce.",
+        image: "/assets/img/og-image.svg",
+        version: "8",
+      };
+    </script>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+  </head>
+
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased" data-defer-hero>
+    <div id="site-header"></div>
+    <defs>
+      <!-- keep your existing grad if you like -->
+      <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#6366f1" />
+        <stop offset="100%" stop-color="#22d3ee" />
+      </linearGradient>
+
+      <!-- alias + minimal styles so .core/.leg work even if header defs fail -->
+      <linearGradient id="uv" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#6366f1" />
+        <stop offset="100%" stop-color="#22d3ee" />
+      </linearGradient>
+      <style>
+        .core {
+          fill: url(#uv);
+        }
+        .burst {
+          stroke: url(#uv);
+          stroke-width: 3;
+          fill: none;
+        }
+        .leg {
+          stroke: url(#uv);
+          stroke-width: 3;
+        }
+        .leg.slow {
+          stroke-width: 3;
+        }
+      </style>
+    </defs>
+
+    <main id="industries">
+      <!-- Hero -->
+      <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 class="text-4xl md:text-5xl font-semibold">Built for your industry</h1>
+          <p class="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
+            Axxent blends proven, enterprise-grade loyalty commerce with a modern
+            <em>Universal Value</em> layer. Start hosted, add components, or go headless—without a
+            rip-and-replace.
+          </p>
+          <div class="mt-12 flex justify-center">
+            <svg
+              viewBox="0 0 1200 280"
+              class="max-w-5xl w-full h-auto"
+              role="img"
+              aria-labelledby="industriesTitle industriesDesc"
+            >
+              <title id="industriesTitle">Industries Served</title>
+              <desc id="industriesDesc">
+                The Universal Value Platform core connected to four industry verticals: Banking,
+                Retail, Travel, and Marketplaces.
+              </desc>
+
+              <!-- UV core + subtle burst (center at 200,140) -->
+              <g transform="translate(200,140)">
+                <circle r="62" class="core pulse" />
+                <circle r="92" class="burst" />
+                <text y="6" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">
+                  UV Core
+                </text>
+              </g>
+
+              <!-- Example leg lines now use shared gradient and styles -->
+              <line x1="280" y1="140" x2="420" y2="60" class="leg" />
+              <line x1="280" y1="140" x2="420" y2="140" class="leg slow" />
+              <line x1="280" y1="140" x2="420" y2="220" class="leg" />
+
+              <!-- Industry cards -->
+              <g transform="translate(440,40)">
+                <rect
+                  width="200"
+                  height="60"
+                  rx="12"
+                  fill="rgba(255,255,255,.06)"
+                  stroke="rgba(255,255,255,.15)"
+                />
+                <text
+                  x="100"
+                  y="36"
+                  text-anchor="middle"
+                  fill="#fff"
+                  font-size="14"
+                  font-weight="600"
+                >
+                  Banking & Issuers
+                </text>
+              </g>
+              <g transform="translate(440,120)">
+                <rect
+                  width="200"
+                  height="60"
+                  rx="12"
+                  fill="rgba(255,255,255,.06)"
+                  stroke="rgba(255,255,255,.15)"
+                />
+                <text
+                  x="100"
+                  y="36"
+                  text-anchor="middle"
+                  fill="#fff"
+                  font-size="14"
+                  font-weight="600"
+                >
+                  Retail & eCommerce
+                </text>
+              </g>
+              <g transform="translate(440,200)">
+                <rect
+                  width="200"
+                  height="60"
+                  rx="12"
+                  fill="rgba(255,255,255,.06)"
+                  stroke="rgba(255,255,255,.15)"
+                />
+                <text
+                  x="100"
+                  y="36"
+                  text-anchor="middle"
+                  fill="#fff"
+                  font-size="14"
+                  font-weight="600"
+                >
+                  Travel & Hospitality
+                </text>
+              </g>
+              <g transform="translate(660,120)">
+                <rect
+                  width="220"
+                  height="60"
+                  rx="12"
+                  fill="rgba(255,255,255,.06)"
+                  stroke="rgba(255,255,255,.15)"
+                />
+                <text
+                  x="110"
+                  y="36"
+                  text-anchor="middle"
+                  fill="#fff"
+                  font-size="14"
+                  font-weight="600"
+                >
+                  Marketplaces & Platforms
+                </text>
+              </g>
+
+              <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#6366f1" />
+                  <stop offset="100%" stop-color="#22d3ee" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="/demo/"
+              class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+            >
+              Book a Demo
+            </a>
+            <a
+              href="/contact/"
+              class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+            >
+              Talk to Sales
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick nav -->
+      <section class="py-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="flex flex-wrap gap-3 text-sm">
+            <a href="#banking" class="underline underline-offset-4">Banking &amp; Issuers</a>
+            <a href="#retail" class="underline underline-offset-4">Retail &amp; eCommerce</a>
+            <a href="#travel" class="underline underline-offset-4">Travel &amp; Hospitality</a>
+            <a href="#marketplaces" class="underline underline-offset-4"
+              >Marketplaces &amp; Platforms</a
+            >
+          </nav>
+        </div>
+      </section>
+
+      <!-- Banking & Issuers -->
+      <section id="banking" class="py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="md:flex md:items-start md:justify-between">
+            <div class="md:max-w-2xl">
+              <h2 class="text-3xl font-semibold">Banking &amp; Issuers</h2>
+              <p class="mt-4 text-white/80">
+                Expand card utility and program engagement with real-time redemption at checkout,
+                governed program-to-program exchange, and transparent settlement.
+              </p>
+              <ul class="mt-6 space-y-2 text-white/80 list-disc list-inside">
+                <li>Real-time quotes for points/miles; split-pay with cards or wallets</li>
+                <li>Program-to-program settlement with policy guardrails</li>
+                <li>Fraud/risk controls and issuer-friendly refund flows</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/solutions.html#how-it-works" class="underline underline-offset-4"
+                  >How it works →</a
+                >
+                <a href="/results.html" class="underline underline-offset-4">Outcomes →</a>
+                <a href="/developers.html" class="underline underline-offset-4">Developers →</a>
+              </div>
+            </div>
+            <div class="mt-10 md:mt-0 md:w-[40%]">
+              <div class="uv-card uv-glow">
+                <h3 class="text-xl font-medium text-white">Blended proof points</h3>
+                <p class="mt-2 text-white/80">
+                  Carry forward issuer-grade governance and reporting from the legacy stack, paired
+                  with Axxent’s modern APIs and webhooks.
+                </p>
+                <ul class="mt-4 space-y-2 text-white/80 list-disc list-inside">
+                  <li>SLA-backed uptime and incident response</li>
+                  <li>Scoped OAuth, signed webhooks, event replays</li>
+                  <li>Enterprise reporting and reconciliation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Retail & eCommerce -->
+      <section id="retail" class="py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="md:flex md:items-start md:justify-between">
+            <div class="md:max-w-2xl">
+              <h2 class="text-3xl font-semibold">Retail &amp; eCommerce</h2>
+              <p class="mt-4 text-white/80">
+                Turn points, miles, gift balance, and brand credit into instant purchasing power at
+                checkout.
+              </p>
+              <ul class="mt-6 space-y-2 text-white/80 list-disc list-inside">
+                <li>Component or hosted checkout with split-pay</li>
+                <li>Gift &amp; store credit unification with clean refunds</li>
+                <li>Policy guardrails minimize post-purchase churn</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/solutions/merchandise.html" class="underline underline-offset-4"
+                  >Merchandise Rewards →</a
+                >
+                <a href="/solutions/gift-cards.html" class="underline underline-offset-4"
+                  >Gift Card Rewards →</a
+                >
+                <a href="/case-studies/exclusive-offers.html" class="underline underline-offset-4"
+                  >Exclusive Offers case →</a
+                >
+              </div>
+            </div>
+            <div class="mt-10 md:mt-0 md:w-[40%]">
+              <div class="uv-card uv-glow">
+                <h3 class="text-xl font-medium text-white">Why it works for retail</h3>
+                <p class="mt-2 text-white/80">
+                  Customers feel less friction spending value they already earned.
+                </p>
+                <ul class="mt-4 space-y-2 text-white/80 list-disc list-inside">
+                  <li>Higher conversion on threshold-priced SKUs</li>
+                  <li>Fewer drop-offs vs. coupon hunts</li>
+                  <li>Fast customer service on returns</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Travel & Hospitality -->
+      <section id="travel" class="py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="md:flex md:items-start md:justify-between">
+            <div class="md:max-w-2xl">
+              <h2 class="text-3xl font-semibold">Travel &amp; Hospitality</h2>
+              <p class="mt-4 text-white/80">
+                Accept multiple program balances at booking, let members bridge fare gaps with
+                split-pay, and govern refund/cancellation flows.
+              </p>
+              <ul class="mt-6 space-y-2 text-white/80 list-disc list-inside">
+                <li>Real-time multi-program acceptance at checkout</li>
+                <li>Split-pay for fare differences, ancillaries, and upgrades</li>
+                <li>Program-compliant refunds and cancellations</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/solutions/travel.html" class="underline underline-offset-4"
+                  >Travel Rewards →</a
+                >
+                <a href="/results.html" class="underline underline-offset-4">Outcomes →</a>
+              </div>
+            </div>
+            <div class="mt-10 md:mt-0 md:w-[40%]">
+              <div class="uv-card uv-glow">
+                <h3 class="text-xl font-medium text-white">Operational confidence</h3>
+                <p class="mt-2 text-white/80">
+                  From call center to chargeback, the governed layer preserves program rules and
+                  creates a clean audit trail.
+                </p>
+                <ul class="mt-4 space-y-2 text-white/80 list-disc list-inside">
+                  <li>Evented ledger with replay for dispute research</li>
+                  <li>Settlement timing options per partner</li>
+                  <li>SLA tiers aligned to seasonality</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Marketplaces & Platforms -->
+      <section id="marketplaces" class="py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="md:flex md:items-start md:justify-between">
+            <div class="md:max-w-2xl">
+              <h2 class="text-3xl font-semibold">Marketplaces &amp; Platforms</h2>
+              <p class="mt-4 text-white/80">
+                Add loyalty acceptance and wallet payouts across multi-tenant catalogs.
+              </p>
+              <ul class="mt-6 space-y-2 text-white/80 list-disc list-inside">
+                <li>Tenant-aware acceptance &amp; settlement</li>
+                <li>Wallet payouts to sellers, partners, or creators</li>
+                <li>Policy guardrails for categories, limits, and returns</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/platform.html" class="underline underline-offset-4"
+                  >Platform overview →</a
+                >
+                <a href="/developers.html" class="underline underline-offset-4">Developers →</a>
+              </div>
+            </div>
+            <div class="mt-10 md:mt-0 md:w-[40%]">
+              <div class="uv-card uv-glow">
+                <h3 class="text-xl font-medium text-white">From legacy to headless</h3>
+                <p class="mt-2 text-white/80">
+                  Borrow the trust signals and content scale from the legacy era, deploy them
+                  through modern headless patterns.
+                </p>
+                <ul class="mt-4 space-y-2 text-white/80 list-disc list-inside">
+                  <li>Hosted → Components → Headless path</li>
+                  <li>Webhook-first orchestration</li>
+                  <li>Reporting that scales with your catalog</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-semibold">See it for your industry</h2>
+          <p class="mt-2 text-white/80">
+            We’ll tailor a live demo and a sandbox program to your use case.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="/demo/"
+              class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+            >
+              Book a Demo
+            </a>
+            <a
+              href="/sandbox/"
+              class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+            >
+              Get Sandbox Access
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>

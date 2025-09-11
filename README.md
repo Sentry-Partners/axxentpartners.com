@@ -1,0 +1,1 @@
+Static site packaged for Netlify. Publish directory is '.'; forms auto-detected.
