@@ -14,8 +14,18 @@
         version: "5",
       };
     </script>
-    <script src="/assets/js/head-meta.js"></script>
-  </head>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>  </head>
   <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <div id="site-header"></div>
 
