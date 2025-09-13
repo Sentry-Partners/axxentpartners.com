@@ -13,7 +13,11 @@
       };
     </script>
     <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
-    <style>html.tw-wait{visibility:hidden}</style>
+    <style>
+      html.tw-wait {
+        visibility: hidden;
+      }
+    </style>
 
     <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
     <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
@@ -23,26 +27,314 @@
     <link rel="stylesheet" href="/assets/css/glow.css" />
 
     <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
-    <script src="/assets/js/head-meta.js" defer></script>  </head>
+    <script src="/assets/js/head-meta.js" defer></script>
+  </head>
   <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <div id="site-header"></div>
     <main class="py-16">
-      <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-semibold text-white">Merchandise Rewards</h1>
-        <p class="mt-4 text-white/80">
-          Placeholder page. Content coming soon on merchandise rewards with electronics, fashion,
-          and lifestyle items.
-        </p>
+      <!-- HERO -->
+      <section
+        class="relative overflow-hidden"
+        style="
+          --hero-darken: 0.48; /* 0 → 1; increase to darken */
+          background-image:
+            linear-gradient(
+              to top,
+              rgb(0 0 0 / var(--hero-darken)),
+              rgb(0 0 0 / var(--hero-darken))
+            ),
+            url(&quot;/assets/img/merch/hero.png&quot;);
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Fixed window height (slice of image) -->
+          <div class="py-24 sm:py-32 text-center">
+            <h1 class="text-4xl font-semibold text-white">Merchandise Rewards</h1>
+            <p class="mt-4 text-white/90 max-w-2xl mx-auto font-semibold">
+              Over two million ways to reward your customers with what they want
+            </p>
+            <!-- (optional CTAs here) -->
+          </div>
+        </div>
       </section>
-      <section class="py-24 text-center">
-        <img
-          src="/assets/img/under-construction.svg"
-          alt="Page in progress"
-          class="mx-auto max-w-6xl w-full h-auto"
-        />
-        <p class="mt-6 text-white/70">
-          This page is being connected to the Universal Value Platform. Please check back soon.
+
+      <!-- ENDLESS SHOPPING / INTRO -->
+      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-semibold text-white">Endless Shopping Within Your Brand</h2>
+        <p class="mt-4 text-white/75">
+          Deliver an endless shopping experience within your brand channels. Customers get the most
+          out of their rewards when they can shop with loyalty currency and split tender.
+          <span class="text-white">Prism Merchandise Rewards</span> delivers flexible, customizable
+          storefronts with over two million items to choose from.
         </p>
+        <p class="mt-3 text-white/75">
+          Everyone can find a reward that they'll love. From traditional retail favorites to unique
+          creator-curated collections, our expanding marketplace ensures your customers discover
+          products that truly resonate with their interests and lifestyle.
+        </p>
+        <!-- TODO: image (section image) -->
+        <img
+          src=""
+          alt=""
+          loading="lazy"
+          class="mt-6 rounded-2xl bg-white/5 ring-1 ring-white/10 w-full h-auto"
+        />
+      </section>
+
+      <!-- WHY CHOOSE PRISM -->
+      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-semibold text-white text-center">
+          Why Choose Prism Merchandise Rewards
+        </h2>
+        <!-- TODO: image (divider/illustration) -->
+        <img
+          src="/assets/img/merch/merchrewards.png"
+          alt="Merchandise Rewards"
+          loading="lazy"
+          class="mt-6 rounded-2xl bg-white/5 ring-1 ring-white/10 w-full h-auto"
+        />
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Deepen Loyalty</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Build deeper customer loyalty by providing access to a wide selection of appealing
+              retail redemption options that keep customers engaged with your brand.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Boost Engagement</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Strengthen engagement with incentives that bolster your program and create meaningful
+              connections between your brand and customers.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Easy Navigation</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              User-friendly interface for rewards storefronts that deliver a delightful user
+              experience across all devices and platforms.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Seamless Integration</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Partners integrate to our rewards solutions via their points bank provider with
+              minimal technical complexity and maximum efficiency.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPANDING OUR MERCHANT NETWORK -->
+      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-semibold text-white text-bold text-center">
+          Expanding Our Merchant Network
+        </h2>
+        <p class="mt-4 text-white/75">
+          <span class="text-white">From Enterprise to Everyone</span> — While Axxent Partners has
+          traditionally served large companies and banks with institutional-grade solutions, we're
+          now expanding to welcome the dynamic Ecommerce community. This evolution brings exciting
+          new opportunities for merchants of all sizes.
+        </p>
+        <p class="mt-3 text-white/75">
+          Our platform is growing to include influencer and creator networks who will contribute
+          unique, curated products to our marketplace, creating a more diverse and engaging shopping
+          experience for all customers.
+        </p>
+        <!-- TODO: image -->
+        <img
+          src="/assets/img/merch/network.png"
+          alt="Expanding our Merchant Network"
+          loading="lazy"
+          class="mt-6 rounded-2xl bg-white/5 ring-1 ring-white/10 max-w-xl w-full h-auto mx-auto"
+        />
+      </section>
+
+      <!-- CREATOR ECONOMY INTEGRATION -->
+      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-semibold text-white text-center">Creator Economy Integration</h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Influencer Networks</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Partner with top influencers who bring their unique product selections and engaged
+              audiences to expand our marketplace reach and authenticity.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Creator Collaborations</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Enable creators to showcase their curated collections, bringing fresh perspectives and
+              trending products that resonate with modern consumers.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Community-Driven</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Foster a vibrant ecosystem where creators and customers interact, creating authentic
+              connections that drive engagement and loyalty.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FULL SERVICE SOLUTION -->
+      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:flex lg:items-center">
+          <!-- LEFT: image with right padding -->
+          <div class="lg:w-1/2 lg:pr-12">
+            <img
+              src="/assets/img/merch/fullservice.png"
+              alt="Full service solution"
+              class="block w-full h-auto max-w-[540px] rounded-2xl bg-white/5 ring-1 ring-white/10 mx-auto lg:mx-0"
+            />
+          </div>
+
+          <!-- RIGHT: text with left padding -->
+          <div class="lg:w-1/2 lg:pl-12 mt-10 lg:mt-0">
+            <h2 class="text-2xl font-semibold text-white text-center">Full Service Solution</h2>
+            <h3 class="mt-6 text-xl font-semibold text-white">Easy Integration, Endless Options</h3>
+            <p class="mt-3 text-white/75 max-w-prose">
+              Over two million items to choose from across categories and brands, now enhanced with
+              creator-curated collections and emerging brand partnerships.
+            </p>
+            <p class="mt-3 text-white/75 max-w-prose">
+              From traditional apparel to cutting-edge tech, beauty essentials to baby products, our
+              expanded marketplace offers something for everyone. The addition of Shopify merchants
+              and creator networks ensures fresh, trending products that appeal to diverse customer
+              segments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GETTING STARTED IS SIMPLE (01–04) -->
+      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-semibold text-white text-center">Getting Started Is Simple</h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <p class="text-sm text-white/60">01</p>
+            <h3 class="mt-2 text-white font-medium">Activate Technology</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Activate Bakkt Merchandise Rewards technology with seamless onboarding support for
+              merchants of all sizes, from enterprise to individual creators.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <p class="text-sm text-white/60">02</p>
+            <h3 class="mt-2 text-white font-medium">Connect Your Points</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Connect your point-bank for real-time redemption from customer accounts, enabling
+              instant gratification and smooth transactions.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <p class="text-sm text-white/60">03</p>
+            <h3 class="mt-2 text-white font-medium">Customer Discovery</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Customers can explore, discover, and buy retail items from our expanded catalog
+              featuring both established brands and emerging creators.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <p class="text-sm text-white/60">04</p>
+            <h3 class="mt-2 text-white font-medium">Direct Delivery</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Items are delivered directly to customers with tracking and support, ensuring a
+              premium experience from selection to delivery.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW AXXENT PARTNERS ECOSYSTEM -->
+      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-semibold text-white text-center">
+          The New Axxent Partners Ecosystem
+        </h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Enterprise Partners</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Large companies and banks continue to benefit from our institutional-grade loyalty
+              solutions and extensive product catalogs.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Shopify/Ecom Merchants</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Ecommerce businesses bring unique products and customer bases, expanding our
+              marketplace diversity and appeal.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Creator Networks</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              Influencers and creators contribute curated collections and engaged audiences, adding
+              authenticity and trend-forward products.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
+            <h3 class="text-white font-medium">Diverse Customers</h3>
+            <p class="mt-2 text-white/70 text-sm">
+              A whole new exciting set of customers discovers rewards they love through expanded
+              merchant partnerships and creator collaborations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARKETPLACE STATS + CTA -->
+      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+            <p class="text-3xl font-semibold text-white">2M+</p>
+            <p class="mt-1 text-white/70 text-sm">Product Options</p>
+            <p class="mt-1 text-white/60 text-xs">
+              Items available across all categories and merchant types
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+            <p class="text-3xl font-semibold text-white">100%</p>
+            <p class="mt-1 text-white/70 text-sm">Customizable</p>
+            <p class="mt-1 text-white/60 text-xs">Flexible storefronts tailored to your brand</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+            <p class="text-3xl font-semibold text-white">24/7</p>
+            <p class="mt-1 text-white/70 text-sm">Always Available</p>
+            <p class="mt-1 text-white/60 text-xs">
+              Round-the-clock shopping experience for customers
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <h3 class="text-xl font-semibold text-white">Partner with Us Today</h3>
+          <p class="mt-3 text-white/75 max-w-3xl mx-auto">
+            Join our expanding ecosystem of merchants, creators, and enterprise partners. Whether
+            you're a large corporation, an emerging Shopify store, or an influential creator, Axxent
+            Partners provides the platform to reward customers with products they'll truly love. Our
+            enhanced marketplace connects diverse merchants with engaged customers, creating
+            opportunities for growth, loyalty, and authentic brand connections across all segments
+            of the modern economy.
+          </p>
+          <div class="mt-6 flex items-center justify-center gap-3">
+            <a
+              href="https://loyalty.bakkt.com"
+              class="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium text-white bg-white/10 ring-1 ring-white/20 hover:bg-white/15 transition"
+            >
+              Connect with Us
+            </a>
+            <a
+              href="https://loyalty.bakkt.com"
+              class="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium text-white/90 hover:text-white transition"
+            >
+              Contact Support
+            </a>
+          </div>
+        </div>
       </section>
     </main>
     <div id="site-footer"></div>

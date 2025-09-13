@@ -13,6 +13,10 @@
 .brand-gradient {
   background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-accent-2) 100%);
 }
+/* Global helper: applies to ALL text inside the hero copy wrapper */
+.hero-copy * {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 1);
+}
 
 /* --- Black-glass card primitives --- */
 .uv-card {
