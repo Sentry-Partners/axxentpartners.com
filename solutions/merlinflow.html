@@ -35,10 +35,110 @@
     <div id="site-header"></div>
 
     <main class="py-16">
+      <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-12">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-slate-100">
+            Merlin: Prism Managed Wallets in Action
+          </h1>
+          <p class="mt-4 text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
+            <span class="font-medium text-slate-100">Merlin</span> is a specialized
+            <span class="font-medium text-slate-100">facet of Prism</span>, delivered via the
+            Federated Value Platform (FVP). It transforms blocked or complex transactions
+            into seamless, compliant checkouts—routing payments through stablecoins, fiat
+            ramps, or programmable settlements while handling compliance and customer
+            education in the background.
+          </p>
+          <p class="mt-4 text-slate-300/80 max-w-2xl mx-auto">
+            The result: merchants recover sales that would otherwise fail, and consumers
+            complete purchases with one-click confidence—without needing to understand
+            crypto or alternative rails.
+          </p>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 class="text-3xl font-semibold tracking-tight text-slate-100">Unlock every checkout, compliantly.</h2>
+            <p class="mt-3 text-slate-300/90">
+              Merlin is a specialized facet of Prism. It turns blocked or complex payments into
+              compliant, one-click checkouts—routing across stablecoins, fiat ramps, and split settlement,
+              while handling KYC/AML and user education behind the scenes.
+            </p>
+            <div class="mt-6 flex gap-3">
+              <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-sky-400/90 px-4 py-2 font-medium text-slate-900 hover:bg-sky-300">Talk to Sales</a>
+              <a href="#merlin-flow-title" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 font-medium text-slate-100 hover:bg-white/10">See the Flow</a>
+            </div>
+
+            <dl class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <dt class="font-semibold text-slate-100">More approved checkouts</dt>
+                <dd class="mt-1 text-slate-300/90">Recover sales when cards are blocked or rails are restricted.</dd>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <dt class="font-semibold text-slate-100">Compliance baked in</dt>
+                <dd class="mt-1 text-slate-300/90">Jurisdiction-aware KYC/AML tiers, enforced per route.</dd>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <dt class="font-semibold text-slate-100">Any rail, same UX</dt>
+                <dd class="mt-1 text-slate-300/90">USDC, BTC, fiat ramps—Merlin chooses and explains the path.</dd>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <dt class="font-semibold text-slate-100">Programmable settlement</dt>
+                <dd class="mt-1 text-slate-300/90">Split payouts, rev-share wallets, and scheduled settlement.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="lg:pl-10 space-y-5">
+            <h3 class="text-2xl font-semibold text-slate-100 mb-4">Merlin Use Case — USDC Checkout</h3>
+
+            <!-- Step cards -->
+            <div class="space-y-4">
+              <div class="rounded-2xl border border-cyan-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
+                <h4 class="font-semibold text-cyan-200">1. Blocked Checkout</h4>
+                <p class="mt-1 text-slate-300/90">Consumer finds items cannot be purchased with a credit card.</p>
+              </div>
+
+              <div class="rounded-2xl border border-fuchsia-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(217,70,239,0.3)]">
+                <h4 class="font-semibold text-fuchsia-200">2. Merlin Option</h4>
+                <p class="mt-1 text-slate-300/90">Merchant’s Merlin-enabled cart offers <span class="font-medium text-slate-100">“Pay with USDC”</span>.</p>
+              </div>
+
+              <div class="rounded-2xl border border-amber-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(251,191,36,0.3)]">
+                <h4 class="font-semibold text-amber-200">3. Wallet & Compliance</h4>
+                <p class="mt-1 text-slate-300/90">Prism Managed Wallet activates and checks rules. Purchase &lt; $1000 → no KYC required. Profile shows status transparently.</p>
+              </div>
+
+              <div class="rounded-2xl border border-violet-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(167,139,250,0.3)]">
+                <h4 class="font-semibold text-violet-200">4. Invoice in USDC</h4>
+                <p class="mt-1 text-slate-300/90">Invoice updates to show all items in USDC. User clicks <span class="font-medium text-slate-100">“Ready to Pay”</span>.</p>
+              </div>
+
+              <div class="rounded-2xl border border-emerald-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(52,211,153,0.3)]">
+                <h4 class="font-semibold text-emerald-200">5. Payment Window</h4>
+                <p class="mt-1 text-slate-300/90">QR code appears. User pays directly from their wallet.</p>
+              </div>
+
+              <div class="rounded-2xl border border-sky-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
+                <h4 class="font-semibold text-sky-200">6. USDC Store (if needed)</h4>
+                <p class="mt-1 text-slate-300/90">Not enough balance? Merlin routes to USDC Store to top-up with a credit card.</p>
+              </div>
+
+              <div class="rounded-2xl border border-lime-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(132,204,22,0.3)]">
+                <h4 class="font-semibold text-lime-200">7. Settlement & Proof</h4>
+                <p class="mt-1 text-slate-300/90">DefiPay settles funds, verifies on blockchain, issues proof of purchase, and handles splits/commissions automatically.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="text-4xl font-semibold text-white">The Merlin Processing flow <h1>
         <p class="mt-4 text-white/80 max-w-3xl">
-          Compliant federation layer for inter-program settlement, inventory sourcing, and cross-brand
+          The following is a graphical representation of the use case: A compliant federation layer for inter-program settlement, inventory sourcing, and cross-brand
           redemption.
         </p>
 
@@ -267,6 +367,28 @@
             <circle cx="860" cy="600" r="3" fill="#9fb4d4" opacity=".9" />
             <text class="label" x="850" y="665" text-anchor="end">6. Payout</text>
           </svg>
+
+          <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-8">
+            <div class="text-center">
+              <h2 class="text-3xl font-semibold tracking-tight text-slate-100">
+                Merlin Flow — Role-Based Swimlane
+              </h2>
+              <p class="mt-4 text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
+                While the flow diagram shows Merlin at a high level, the
+                <span class="font-medium text-slate-100">swimlane view</span> goes deeper.
+                It identifies the <span class="font-medium text-slate-100">actors</span> in
+                each step—consumer, merchant, Prism Wallet, compliance services, route
+                providers, settlement layers—and shows how responsibilities hand off across
+                the transaction lifecycle.
+              </p>
+              <p class="mt-4 text-slate-300/80 max-w-2xl mx-auto">
+                This detailed view serves as a <span class="font-medium text-slate-100">
+                blueprint for operators and developers</span>, clarifying where compliance,
+                routing, and AI support occur within the end-to-end payment journey.
+              </p>
+            </div>
+          </section>
+
           <!-- paste the raw <svg>…</svg> here -->
           <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prism swimlane payment flow">
             <defs>
