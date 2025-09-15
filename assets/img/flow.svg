@@ -1,0 +1,168 @@
+<!-- Prism Payment Flow — 7-step horizontal sequence -->
+<svg width="1400" height="360" viewBox="0 0 1400 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Consumer to Merchant Payment 7-step flow">
+  <defs>
+    <!-- Background glow dots (very subtle) -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#060a14"/>
+    </radialGradient>
+
+    <!-- Arrowhead -->
+    <marker id="arrow" markerWidth="14" markerHeight="10" refX="12" refY="5" orient="auto">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#a7b5c7" opacity="0.9"/>
+    </marker>
+
+    <!-- Shared glass effects -->
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <linearGradient id="glassSheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.20"/>
+    </linearGradient>
+
+    <!-- Box palettes (tweak to taste) -->
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff9fb1" />
+      <stop offset="100%" stop-color="#ff6f85" />
+    </linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#caa3ff" />
+      <stop offset="100%" stop-color="#a676ff" />
+    </linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd86a" />
+      <stop offset="100%" stop-color="#ffbe3d" />
+    </linearGradient>
+    <linearGradient id="c4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe88a" />
+      <stop offset="100%" stop-color="#ffd257" />
+    </linearGradient>
+    <linearGradient id="c5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c9c5ff" />
+      <stop offset="100%" stop-color="#a8a0ff" />
+    </linearGradient>
+    <linearGradient id="c6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9ef7d0" />
+      <stop offset="100%" stop-color="#56e6b0" />
+    </linearGradient>
+    <linearGradient id="c7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6fe389" />
+      <stop offset="100%" stop-color="#35cc63" />
+    </linearGradient>
+
+    <!-- Reusable rounded “glass box” symbol -->
+    <symbol id="glassBox" viewBox="0 0 240 88">
+      <rect x="0" y="0" width="240" height="88" rx="20"
+            fill="url(#FILL)" opacity="0.88" filter="url(#softShadow)"/>
+      <rect x="1" y="1" width="238" height="86" rx="19"
+            fill="url(#glassSheen)" opacity="0.6"/>
+      <rect x="0.5" y="0.5" width="239" height="87" rx="20"
+            fill="none" stroke="#ffffff" stroke-opacity="0.28"/>
+    </symbol>
+
+    <style>
+      .bg { fill: url(#bgGlow); }
+      .label {
+        font: 600 18px "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        fill: #0b1220;
+        letter-spacing: 0.2px;
+      }
+      .connector {
+        stroke: #a7b5c7;
+        stroke-width: 2.2;
+        fill: none;
+        marker-end: url(#arrow);
+        opacity: 0.9;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="1400" height="360"/>
+
+  <!-- Layout helpers -->
+  <!-- Start position and spacing -->
+  <g transform="translate(80, 70)">
+    <!-- box size: 240x88, gap: 60 -->
+    <!-- 1 -->
+    <g transform="translate(0,0)">
+      <use href="#glassBox">
+        <animate attributeName="href" dur="0s" to="#glassBox"/>
+      </use>
+      <g>
+        <rect width="0" height="0" fill="none"/>
+        <rect id="FILL-1" width="0" height="0" fill="none"/>
+      </g>
+      <rect x="0" y="0" width="240" height="88" rx="20" fill="url(#c1)" opacity="0.88"/>
+      <text class="label" x="120" y="52" text-anchor="middle">Consumer</text>
+    </g>
+
+    <!-- connectors are drawn between box centers (right edge to left edge) -->
+    <path class="connector" d="M240,44 L300,44"/>
+
+    <!-- 2 -->
+    <g transform="translate(300,0)">
+      <rect x="0" y="0" width="240" height="88" rx="20" fill="url(#c2)" opacity="0.88" filter="url(#softShadow)"/>
+      <rect x="1" y="1" width="238" height="86" rx="19" fill="url(#glassSheen)" opacity="0.6"/>
+      <rect x="0.5" y="0.5" width="239" height="87" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.28"/>
+      <text class="label" x="120" y="52" text-anchor="middle">Merchant Checkout</text>
+    </g>
+
+    <path class="connector" d="M540,44 L600,44"/>
+
+    <!-- 3 -->
+    <g transform="translate(600,0)">
+      <rect x="0" y="0" width="240" height="88" rx="20" fill="url(#c3)" opacity="0.9" filter="url(#softShadow)"/>
+      <rect x="1" y="1" width="238" height="86" rx="19" fill="url(#glassSheen)" opacity="0.6"/>
+      <rect x="0.5" y="0.5" width="239" height="87" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.28"/>
+      <text class="label" x="120" y="52" text-anchor="middle">Prism Managed Wallet</text>
+    </g>
+
+    <path class="connector" d="M840,44 L900,44"/>
+
+    <!-- 4 -->
+    <g transform="translate(900,0)">
+      <rect x="0" y="0" width="240" height="88" rx="20" fill="url(#c4)" opacity="0.9" filter="url(#softShadow)"/>
+      <rect x="1" y="1" width="238" height="86" rx="19" fill="url(#glassSheen)" opacity="0.6"/>
+      <rect x="0.5" y="0.5" width="239" height="87" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.28"/>
+      <text class="label" x="120" y="52" text-anchor="middle">Compliance Services</text>
+    </g>
+
+    <path class="connector" d="M1140,44 L1200,44"/>
+
+    <!-- 5 -->
+    <g transform="translate(1200,0)">
+      <rect x="0" y="0" width="240" height="88" rx="20" fill="url(#c5)" opacity="0.9" filter="url(#softShadow)"/>
+      <rect x="1" y="1" width="238" height="86" rx="19" fill="url(#glassSheen)" opacity="0.6"/>
+      <rect x="0.5" y="0.5" width="239" height="87" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.28"/>
+      <text class="label" x="120" y="52" text-anchor="middle">USDC Store</text>
+    </g>
+
+    <!-- SECOND ROW (kept horizontal by widening viewport). If you prefer a single-row fit, set width to ~1800 or reduce gaps to 40. -->
+  </g>
+
+  <!-- Alt: single-row compact layout (exact 7 steps) -->
+  <g transform="translate(80, 230)">
+    <!-- box size: 200x70, gap: 40 -->
+    <!-- 1 -->
+    <g transform="translate(0,0)">
+      <rect width="200" height="70" rx="16" fill="url(#c1)" opacity="0.9" filter="url(#softShadow)"/>
+      <rect x="1" y="1" width="198" height="68" rx="15" fill="url(#glassSheen)" opacity="0.6"/>
+      <text class="label" x="100" y="43" text-anchor="middle">DefiPay Settlement</text>
+    </g>
+    <path class="connector" d="M200,35 L240,35"/>
+
+    <g transform="translate(240,0)">
+      <rect width="200" height="70" rx="16" fill="url(#c7)" opacity="0.9" filter="url(#softShadow)"/>
+      <rect x="1" y="1" width="198" height="68" rx="15" fill="url(#glassSheen)" opacity="0.6"/>
+      <text class="label" x="100" y="43" text-anchor="middle">Merchant Payment</text>
+    </g>
+  </g>
+
+  <!-- Title (optional, remove if embedding into a section with its own header) -->
+  <text x="40" y="40" fill="#9fb4d4" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="18">
+    Prism Payment Processing — 7-Step Flow
+  </text>
+</svg>
