@@ -268,6 +268,205 @@
             <text class="label" x="850" y="665" text-anchor="end">6. Payout</text>
           </svg>
           <!-- paste the raw <svg>…</svg> here -->
+          <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prism swimlane payment flow">
+            <defs>
+              <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+                <stop offset="0%" stop-color="#0b1220"/><stop offset="100%" stop-color="#060a14"/>
+              </radialGradient>
+              <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/>
+              </filter>
+              <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fff" stop-opacity=".28"/>
+                <stop offset="45%" stop-color="#fff" stop-opacity=".10"/>
+                <stop offset="100%" stop-color="#000" stop-opacity=".20"/>
+              </linearGradient>
+              <marker id="arrow" markerWidth="14" markerHeight="10" refX="12" refY="5" orient="auto">
+                <path d="M0,0 L12,5 L0,10 Z" fill="#9fb4d4"/>
+              </marker>
+
+              <!-- lane header pills -->
+              <linearGradient id="gHdr" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#caa3ff"/><stop offset="100%" stop-color="#a676ff"/>
+              </linearGradient>
+              <!-- box fills -->
+              <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff9fb1"/><stop offset="100%" stop-color="#ff6f85"/></linearGradient>
+              <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffd86a"/><stop offset="100%" stop-color="#ffbe3d"/></linearGradient>
+              <linearGradient id="gC" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffe88a"/><stop offset="100%" stop-color="#ffd257"/></linearGradient>
+              <linearGradient id="gD" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c9c5ff"/><stop offset="100%" stop-color="#a8a0ff"/></linearGradient>
+              <linearGradient id="gE" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a7f7d6"/><stop offset="100%" stop-color="#53e4b0"/></linearGradient>
+              <linearGradient id="gF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6fe389"/><stop offset="100%" stop-color="#35cc63"/></linearGradient>
+              <linearGradient id="gNote" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9fe8ff"/><stop offset="100%" stop-color="#63d0ff"/></linearGradient>
+
+              <style>
+                .bg { fill: url(#bg); }
+                .lane { fill: rgba(255,255,255,0.03); stroke: #ffffff20; }
+                .laneHdr { fill: url(#gHdr); filter: url(#shadow); }
+                .hdrText, .boxTitle {
+                  font: 600 16px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+                  fill:#0b1220; letter-spacing:.2px;
+                }
+                .box { filter:url(#shadow); opacity:.95; }
+                .outline { fill:none; stroke:#fff; stroke-opacity:.28; }
+                .label {
+                  font: 600 14px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+                  fill:#aecdff;
+                }
+                .small {
+                  font: 500 12px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+                  fill:#0b1220;
+                }
+                .arrow { stroke:#9fb4d4; stroke-width:1.5; fill:none; marker-end:url(#arrow); }
+                .dash { stroke-dasharray:6 6; }
+                .note { font:500 13px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; fill:#b9d4ff; }
+              </style>
+            </defs>
+
+            <rect class="bg" x="0" y="0" width="1400" height="900"/>
+
+            <!-- layout constants -->
+            <!-- lanes: y0=80, each 100 tall, 7 lanes; content area x: 220..1320 -->
+            <!-- helper: function to draw lane header + band -->
+            <g id="lanes">
+              <!-- lane 1 -->
+              <rect class="lane" x="20" y="80" width="1550" height="100" rx="14"/>
+              <g transform="translate(20,80)">
+                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                <text class="hdrText" x="90" y="23" text-anchor="middle">Consumer</text>
+              </g>
+              <!-- lane 2 -->
+              <rect class="lane" x="20" y="180" width="1550" height="100" rx="14"/>
+              <g transform="translate(20,180)">
+                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                <text class="hdrText" x="90" y="23" text-anchor="middle">Merchant Checkout</text>
+              </g>
+              <!-- lane 3 -->
+              <rect class="lane" x="20" y="280" width="1550" height="100" rx="14"/>
+              <g transform="translate(20,280)">
+                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                <text class="hdrText" x="110" y="23" text-anchor="middle">Prism Managed Wallet</text>
+              </g>
+              <!-- lane 4 -->
+              <rect class="lane" x="20" y="380" width="1550" height="100" rx="14"/>
+              <g transform="translate(20,380)">
+                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                <text class="hdrText" x="90" y="23" text-anchor="middle">Compliance Services</text>
+              </g>
+              <!-- lane 5 -->
+              <rect class="lane" x="20" y="480" width="1550" height="100" rx="14"/>
+              <g transform="translate(20,480)">
+                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                <text class="hdrText" x="110" y="23" text-anchor="middle">Payment Route Provider</text>
+              </g>
+              <!-- lane 6 -->
+              <rect class="lane" x="20" y="580" width="1550" height="100" rx="14"/>
+              <g transform="translate(20,580)">
+                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                <text class="hdrText" x="90" y="23" text-anchor="middle">Settlement Layer</text>
+              </g>
+              <!-- lane 7 -->
+              <rect class="lane" x="20" y="680" width="1550" height="100" rx="14"/>
+              <g transform="translate(20,680)">
+                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                <text class="hdrText" x="90" y="23" text-anchor="middle">Merchant</text>
+              </g>yea
+            </g>
+
+            <!-- step boxes -->
+            <!-- x positions for stages -->
+            <!-- xA=220, xB=420, xC=640, xD=880, xE=1120 -->
+            <!-- width=170, height=56 -->
+            <g>
+              <!-- Consumer -->
+              <g transform="translate(250,102)">
+                <rect class="box" width="170" height="56" rx="16" fill="url(#gA)"/>
+                <rect class="outline" width="170" height="56" rx="16"/>
+                <text class="boxTitle" x="85" y="34" text-anchor="middle">1) Initiate Checkout</text>
+              </g>
+
+              <!-- Merchant Checkout -->
+              <g transform="translate(420,202)">
+                <rect class="box" width="170" height="56" rx="16" fill="url(#gD)"/>
+                <rect class="outline" width="170" height="56" rx="16"/>
+                <text class="boxTitle" x="85" y="26" text-anchor="middle">2) Plugin triggers</text>
+                <text class="small" x="85" y="42" text-anchor="middle">Prism offer</text>
+              </g>
+
+              <!-- Prism Managed Wallet -->
+              <g transform="translate(640,302)">
+                <rect class="box" width="170" height="56" rx="16" fill="url(#gB)"/>
+                <rect class="outline" width="170" height="56" rx="16"/>
+                <text class="boxTitle" x="85" y="26" text-anchor="middle">3) Offer Prism route</text>
+                <text class="small" x="85" y="42" text-anchor="middle">4) User confirms</text>
+              </g>
+
+              <!-- Compliance Services -->
+              <g transform="translate(880,402)">
+                <rect class="box" width="170" height="56" rx="16" fill="url(#gC)"/>
+                <rect class="outline" width="170" height="56" rx="16"/>
+                <text class="boxTitle" x="85" y="26" text-anchor="middle">5) Select KYC/AML</text>
+                <text class="small" x="85" y="42" text-anchor="middle">Rules enforced</text>
+              </g>
+
+              <!-- Payment Route Provider -->
+              <g transform="translate(1120,502)">
+                <rect class="box" width="210" height="56" rx="16" fill="url(#gD)"/>
+                <rect class="outline" width="200" height="56" rx="16"/>
+                <text class="boxTitle" x="92" y="26" text-anchor="middle">6) Convert funding → asset</text>
+                <text class="small" x="85" y="42" text-anchor="middle">e.g., card→USDC/BTC</text>
+              </g>
+
+              <!-- Settlement Layer -->
+              <g transform="translate(880,602)">
+                <rect class="box" width="170" height="56" rx="16" fill="url(#gE)"/>
+                <rect class="outline" width="170" height="56" rx="16"/>
+                <text class="boxTitle" x="85" y="26" text-anchor="middle">7) Apply split rules</text>
+                <text class="small" x="85" y="42" text-anchor="middle">settle + proof</text>
+              </g>
+
+              <!-- Merchant -->
+              <g transform="translate(640,702)">
+                <rect class="box" width="170" height="56" rx="16" fill="url(#gF)"/>
+                <rect class="outline" width="170" height="56" rx="16"/>
+                <text class="boxTitle" x="85" y="34" text-anchor="middle">8) Payment received</text>
+              </g>
+            </g>
+
+            <!-- arrows (left→right progression across lanes) -->
+            <path class="arrow" d="M420,130 H540" />
+            <text class="label" x="475" y="120" text-anchor="middle">to checkout</text>
+
+            <path class="arrow" d="M590,230 H690" />
+            <text class="label" x="635" y="218" text-anchor="middle">Prism route</text>
+
+            <path class="arrow" d="M810,330 H900" />
+            <text class="label" x="845" y="318" text-anchor="middle">confirm</text>
+
+            <path class="arrow" d="M1050,430 H1140" />
+            <text class="label" x="1090" y="418" text-anchor="middle">approved</text>
+
+            <path class="arrow" d="M1205,558 V602" />
+            <text class="label" x="1220" y="582">for settlement</text>
+
+            <path class="arrow" d="M1050,630 H810" />
+            <text class="label" x="930" y="616" text-anchor="middle">proof & notify</text>
+
+            <path class="arrow" d="M725,780 V802" class="dash"/>
+            <text class="label" x="760" y="780">credit</text>
+
+            <!-- optional split fan-out from Settlement -->
+            <path class="arrow dash" d="M965,630 H1200 V670" />
+            <text class="label" x="1210" y="666">split to rev-share wallet</text>
+
+            <!-- Merlin AI note -->
+            <g transform="translate(50,805)">
+              <rect class="box" width="850" height="70" rx="18" fill="url(#gNote)"/>
+              <rect class="outline" width="850" height="70" rx="18"/>
+              <text class="boxTitle" x="420" y="30" text-anchor="middle">Merlin AI (parallel): fees & routing • compliance guidance • loyalty (5% Prism APR, merchant % cashback)</text>
+              <text class="small" x="300" y="50" text-anchor="middle">plain-language confirmations & receipts</text>
+            </g>
+          </svg>
+
         </div>
       </section>
     </main>
