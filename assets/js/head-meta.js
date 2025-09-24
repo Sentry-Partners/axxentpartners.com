@@ -1,4 +1,9 @@
 (function () {
+  {
+    printf '/* defensive removal of injected tailwind CDN */\n(function(){\n  try {\n    document.querySelectorAll(\"script[src*=\\\"cdn.tailwindcss.com\\\"]\").forEach(function(el){ if(el && el.parentNode) el.parentNode.removeChild(el); });\n  } catch(e) {}\n})();\n\n';
+    cat assets/js/head-meta.js.bak;
+  } > assets/js/head-meta.js
+
   var DEF = {
     title: "Axxent Partners",
     description: "Axxent Loyalty—Universal Value for enterprise rewards.",
