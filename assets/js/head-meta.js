@@ -1,9 +1,12 @@
 (function () {
-  {
-    printf '/* defensive removal of injected tailwind CDN */\n(function(){\n  try {\n    document.querySelectorAll(\"script[src*=\\\"cdn.tailwindcss.com\\\"]\").forEach(function(el){ if(el && el.parentNode) el.parentNode.removeChild(el); });\n  } catch(e) {}\n})();\n\n';
-    cat assets/js/head-meta.js.bak;
-  } > assets/js/head-meta.js
-
+  // defensive: remove any injected Tailwind CDN script immediately
+  (function () {
+    try {
+      document.querySelectorAll('script[src*="cdn.tailwindcss.com"]').forEach(function (el) {
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
+    } catch (e) {}
+  })();
   var DEF = {
     title: "Axxent Partners",
     description: "Axxent Loyalty—Universal Value for enterprise rewards.",
@@ -43,16 +46,18 @@
   // Anti-FOUC: hide until /assets/css/tailwind.css is ready, then reveal.
   (function () {
     var html = document.documentElement;
-    html.classList.add('tw-wait');
+    html.classList.add("tw-wait");
 
-    function reveal() { html.classList.remove('tw-wait'); }
+    function reveal() {
+      html.classList.remove("tw-wait");
+    }
 
     // Reveal when the Tailwind link reports loaded
-    var link = document.getElementById('twcss');
-    if (link && link.addEventListener) link.addEventListener('load', reveal);
+    var link = document.getElementById("twcss");
+    if (link && link.addEventListener) link.addEventListener("load", reveal);
 
     // Extra safety: reveal at window load and after a short timeout (cached CSS may skip 'load')
-    window.addEventListener('load', reveal);
+    window.addEventListener("load", reveal);
     setTimeout(reveal, 2000);
   })();
 
@@ -134,7 +139,6 @@
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
   });
-
 
   once('link[rel="stylesheet"][href="/assets/css/brand.css"]', "link", {
     rel: "stylesheet",
