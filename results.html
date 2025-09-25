@@ -33,7 +33,11 @@
       };
     </script>
     <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
-    <style>html.tw-wait{visibility:hidden}</style>
+    <style>
+      html.tw-wait {
+        visibility: hidden;
+      }
+    </style>
 
     <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
     <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
@@ -408,10 +412,10 @@
                 href="/sandbox/"
                 class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
               >
-                Get Sandbox Access
+                Request Sandbox Access
               </a>
               <a
-                href="/contact/"
+                href="/contact.html"
                 class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
               >
                 Talk to Sales
