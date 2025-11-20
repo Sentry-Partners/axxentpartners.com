@@ -227,3 +227,82 @@ body {
 .animate-fadeIn-up {
     animation: fadeInUp 0.4s ease-in forwards;
 }
+
+
+/* Animations KeyFrames */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+      transform: translate3d(0,60px,0)
+  }
+
+  100% {
+      transform: translate3d(0,0,0);
+      opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+      transform: translate3d(0,60px,0)
+  }
+
+  100% {
+      transform: translate3d(0,0,0);
+      opacity: 1;
+  }
+}
+@-webkit-keyframes slideInDown {
+  0% {
+    transform: translate3d(0px, -100%, 0px);
+    visibility: visible;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+@keyframes slideInDown {
+  0% {
+    transform: translate3d(0px, -100%, 0px);
+    visibility: visible;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+@-webkit-keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
