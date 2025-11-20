@@ -49,24 +49,24 @@
   </g>
 
   <!-- Copy block -->
-  <g transform="translate(80,120)">
+  <g transform="translate(80,80)">
     <rect x="0" y="-30" width="132" height="28" rx="8" class="chip"/>
     <text x="16" y="-12" class="chip-t">IN PROGRESS</text>
 
-    <text x="0" y="20" class="txt-1">We’re wiring up this page</text>
-    <text x="0" y="52" class="txt-2">
+    <text x="0" y="60" class="txt-1">We’re wiring up this page</text>
+    <text x="0" y="92" class="txt-2">
       Pardon the dust—this section is being connected to the Universal Value Platform.
       Everything else is live and ready for review.
     </text>
 
-    <text x="0" y="84" class="txt-2">
+    <text x="0" y="114" class="txt-2">
       Need something specific?
       <tspan fill="#fff" opacity=".95">contact@sentry.partners</tspan>
     </text>
   </g>
 
   <!-- Bridge motif: beam being installed -->
-  <g transform="translate(640,70)">
+  <g transform="translate(600,83)">
     <!-- Arch -->
     <path d="M0,240 C140,60 420,60 560,240" fill="none" class="line" stroke-opacity=".25"/>
     <!-- Deck -->

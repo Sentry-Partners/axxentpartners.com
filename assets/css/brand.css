@@ -1,12 +1,27 @@
 :root {
-  --brand-bg: #0b1020;
-  --brand-fg: #e6f2ff;
-  --brand-accent: #6366f1;
-  --brand-accent-2: #22d3ee;
+  --brand-bg: #003264;
+  --brand-fg: #ffffff;
+  --brand-accent: #0093d3;
+  --brand-accent-2: #0eb6ea;
   --brand-muted: #94a3b8;
+  --brand-dark-blue: #114175;
 
   /* Neon accent for glows (sky-400-ish) */
   --uv-glow-accent: 96, 165, 250;
+}
+
+.fab,
+.fa-brands {
+    font-family: 'Font Awesome 5 Brands';
+}
+
+.far {
+    font-family: 'Font Awesome 5 Free';
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free';
 }
 
 /* Accent gradient */
@@ -21,7 +36,7 @@
 /* --- Black-glass card primitives --- */
 .uv-card {
   border-radius: 1rem; /* ~rounded-2xl */
-  padding: 1.5rem; /* ~p-6 */
+  /* padding: 1.5rem; */ /* ~p-6 */
   background: rgba(255, 255, 255, 0.06); /* “dark glass” */
   border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
@@ -94,6 +109,10 @@
   text-decoration: none;
 }
 
+.text-menu-active {
+  color: var(--brand-accent-2);
+}
+
 /* --- Media fullscreen bits you already had --- */
 .uv-media {
   position: relative;
@@ -149,4 +168,62 @@ body {
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+/* Buttons */
+.btn-light:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    margin: auto;
+    background-color: rgb(0, 50, 100, 0.1);
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.btn-light:hover:before {
+    width: 100%;
+}
+
+.btn-light:active:before {
+  width: 0%;
+}
+
+.btn-dark:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    margin: auto;
+    background-color: rgb(0, 147, 221, 0.2);
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.btn-dark:hover:before {
+    width: 100%;
+}
+
+.btn-dark:active:before {
+  width: 0%;
+}
+
+
+/* Animations */
+.animate-fadeIn {
+	animation: fadeIn 0.4s ease-in forwards;
+}
+
+.animate-fadeInUp {
+	animation: fadeInUp 0.4s ease-in forwards;
+}
+
+.animate-fadeIn-up {
+    animation: fadeInUp 0.4s ease-in forwards;
 }

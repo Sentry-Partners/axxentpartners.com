@@ -27,97 +27,103 @@
   <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <div id="site-header"></div>
 
+
     <main id="press-kit">
       <!-- Hero -->
-      <section class="py-20 text-center">
-        <div class="chip mb-4">Media Resources</div>
-        <h1 class="text-4xl md:text-5xl font-semibold">Press & Branding Kit</h1>
-        <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
+      <section id="press-kit" class="relative overflow-hidden py-16 md:py-20 lg:py-24">
+      <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
+      <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="chip mb-4 fade-in opacity-0">Media Resources</div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 fade-in opacity-0">Press & Branding Kit</h1>
+           <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto fade-in opacity-0">
           Logos, diagrams, boilerplate, press images, and contact info — everything you need to
           cover Axxent Partners.
         </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <div class="mt-6 md:mt-8 sm:flex sm:flex-col sm:flex-row gap-3 sm:justify-center">
           <a
             href="/assets/brand/Axxent-Press-Kit.zip"
-            class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+            class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >Download Full Kit (.zip)</a
           >
           <a
             href="/brand-guide.html"
-            class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+            class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0"
             >View Brand Guide</a
           >
         </div>
-      </section>
+        </div>
+      </div>
+    </section>
 
       <!-- Quick Downloads -->
-      <section class="py-20 border-t border-white/10">
+      <section class="bg-white py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Quick Downloads</h2>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Logo Pack</h3>
-              <p class="mt-2 text-white/80">Horizontal + stacked wordmarks, dark/light variants.</p>
-              <a href="/assets/brand/Axxent-LogoPack.zip" class="mt-4 inline-block underline"
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--brand-bg)] text-center fade-in opacity-0">Quick Downloads</h2>
+          <div class="mt-10 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Logo Pack</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">Horizontal + stacked wordmarks, dark/light variants.</p>
+              <a href="/assets/brand/Axxent-LogoPack.zip" class="mt-2 inline-block underline font-medium text-[var(--brand-bg)] hover:text-[var(--brand-accent)]"
                 >Download</a
               >
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Emblem</h3>
-              <p class="mt-2 text-white/80">Standalone mark for icons and badges.</p>
-              <a href="/assets/img/axxent_emblem1.png" class="mt-4 inline-block underline"
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Emblem</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">Standalone mark for icons and badges.</p>
+              <a href="/assets/img/axxent_emblem1.png" class="mt-2 inline-block underline font-medium text-[var(--brand-bg)] hover:text-[var(--brand-accent)]"
                 >Download</a
               >
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">UV Diagram</h3>
-              <p class="mt-2 text-white/80">Official Universal Value flow diagram.</p>
-              <a href="/assets/img/uv-flow-diagram.svg" class="mt-4 inline-block underline">View</a>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">UV Diagram</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">Official Universal Value flow diagram.</p>
+              <a href="/assets/img/uv-flow-diagram.svg" class="mt-2 inline-block underline font-medium text-[var(--brand-bg)] hover:text-[var(--brand-accent)]">View</a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Logos -->
-      <section class="py-20 border-t border-white/10" id="logos">
+      <section class="bg-[var(--brand-accent)] py-16 md:py-20 lg:py-24 border-t border-white/10" id="logos">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Logos</h2>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <div class="uv-card uv-glow text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-center fade-in opacity-0">Logos</h2>
+          <div class="mt-10 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 text-center fade-in opacity-0">
               <img
                 src="/assets/img/axxent_logo_horizontal.png"
                 alt="Horizontal logo"
-                class="max-h-20 mx-auto"
+                class="max-h-44 mx-auto"
               />
-              <div class="mt-3 text-white/80 text-sm">Horizontal Logo</div>
+              <div class="text-white text-lg md:text-xl font-semibold text-center">Horizontal Logo</div>
             </div>
-            <div class="uv-card uv-glow text-center">
+            <div class="uv-card uv-glow p-6 text-center fade-in opacity-0">
               <img
                 src="/assets/img/axxent_logo_trans_letters.png"
                 alt="Transparent wordmark"
-                class="max-h-20 mx-auto"
+                class="max-h-44 mx-auto"
               />
-              <div class="mt-3 text-white/80 text-sm">Transparent Wordmark</div>
+              <div class="text-white text-lg md:text-xl font-semibold text-center">Transparent Wordmark</div>
             </div>
-            <div class="uv-card uv-glow text-center">
+            <div class="uv-card uv-glow p-6 text-center fade-in opacity-0">
               <img
                 src="/assets/img/axxent_logo_black_letters.png"
                 alt="Black wordmark"
-                class="max-h-20 mx-auto"
+                class="max-h-44 mx-auto"
               />
-              <div class="mt-3 text-white/80 text-sm">Black Wordmark</div>
+              <div class="text-white text-lg md:text-xl font-semibold text-center">Black Wordmark</div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Press Images -->
-      <section class="py-20 border-t border-white/10" id="press-images">
+      <section class="py-16 md:py-20 lg:py-24 border-t border-white/10" id="press-images">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Press Images</h2>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-center fade-in opacity-0">Press Images</h2>
+          <div class="mt-10 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             <a
-              class="uv-card uv-glow block hover:opacity-95"
+              class="uv-card uv-glow block hover:opacity-95 p-6 fade-in opacity-0"
               href="/assets/img/uv-flow-diagram.svg"
               download
             >
@@ -126,10 +132,10 @@
                 alt="UV Flow Diagram"
                 class="max-h-40 mx-auto"
               />
-              <div class="mt-3 text-white/80 text-sm">UV Flow Diagram (SVG)</div>
+              <div class="mt-3 text-white text-lg md:text-xl font-semibold text-center">UV Flow Diagram (SVG)</div>
             </a>
             <a
-              class="uv-card uv-glow block hover:opacity-95"
+              class="uv-card uv-glow block hover:opacity-95 p-6 fade-in opacity-0"
               href="/assets/img/axxent_building_a.png"
               download
             >
@@ -138,10 +144,10 @@
                 alt="Building A"
                 class="max-h-40 mx-auto"
               />
-              <div class="mt-3 text-white/80 text-sm">Brand Image A</div>
+              <div class="mt-3 text-white text-lg md:text-xl font-semibold text-center">Brand Image A</div>
             </a>
             <a
-              class="uv-card uv-glow block hover:opacity-95"
+              class="uv-card uv-glow block hover:opacity-95 p-6 fade-in opacity-0"
               href="/assets/img/axxent_building_b.png"
               download
             >
@@ -150,18 +156,18 @@
                 alt="Building B"
                 class="max-h-40 mx-auto"
               />
-              <div class="mt-3 text-white/80 text-sm">Brand Image B</div>
+              <div class="mt-3 text-white text-lg md:text-xl font-semibold text-center">Brand Image B</div>
             </a>
           </div>
         </div>
       </section>
 
       <!-- Boilerplate -->
-      <section class="py-20 border-t border-white/10" id="boilerplate">
+      <section class="bg-[var(--brand-accent)] py-16 md:py-20 lg:py-24 border-t border-white/10" id="boilerplate">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Boilerplate Copy</h2>
-          <div class="mt-12 uv-card uv-glow">
-            <p class="text-white/80" id="boiler-text">
+          <h2 class="text-3xl md:text-4xl font-bold text-center fade-in opacity-0">Boilerplate Copy</h2>
+          <div class="mt-6">
+            <p class="text-white/80 fade-in opacity-0" id="boiler-text">
               <strong>Axxent Partners</strong> is building the next-generation loyalty commerce
               ecosystem, powered by its governed <strong>Universal Value™</strong> layer. Our
               platform bridges merchants, banks, and consumers across traditional (Web2) and
@@ -169,30 +175,31 @@
               loyalty value without a rip-and-replace. Headquartered in Cheyenne, Wyoming, Axxent
               Partners powers loyalty programs for enterprises and financial institutions worldwide.
             </p>
-            <button
-              id="copyBoiler"
-              class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black font-medium hover:opacity-90"
-            >
-              Copy boilerplate
-            </button>
+            <div class="text-center">
+              <button id="copyBoiler" class="mt-6 w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden btn-light cursor-pointer mt-3 sm:mt-0 fade-in opacity-0">
+                Copy boilerplate
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Media Contact -->
-      <section class="py-20 border-t border-white/10" id="contact">
+      <section class="bg-white py-16 md:py-20 lg:py-24 border-t border-white/10" id="contact">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Media Contact</h2>
-          <div class="mt-12 uv-card uv-glow text-white/80">
-            <p><strong>Axxent Partners, Inc.</strong></p>
-            <p>1912 Capitol Ave, Ste. 500 • Cheyenne, WY 82001</p>
-            <p>
-              Email:
-              <a href="mailto:admin@axxentpartners.com" class="underline"
-                >admin@axxentpartners.com</a
-              >
-            </p>
-            <p>Phone: [Placeholder]</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--brand-bg)] text-center fade-in opacity-0">Media Contact</h2>
+          <div class="mt-6 text-[var(--brand-accent)] flex flex-wrap justify-center items-center">
+            <div class="fade-in opacity-0">
+              <p><strong>Axxent Partners, Inc.</strong></p>
+              <p>1912 Capitol Ave, Ste. 500 • Cheyenne, WY 82001</p>
+              <p>
+                Email:
+                <a href="mailto:admin@axxentpartners.com" class="underline"
+                  >admin@axxentpartners.com</a
+                >
+              </p>
+              <p>Phone: [Placeholder]</p>
+            </div>
           </div>
         </div>
       </section>

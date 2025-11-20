@@ -47,47 +47,47 @@
     <div class="relative backdrop-blur">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- keep your existing grid + brand/nav/cta -->
-        <div class="grid [grid-template-columns:1fr_auto_1fr] items-center h-32 gap-4">
+        <div class="flex md:grid [grid-template-columns:1fr_auto_1fr] items-center h-20 md:h-24 lg:h-28 gap-4">
           <!-- COL 1: brand (unchanged) -->
           <div class="flex justify-start">
-            <a href="/index.html" class="flex items-center gap-1 min-w-0">
-              <span class="relative block h-[108px] w-[108px] shrink-0 -translate-y-1">
+            <a href="/index.html" class="flex items-center focus:outline-none gap-1 min-w-0">
+              <span class="relative block h-[64px] w-[64px] md:h-[82px] md:w-[82px] shrink-0 -translate-y-0 mr-2">
                 <span
-                  class="absolute left-1/2 top-1/2 h-[35px] w-[45px] -translate-x-1/2 -translate-y-[54%] rounded-[10px] bg-white/90 shadow-sm"
+                  class="absolute left-1/2 top-1/2 h-[34px] w-[44px] md:h-[40px] md:w-[55px] -translate-x-1/2 -translate-y-[54%] rounded-[10px] bg-white/90 shadow-sm"
                 ></span>
                 <img
-                  src="/assets/img/axxent-icon-transparent.png"
+                  src="/assets/img/axxent-logo.png"
                   alt="Axxent Icon"
-                  class="absolute left-1/2 top-1/2 h-[108px] w-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                  class="absolute left-1/2 top-1/2 w-[64px] md:w-[82px] h-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                 />
               </span>
-              <span class="leading-none shrink-0 -translate-y-1">
-                <span class="block text-2xl font-extrabold tracking-tight">AXXENT</span>
-                <span class="block text-xs tracking-[0.18em] opacity-80">PARTNERS</span>
+              <span class="leading-none shrink-0 -translate-y-0">
+                <span class="block text-xl md:text-2xl font-extrabold tracking-tight">AXXENT</span>
+                <span class="block text-xs md:text-sm tracking-[0.10em] opacity-80">PARTNERS</span>
               </span>
             </a>
           </div>
 
           <!-- COL 2: centered nav (unchanged) -->
           <nav
-            class="hidden md:flex justify-center items-center gap-8 text-sm min-w-0"
+            class="hidden md:flex justify-center items-center gap-8 text-base min-w-0"
             aria-label="Primary"
           >
-            <a class="hover:text-white/90" href="/solutions.html">Solutions</a>
-            <a class="hover:text-white/90" href="/platform.html">Platform</a>
-            <a class="hover:text-white/90" href="/industries.html">Industries</a>
-            <a class="hover:text-white/90" href="/results.html">Results</a>
-            <a class="hover:text-white/90" href="/developers.html">Developers</a>
-            <a class="hover:text-white/90" href="/about.html">About</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/solutions.html">Solutions</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/platform.html">Platform</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/industries.html">Industries</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/results.html">Results</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/developers.html">Developers</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/about.html">About</a>
             <!-- If you have Press at /press/ keep it here too -->
             <!-- <a class="hover:text-white/90" href="/press/">Press</a> -->
           </nav>
 
           <!-- COL 3: CTA + mobile burger -->
-          <div class="flex justify-end items-center gap-3">
+          <div class="flex justify-end items-center gap-3 ml-auto">
             <!-- Desktop CTA only -->
             <a
-              class="hidden md:inline-flex px-4 py-2 rounded-lg bg-white text-black font-medium hover:opacity-90"
+              class="relative hidden md:inline-flex px-6 py-2.5 rounded-lg bg-white text-[var(--brand-bg)] font-medium shadow-lg transition duration-300 hover:scale-105 overflow-hidden btn-light"
               href="/contact.html"
             >
               Book an Appt.
@@ -130,8 +130,8 @@
       left: 0;
       right: 0;
       top: 80px;
-      background: #0b0f17;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #003264;
+      border-top: 1px solid rgb(0, 147, 211, 0.6);
       transform: translateY(-8px);
       opacity: 0;
       visibility: hidden;
@@ -145,13 +145,12 @@
     }
     #uvSiteHeader .uv-panel a {
       display: block;
-      padding: 12px 8px;
+      padding: 10px 20px;
       text-decoration: none;
-      color: #e6e9ef;
       border-radius: 10px;
     }
     #uvSiteHeader .uv-panel a:hover {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgb(0, 147, 211, 0.6);
     }
     #uvSiteHeader .uv-group {
       margin-top: 12px;
@@ -180,7 +179,7 @@
     }
   </style>
 
-  <div class="uv-overlay" id="uvOverlay"></div>
+<div class="uv-overlay" id="uvOverlay"></div>
   <nav id="uvMobilePanel" class="uv-panel" aria-label="Mobile">
     <a href="/solutions.html">Solutions</a>
     <a href="/platform.html">Platform</a>
@@ -203,13 +202,15 @@
 
     <!-- Mobile CTA at bottom -->
     <div class="uv-group">
-      <a class="bg-white text-black font-medium text-center" href="/contact.html">Book an Appt.</a>
+      <a class="bg-white text-[var(--brand-bg)] font-medium text-center" href="/contact.html">Book an Appt.</a>
     </div>
   </nav>
 
   <!-- one-of-each (deduped) -->
   <link rel="stylesheet" href="/assets/css/brand.css" />
   <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
   <!-- Hidden global SVG defs (load once per page) -->
   <svg

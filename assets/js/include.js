@@ -113,7 +113,7 @@ function highlightActiveNav() {
     const href = (a.getAttribute("href") || "").replace(/index\.html$/, "");
     if (href === path || (href === "/" && path === "/")) {
       a.setAttribute("aria-current", "page");
-      a.classList.add("font-semibold", "underline", "underline-offset-4");
+      a.classList.add("font-semibold", "underline", "underline-offset-4", "text-menu-active");
     }
   });
 }
@@ -134,3 +134,21 @@ function setYear() {
 
   document.documentElement.classList.add("uv-hydrated");
 })();
+
+// General Fade in Animation script.
+  const callback = function (entries) {
+      entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fadeIn");
+      }
+      else {
+          entry.target.classList.remove("animate-fadeIn");
+      }
+      });
+  };
+  const observer = new IntersectionObserver(callback);
+  const targets = document.querySelectorAll(".fade-in");
+  targets.forEach(function (target) {
+      target.classList.add("opacity-0");
+      observer.observe(target); 
+  });
