@@ -37,6 +37,19 @@
         function wire(container) {
           const btn = container.querySelector(".uv-fs");
           const video = container.querySelector("video");
+
+          // NEW: .uv-ns button
+          const nsBtn = container.querySelector(".uv-ns");
+          if (nsBtn) {
+            nsBtn.addEventListener("click", () => {
+              container.classList.remove("is-fullscreen");
+
+              if (document.fullscreenElement) {
+                document.exitFullscreen().catch(() => {});
+              }
+            });
+          }
+
           if (!btn) return;
 
           btn.addEventListener("click", function (e) {
@@ -111,7 +124,7 @@
           
           <!-- Emblem / motion -->
           <!-- RIGHT: emblem video (desktop) + emblem image (mobile) -->
-          <svg viewBox="0 0 555 380" xmlns="http://www.w3.org/2000/svg" aria-label="Prism with facets, refraction, and rainbow chips" class="md:order-1 fade-in opacity-0">
+          <svg viewBox="0 0 555 400" xmlns="http://www.w3.org/2000/svg" aria-label="Prism with facets, refraction, and rainbow chips" class="md:order-1 fade-in opacity-0">
             <defs>
               <!-- Neon/glow -->
               <filter id="uvGlow" x="-40%" y="-40%" width="180%" height="180%">
@@ -157,7 +170,7 @@
             </defs>
 
             <!-- Inbound beam into apex -->
-            <g transform="translate(160,50)">
+            <g transform="translate(160,70)">
               <rect x="-3" y="-42" width="6" height="20" fill="#fff" filter="url(#uvGlow)">
                 <animate attributeName="y" from="-60" to="0" dur="1.8s" repeatCount="indefinite"/>
               </rect>
@@ -173,7 +186,7 @@
             <!-- Upright prism with 4 internal glass facets -->
             <!-- UPRIGHT PRISM (apex at local 0,0) -->
             <!-- UPRIGHT PRISM (apex at local 0,0) -->
-            <g id="prism" transform="translate(160,60)">
+            <g id="prism" transform="translate(160,80)">
               <defs>
                 <!-- Individual facet tints -->
                 <linearGradient id="glass1" x1="0" y1="0" x2="1" y2="1">
@@ -311,32 +324,32 @@
             <!-- Spectrum beams -->
             <g stroke-linecap="round">
               <!-- BLUE -->
-              <path d="M210,210 L398,158" class="spectrum" stroke="url(#spBlue)"   pathLength="1" filter="url(#uvGlowTight)"/>
-              <path d="M210,210 L398,158" class="beamCore"  pathLength="1"/>
+              <path d="M210,230 L398,178" class="spectrum" stroke="url(#spBlue)"   pathLength="1" filter="url(#uvGlowTight)"/>
+              <path d="M210,230 L398,178" class="beamCore"  pathLength="1"/>
 
               <!-- GREEN -->
-              <path d="M220,230 L398,200" class="spectrum" stroke="url(#spGreen)"  pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.1s"/>
-              <path d="M220,230 L398,200" class="beamCore"  pathLength="1"/>
+              <path d="M220,250 L398,220" class="spectrum" stroke="url(#spGreen)"  pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.1s"/>
+              <path d="M220,250 L398,220" class="beamCore"  pathLength="1"/>
 
               <!-- YELLOW (keep slight slope to avoid scanline fade; core a bit lighter) -->
-              <path d="M233,250 L398,238" class="spectrum" stroke="url(#spYellow)" pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.2s"/>
-              <path d="M233,250 L398,238" class="beamCore"  pathLength="1" style="opacity:.35"/>
+              <path d="M233,270 L398,258" class="spectrum" stroke="url(#spYellow)" pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.2s"/>
+              <path d="M233,270 L398,258" class="beamCore"  pathLength="1" style="opacity:.35"/>
 
               <!-- PINK -->
-              <path d="M238,280 L398,276" class="spectrum" stroke="url(#spPink)"   pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.3s"/>
-              <path d="M238,280 L398,276" class="beamCore"  pathLength="1"/>
+              <path d="M238,300 L398,296" class="spectrum" stroke="url(#spPink)"   pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.3s"/>
+              <path d="M238,300 L398,296" class="beamCore"  pathLength="1"/>
 
               <!-- RED -->
-              <path d="M248,308 L398,310" class="spectrum" stroke="url(#spRed)"    pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.4s"/>
-              <path d="M248,308 L398,310" class="beamCore"  pathLength="1"/>
+              <path d="M248,328 L398,330" class="spectrum" stroke="url(#spRed)"    pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.4s"/>
+              <path d="M248,328 L398,330" class="beamCore"  pathLength="1"/>
 
               <!-- VIOLET -->
-              <path d="M258,335 L398,350" class="spectrum" stroke="url(#spViolet)" pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.5s"/>
-              <path d="M258,335 L398,350" class="beamCore"  pathLength="1"/>
+              <path d="M258,355 L398,370" class="spectrum" stroke="url(#spViolet)" pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.5s"/>
+              <path d="M258,355 L398,370" class="beamCore"  pathLength="1"/>
             </g>
 
             <!-- Rainbow glass chips (match line colors) -->
-            <g transform="translate(416,140)">
+            <g transform="translate(416,160)">
               <g transform="translate(0,0)">
                 <rect class="chip" width="130" height="28" fill="url(#spBlue)" fill-opacity=".35"/>
                 <text class="t" x="10" y="18">Customers</text>
@@ -625,11 +638,18 @@
 
             <!-- Optional: fullscreen button (hide if not desired) -->
             <button
-              class="uv-fs absolute top-2 right-2 z-10 px-3 py-1.5 text-xs rounded-md border border-white/20 bg-black/40 backdrop-blur hover:bg-black/60 fade-in opacity-0"
+              class="uv-fs absolute top-2 right-2 z-10 px-3 py-1.5 text-xs rounded-sm border border-white/20 bg-black/40 backdrop-blur hover:bg-black/60 cursor-pointer fade-in opacity-0"
               aria-label="View full size"
               type="button"
             >
-              ⤢ View full size
+              <span class="flex items-center justify-center gap-x-2"><span class="material-symbols-outlined">fit_screen</span> <span>View full size</span></span>
+            </button>
+             <button
+              class="uv-ns absolute top-2 right-2 z-10 px-3 py-1.5 text-xs rounded-sm border border-white/20 bg-black/40 backdrop-blur hover:bg-black/60 cursor-pointer fade-in opacity-0"
+              aria-label="View normal size"
+              type="button"
+            >
+              <span class="flex items-center justify-center gap-x-2"><span class="material-symbols-outlined">close_fullscreen</span> <span>View normal size</span></span>
             </button>
 
             <noscript>
@@ -852,22 +872,22 @@
         requestAnimationFrame(tick);
 
         // Optional fullscreen handler
-        const fsBtn = el.querySelector(".uv-fs");
-        if (fsBtn && img.requestFullscreen) {
-          fsBtn.addEventListener("click", () => {
+        // const fsBtn = el.querySelector(".uv-fs");
+        // if (fsBtn && img.requestFullscreen) {
+        //   fsBtn.addEventListener("click", () => {
             // Open the current frame in a simple fullscreen overlay
-            const wrap = document.createElement("div");
-            wrap.style.cssText =
-              "position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:9999";
-            const big = document.createElement("img");
-            big.src = img.src;
-            big.alt = img.alt || "Storyboard";
-            big.style.cssText = "max-width:95vw;max-height:90vh;object-fit:contain";
-            wrap.appendChild(big);
-            document.body.appendChild(wrap);
-            wrap.addEventListener("click", () => wrap.remove());
-          });
-        }
+        //     const wrap = document.createElement("div");
+        //     wrap.style.cssText =
+        //       "position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:9999";
+        //     const big = document.createElement("img");
+        //     big.src = img.src;
+        //     big.alt = img.alt || "Storyboard";
+        //     big.style.cssText = "max-width:95vw;max-height:90vh;object-fit:contain";
+        //     wrap.appendChild(big);
+        //     document.body.appendChild(wrap);
+        //     wrap.addEventListener("click", () => wrap.remove());
+        //   });
+        // }
       })();
     </script>
   </body>

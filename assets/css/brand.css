@@ -117,32 +117,52 @@
 .uv-media {
   position: relative;
 }
-.uv-fs {
+.uv-fs,
+.uv-ns {
   position: absolute;
   right: 0.75rem;
   top: 0.75rem;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.75rem;
-  background: rgba(0, 0, 0, 0.35);
+  border-radius: 0.5rem;
+  background: rgba(0, 50, 100, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.25);
   font-size: 0.875rem;
   font-weight: 600;
   color: #fff;
   backdrop-filter: blur(4px);
 }
-.uv-fs:hover {
+.uv-fs:hover,
+.uv-ns:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
 .uv-media:fullscreen,
 .uv-media.is-fullscreen {
-  background: #000;
+  background: rgb(0, 50, 100, 0.5);
+  border-radius: 0px;
+  border: none;
 }
 .uv-media:fullscreen video,
 .uv-media.is-fullscreen video {
   width: 100vw;
   height: 100vh;
   object-fit: contain;
+}
+
+.glow-box .uv-fs {
+  display: block;
+}
+
+.glow-box .uv-ns {
+  display: none;
+}
+
+.glow-box.is-fullscreen .uv-fs {
+  display: none;
+}
+
+.glow-box.is-fullscreen .uv-ns {
+  display: block;
 }
 
 /* Base font (kept consistent site-wide) */
