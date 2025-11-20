@@ -627,7 +627,7 @@
             data-fps="1"
           >
             <!-- Static still for first paint + reduced-motion -->
-            <img
+            <div class="relative"><img
               id="uvFrame"
               src="/assets/img/uv-story/frame_01.png"
               alt="Storyboard frame showing the Universal Value flow"
@@ -638,19 +638,20 @@
 
             <!-- Optional: fullscreen button (hide if not desired) -->
             <button
-              class="uv-fs absolute top-2 right-2 z-10 px-3 py-1.5 text-xs rounded-sm border border-white/20 bg-black/40 backdrop-blur hover:bg-black/60 cursor-pointer fade-in opacity-0"
+              class="uv-fs absolute top-2 right-2 z-10 px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm rounded-sm border border-white/20 bg-black/40 backdrop-blur hover:bg-black/60 cursor-pointer fade-in opacity-0"
               aria-label="View full size"
               type="button"
             >
               <span class="flex items-center justify-center gap-x-2"><span class="material-symbols-outlined">fit_screen</span> <span>View full size</span></span>
             </button>
              <button
-              class="uv-ns absolute top-2 right-2 z-10 px-3 py-1.5 text-xs rounded-sm border border-white/20 bg-black/40 backdrop-blur hover:bg-black/60 cursor-pointer fade-in opacity-0"
+              class="uv-ns absolute top-2 right-2 z-10 px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm rounded-sm border border-white/20 bg-black/40 backdrop-blur hover:bg-black/60 cursor-pointer fade-in opacity-0"
               aria-label="View normal size"
               type="button"
             >
               <span class="flex items-center justify-center gap-x-2"><span class="material-symbols-outlined">close_fullscreen</span> <span>View normal size</span></span>
             </button>
+            </div>
 
             <noscript>
               <a
