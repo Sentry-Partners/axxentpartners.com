@@ -1,0 +1,52 @@
+:root {
+  --brand-bg: #0b1020;
+  --brand-fg: #e6f2ff;
+  --brand-accent: #6366f1;
+  --brand-accent-2: #22d3ee;
+  --brand-muted: #94a3b8;
+}
+.brand-gradient {
+  background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-accent-2) 100%);
+}
+.card {
+  @apply rounded-2xl p-6 shadow-xl bg-white/80 backdrop-blur;
+}
+.glow {
+  box-shadow: 0 0 40px rgba(98, 102, 241, 0.25);
+}
+a.link {
+  @apply underline underline-offset-4 hover:no-underline;
+}
+
+/* Fullscreen button + states */
+.uv-media {
+  position: relative;
+}
+.uv-fs {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+.uv-fs:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Fullscreen fit (works even if FS API is missing) */
+.uv-media:fullscreen,
+.uv-media.is-fullscreen {
+  background: #000;
+}
+.uv-media:fullscreen video,
+.uv-media.is-fullscreen video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+}

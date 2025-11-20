@@ -1,0 +1,257 @@
+          <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" aria-label="Prism with facets, refraction, and rainbow chips">
+            <defs>
+              <!-- Neon/glow -->
+              <filter id="uvGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+
+              <!-- Core aura -->
+              <radialGradient id="aura" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#fff" stop-opacity=".38"/>
+                <stop offset="60%" stop-color="#60a5fa" stop-opacity=".2"/>
+                <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+              </radialGradient>
+
+              <!-- Glass tint -->
+              <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8ab4ff" stop-opacity=".16"/>
+                <stop offset="100%" stop-color="#22d3ee" stop-opacity=".10"/>
+              </linearGradient>
+
+              <!-- Spectrum gradients -->
+              <linearGradient id="spBlue"   x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#93c5fd"/></linearGradient>
+              <linearGradient id="spGreen"  x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#86efac"/></linearGradient>
+              <linearGradient id="spYellow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#facc15"/><stop offset="1" stop-color="#fde68a"/></linearGradient>
+              <linearGradient id="spPink"   x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f9a8d4"/><stop offset="1" stop-color="#fbcfe8"/></linearGradient>
+              <linearGradient id="spRed"    x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f87171"/><stop offset="1" stop-color="#fca5a5"/></linearGradient>
+              <linearGradient id="spViolet" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#c4b5fd"/></linearGradient>
+
+              <style>
+              .t {
+                fill: #ffffff;
+                fill-opacity: 1;   /* ensure not semi-transparent */
+                font: 700 13px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+                letter-spacing: .02em;
+                filter: drop-shadow(0 0 2px rgba(255,255,255,.7));
+
+              }
+                .facet{fill:url(#glass);stroke:#ffffff88;stroke-width:.8}
+                .chip{stroke:#ffffff4f;stroke-width:1;rx:10}
+                .spectrum{fill:none;stroke-width:4;stroke-linecap:round;stroke-dasharray:160 240;animation:flow 3.2s linear infinite}
+                @keyframes flow{to{stroke-dashoffset:-400}}
+              </style>
+            </defs>
+
+            <!-- Inbound beam into apex -->
+            <g transform="translate(200,50)">
+              <rect x="-3" y="-42" width="6" height="20" fill="#fff" filter="url(#uvGlow)">
+                <animate attributeName="y" from="-60" to="0" dur="1.8s" repeatCount="indefinite"/>
+              </rect>
+              <circle r="10" stroke="#fff" stroke-width="2" fill="none" filter="url(#uvGlow)" opacity="0">
+                <animate attributeName="r" from="10" to="60" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" from="0.9" to="0" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+
+
+              <circle r="10" fill="#0b1020" stroke="#fff" stroke-width="4" filter="url(#uvGlow)"/>
+            </g>
+
+            <!-- Upright prism with 4 internal glass facets -->
+            <!-- UPRIGHT PRISM (apex at local 0,0) -->
+            <!-- UPRIGHT PRISM (apex at local 0,0) -->
+            <g id="prism" transform="translate(200,60)">
+              <defs>
+                <!-- Individual facet tints -->
+                <linearGradient id="glass1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#93c5fd" stop-opacity=".18"/>
+                  <stop offset="100%" stop-color="#60a5fa" stop-opacity=".10"/>
+                </linearGradient>
+                <linearGradient id="glass2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#22d3ee" stop-opacity=".18"/>
+                  <stop offset="100%" stop-color="#14b8a6" stop-opacity=".10"/>
+                </linearGradient>
+                <linearGradient id="glass3" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a78bfa" stop-opacity=".18"/>
+                  <stop offset="100%" stop-color="#6366f1" stop-opacity=".10"/>
+                </linearGradient>
+                <linearGradient id="glass4" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f472b6" stop-opacity=".18"/>
+                  <stop offset="100%" stop-color="#ec4899" stop-opacity=".10"/>
+                </linearGradient>
+                <clipPath id="prismClip">
+                  <polygon points="0,0 -150,300 150,300"/>
+                </clipPath>
+              </defs>
+
+              <!-- Outer prism outline -->
+              <polygon
+                points="0,0 -150,300 150,300"
+                fill="none"
+                stroke="#60a5fa"
+                stroke-width="1.8"
+                filter="url(#uvGlow)"
+              />
+              <!-- Facet 4 (base): Existing Tech & Catalog -->
+              <polygon points="0,180 -140,290 140,290" fill="url(#glass4)" stroke="#ffffff55" stroke-width=".9"/>
+              <text class="t" x="0" y="284" text-anchor="middle" dominant-baseline="alphabetic">
+                Existing Tech &amp; Catalog
+              </text>
+
+              <!-- Facet 3: New Tech & Services -->
+              <polygon points="0,120 -120,260 120,260" fill="url(#glass3)" stroke="#ffffff77" stroke-width=".9"/>
+              <text class="t" x="0" y="254" text-anchor="middle" dominant-baseline="alphabetic">
+                New Tech &amp; Services
+              </text>
+
+              <!-- Facet 2: SDKs, APIs, Plug-ins -->
+              <polygon points="0,70 -110,228 110,228" fill="url(#glass2)" stroke="#ffffff99" stroke-width=".9"/>
+              <text class="t" x="0" y="222" text-anchor="middle" dominant-baseline="alphabetic">
+                SDKs, APIs, Plug-ins
+              </text>
+
+              <!-- Facet 1 (near apex): Marketing Framework -->
+              <polygon points="0,30 -95,200 95,200" fill="url(#glass1)" stroke="#ffffffbb" stroke-width=".9"/>
+              <text class="t" x="0" y="194" text-anchor="middle" dominant-baseline="alphabetic">
+                Marketing Framework
+              </text>
+
+              <!-- Refraction rays clipped to prism -->
+              <g clip-path="url(#prismClip)" stroke="#fff" stroke-width="3" stroke-linecap="round" filter="url(#uvGlow)" opacity=".95">
+                <path d="M 0,12 L -68,118"/>
+                <path d="M 0,12 L   0,158" stroke-width="3.5"/>
+                <path d="M 0,12 L  68,118"/>
+              </g>
+
+              <!-- Re-stroke outer edge last for crispness -->
+              <polygon points="0,0 -150,300 150,300" fill="none" stroke="#ffffff77" stroke-width="1.1"/>
+            </g>
+
+
+            <!-- Short spectrum beams out right side (fan) -->
+            <!-- Tight glow filter for beams -->
+            <defs>
+              <!-- Hotter neon glow -->
+              <filter id="uvGlowTight" x="-8%" y="-80%" width="116%" height="260%" color-interpolation-filters="sRGB">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="b"/>
+                <feMerge>
+                  <feMergeNode in="b"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+
+              <!-- Neon spectrum gradients -->
+              <linearGradient id="spBlue" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#38bdf8"/>   <!-- bright sky blue -->
+                <stop offset="100%" stop-color="#0ea5e9"/> <!-- vivid cyan -->
+              </linearGradient>
+
+              <linearGradient id="spGreen" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#4ade80"/>   <!-- neon lime -->
+                <stop offset="100%" stop-color="#22c55e"/> <!-- bright green -->
+              </linearGradient>
+
+              <linearGradient id="spYellow" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#facc15"/>   <!-- golden yellow -->
+                <stop offset="100%" stop-color="#fbbf24"/> <!-- richer amber -->
+              </linearGradient>
+
+              <linearGradient id="spPink" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#f472b6"/>   <!-- hot pink -->
+                <stop offset="100%" stop-color="#ec4899"/> <!-- neon magenta -->
+              </linearGradient>
+
+              <linearGradient id="spRed" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ef4444"/>   <!-- bright red -->
+                <stop offset="100%" stop-color="#dc2626"/> <!-- deeper neon red -->
+              </linearGradient>
+
+              <linearGradient id="spViolet" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#a855f7"/>   <!-- vivid violet -->
+                <stop offset="100%" stop-color="#8b5cf6"/> <!-- electric purple -->
+              </linearGradient>
+            </defs>
+
+
+            <style>
+            .beamCore {
+              fill: none;
+              stroke: #ffffff;
+              stroke-width: 1.2;        /* thin white filament */
+              stroke-linecap: round;
+              opacity: .45;             /* subtle — tweak per color below */
+              pointer-events: none;
+              stroke-dasharray: .6 .4;
+              animation: flow 3.2s linear infinite;
+
+            }
+              .spectrum {
+                fill: none;
+                stroke-width: 4;
+                stroke-linecap: round;
+                stroke-dasharray: .6 .4;  /* fractions, works with pathLength="1" */
+                animation: flow 3.2s linear infinite;
+              }
+              @keyframes flow { to { stroke-dashoffset: -1; } }
+            </style>
+
+            <!-- Spectrum beams -->
+            <g stroke-linecap="round">
+              <!-- BLUE -->
+              <path d="M250,210 L438,158" class="spectrum" stroke="url(#spBlue)"   pathLength="1" filter="url(#uvGlowTight)"/>
+              <path d="M250,210 L438,158" class="beamCore"  pathLength="1"/>
+
+              <!-- GREEN -->
+              <path d="M260,230 L438,200" class="spectrum" stroke="url(#spGreen)"  pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.1s"/>
+              <path d="M260,230 L438,200" class="beamCore"  pathLength="1"/>
+
+              <!-- YELLOW (keep slight slope to avoid scanline fade; core a bit lighter) -->
+              <path d="M273,250 L438,238" class="spectrum" stroke="url(#spYellow)" pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.2s"/>
+              <path d="M273,250 L438,238" class="beamCore"  pathLength="1" style="opacity:.35"/>
+
+              <!-- PINK -->
+              <path d="M278,280 L438,276" class="spectrum" stroke="url(#spPink)"   pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.3s"/>
+              <path d="M278,280 L438,276" class="beamCore"  pathLength="1"/>
+
+              <!-- RED -->
+              <path d="M288,308 L438,310" class="spectrum" stroke="url(#spRed)"    pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.4s"/>
+              <path d="M288,308 L438,310" class="beamCore"  pathLength="1"/>
+
+              <!-- VIOLET -->
+              <path d="M298,335 L438,350" class="spectrum" stroke="url(#spViolet)" pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.5s"/>
+              <path d="M298,335 L438,350" class="beamCore"  pathLength="1"/>
+            </g>
+
+
+
+
+
+
+            <!-- Rainbow glass chips (match line colors) -->
+            <g transform="translate(456,140)">
+              <g transform="translate(0,0)">
+                <rect class="chip" width="130" height="28" fill="url(#spBlue)" fill-opacity=".35"/>
+                <text class="t" x="10" y="18">Customers</text>
+              </g>
+              <g transform="translate(0,40)">
+                <rect class="chip" width="130" height="28" fill="url(#spGreen)" fill-opacity=".35"/>
+                <text class="t" x="10" y="18">Merchants</text>
+              </g>
+              <g transform="translate(0,80)">
+                <rect class="chip" width="130" height="28" fill="url(#spYellow)" fill-opacity=".55"/>
+                <text class="t" x="10" y="18">Partners</text>
+              </g>
+              <g transform="translate(0,120)">
+                <rect class="chip" width="130" height="28" fill="url(#spPink)" fill-opacity=".55"/>
+                <text class="t" x="10" y="18">Programs</text>
+              </g>
+              <g transform="translate(0,160)">
+                <rect class="chip" width="130" height="28" fill="url(#spRed)" fill-opacity=".65"/>
+                <text class="t" x="10" y="18">Solutions</text>
+              </g>
+              <g transform="translate(0,200)">
+                <rect class="chip" width="130" height="28" fill="url(#spViolet)" fill-opacity=".75"/>
+                <text class="t" x="10" y="18">Developers</text>
+              </g>
+            </g>
+          </svg>

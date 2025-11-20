@@ -1,0 +1,16 @@
+{
+  "name": "axxentpartners-site",
+  "private": true,
+  "scripts": {
+    "dev:css": "./node_modules/.bin/tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch",
+    "build:css": "./node_modules/.bin/tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "netlify-cli": "^23.9.5",
+    "tailwindcss": "^4.1.13"
+  },
+  "dependencies": {
+    "@material-design-icons/font": "^0.14.15",
+    "@tailwindcss/cli": "^4.1.13"
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script>
+      window.PAGE_META = {
+        title: "Thanks – Axxent Partners",
+        description: "We are excited to be your loyalty provider of Universal Value.",
+        image: "/assets/img/og-image.svg",
+        version: "8",
+      };
+    </script>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+  </head>
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
+    <div id="site-header"></div>
+
+    <main class="min-h-[60vh] grid place-items-center bg-white">
+      <div class="text-center max-w-lg w-full">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-1 text-[var(--brand-bg)] fade-in opacity-0">Thanks!</h1>
+        <p class="mb-6 text-lg text-[var(--brand-accent)]">We received your message and will follow up shortly.</p>
+        <a
+          href="/index.html"
+          class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
+        >
+          Back home
+        </a>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>

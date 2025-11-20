@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style id="uv-preload-hero">
+      :root {
+        --header-h: 128px;
+      } /* matches h-32 */
+      #site-header {
+        min-height: var(--header-h);
+      } /* reserve space so header injection doesn't push content */
+      /* hide hero until we finish injecting header/footer (no layout shift) */
+      [data-defer-hero] {
+        opacity: 0;
+        transform: translateY(4px);
+        transition:
+          opacity 0.18s ease,
+          transform 0.18s ease;
+        will-change: opacity, transform;
+      }
+      html.uv-hydrated [data-defer-hero] {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+    <script>
+      window.PAGE_META = {
+        title: "Solutions – Axxent Partners",
+        description: "Solutions for Every Merchant. Universal Value for Every Customer",
+        image: "/assets/img/og-image.svg",
+        // url: "https://axxentpartners.com/solutions.html", // optional
+        version: "5", // bump if you need to refresh icons
+      };
+    </script>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>
+      html.tw-wait {
+        visibility: hidden;
+      }
+    </style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+
+    <!-- header/footer injector -->
+    <script src="/assets/js/include.js" defer></script>
+  </head>
+
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased" data-defer-hero>
+    <div id="site-header"></div>
+
+    <main id="solutions" class="relative">
+      <!-- HERO (stacked) -->
+      <section class="py-16 md:py-20 lg:py-24 bg-[var(--brand-bg)] text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl mx-auto text-center">
+            <div class="chip mb-6 inline-block fade-in opacity-0">Prism</div>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight fade-in opacity-0">
+              Solutions for Every Merchant.<br />Value for Every Customer.
+            </h1>
+            <p class="mt-6 text-lg text-white/80 fade-in opacity-0">
+              The easy‑to‑use digital Value platform for <strong>Developers</strong>,
+              <strong>Businesses</strong>, and <strong>Consumers</strong>—three legs of the same
+              stool, turning stored value into sales across web, app, and in‑store.
+            </p>
+
+            <!-- CTA row matches index styles -->
+            <div class="mt-6 sm:flex gap-4 sm:justify-center">
+<!--- --
+              <a
+                href="/solutions/"
+                class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 uv-glow"
+                >Explore Solutions</a
+              >
+-->              <a
+                href="/contact.html"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
+                >Talk to Sales</a
+              >
+            </div>
+            <p class="mt-4 text-base text-white/80 fade-in opacity-0">
+              Trusted by institutions. Built to onboard thousands of merchants—fast.
+            </p>
+          </div>
+
+          <!-- Big diagram -->
+          <div class="mt-10">
+            <div class="rounded-2xl border uv-glow overflow-hidden fade-in opacity-0">
+              <img
+                src="/assets/img/uv-flow-diagram.svg"
+                alt="Universal Value Flow"
+                class="block w-full mx-auto h-auto"
+              />
+            </div>
+            <p class="mt-6 sm:mt-8 md:mt-10 text-center text-white/80 text-base fade-in opacity-0">
+              Customers uses any digital Asset. You set rules. We clear, split‑pay, settle, and
+              reconcile—program‑agnostic.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY UNIVERSAL VALUE (3 cards; clickable to sections) -->
+      <section class="bg-white py-16 md:py-20 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <a
+              href="#loyalty-acceptance"
+              class="block rounded-2xl border p-6 bg-white/5 hover:bg-white/10 transition uv-glow-soft fade-in opacity-0"
+            >
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">One Value Layer</h3>
+              <p class="mt-2 text-sm text-[var(--brand-accent)]">
+                Unify points, miles, gift cards, coupons, and digital assets behind a single
+                acceptance rail.
+              </p>
+            </a>
+            <a
+              href="#how-it-works"
+              class="block rounded-2xl border p-6 bg-white/5 hover:bg-white/10 transition uv-glow-soft fade-in opacity-0"
+            >
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Frictionless Checkout</h3>
+              <p class="mt-2 text-sm text-[var(--brand-accent)]">
+                Split‑pay with rewards + card. Convert value at checkout. Instant settlement to your
+                currency.
+              </p>
+            </a>
+            <a
+              href="#developer"
+              class="block rounded-2xl border p-6 bg-white/5 hover:bg-white/10 transition uv-glow-soft fade-in opacity-0"
+            >
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Keep Your Stack</h3>
+              <p class="mt-2 text-sm text-[var(--brand-accent)]">
+                Start hosted. Graduate to SDKs/APIs without replatforming. Minimal lift, maximum
+                reach.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUDIENCE SPOTLIGHT (Enterprise / SMB / eCom / Web3 / Consumers) -->
+      <section class="border-y border-white/10 py-16 md:py-20 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">Built for every player in commerce</h2>
+          <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <a href="#universal-exchange" class="block rounded-2xl border p-6 uv-glow fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold">Enterprises & Issuers</h3>
+              <p class="mt-2 text-white/80">
+                Institutional scale, governance, program‑to‑program settlement, and reporting.
+              </p>
+            </a>
+            <a href="#merchant-onboarding" class="block rounded-2xl border p-6 uv-glow fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold">SME / SMB</h3>
+              <p class="mt-2 text-white/80">
+                Attract new customers, grow AOV with split‑pay, and launch in days—not months.
+              </p>
+            </a>
+            <a href="#how-it-works" class="block rounded-2xl border p-6 uv-glow fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold">Shopify / Woo / BigCommerce</h3>
+              <p class="mt-2 text-white/80">
+                Seamless plug‑ins and hosted flows. Keep your processor and POS.
+              </p>
+            </a>
+            <a href="#merchant-outcomes" class="block rounded-2xl border p-6 uv-glow fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold">Consumers</h3>
+              <p class="mt-2 text-white/80">
+                Spend anywhere, earn everywhere. Real purchasing power from every reward.
+              </p>
+            </a>
+            <a href="#developer" class="block rounded-2xl border p-6 uv-glow fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold">Developers & Partners</h3>
+              <p class="mt-2 text-white/80">
+                Components, APIs, and even the ability to issue points. Let’s build together.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTION PILLARS -->
+      <section class="bg-[var(--brand-dark-blue)] py-16 md:py-20 lg:py-24" id="pillars">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <div class="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">Our Solutions</h2>
+            <p class="mt-2 text-white/80 fade-in opacity-0">
+              Choose from modular capabilities designed for merchants, issuers, and partners.
+            </p>
+          </div>
+          <!-- Loyalty Acceptance -->
+          <div class="grid md:grid-cols-2 gap-10 items-center" id="loyalty-acceptance">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-semibold text-white fade-in opacity-0">Loyalty Acceptance</h2>
+              <p class="mt-4 text-white/80 fade-in opacity-0">
+                Accept major loyalty currencies and brand credits with configurable conversion
+                rules. Offer “Pay with Points,” “Top‑Up with Card,” and “Earn on Every Purchase.”
+              </p>
+              <ul class="mt-6 space-y-2 text-white/80 list-disc pl-5 fade-in opacity-0">
+                <li>Realtime quotes &amp; conversion</li>
+                <li>Split‑pay: rewards + card / debit / wallet</li>
+                <li>Instant settlement to your preferred currency</li>
+                <li>Automatic earn rules to drive repeat visits</li>
+              </ul>
+            </div>
+            <a
+              href="/solutions/loyalty-acceptance.html"
+              class="rounded-2xl border p-6 uv-surface uv-glow fade-in opacity-0"
+            >
+              <h3 class="text-lg md:text-xl font-semibold text-white fade-in opacity-0">Works with</h3>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">
+                  Shopify / Woo / Custom
+                </div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">
+                  Web &amp; Mobile SDK
+                </div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">POS plug‑ins</div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Hosted checkout</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Merchant Wallet & Payouts -->
+          <div class="grid md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-semibold text-white fade-in opacity-0">Merchant Wallet &amp; Payouts</h2>
+              <p class="mt-4 text-white/80 fade-in opacity-0">
+                Consolidate settlement from cards, rewards, and alternative tenders into a single
+                wallet. Automate reconciliation and control FX.
+              </p>
+              <ul class="mt-6 space-y-2 text-white/80 list-disc pl-5 fade-in opacity-0">
+                <li>Daily or intraday payouts</li>
+                <li>Multi‑currency with clear FX</li>
+                <li>Program‑level reporting &amp; ledgering</li>
+                <li>Program‑aware dispute &amp; refund flows</li>
+              </ul>
+            </div>
+            <a
+              href="/solutions/merchant-wallet.html"
+              class="rounded-2xl border p-6 uv-surface uv-glow-soft"
+            >
+              <h3 class="text-lg md:text-xl font-semibold text-white fade-in opacity-0">Controls</h3>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">
+                  Auto‑convert or hold
+                </div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Min/Max acceptance</div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Promotional boosts</div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Fees &amp; margins</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Universal Exchange (Enterprise) -->
+          <div class="grid md:grid-cols-2 gap-10 items-center" id="universal-exchange">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-semibold text-white fade-in opacity-0">Federated Value Services<h2>
+              <p class="mt-4 text-white/80 fade-in opacity-0">
+                For large programs and issuers: compliant federation services layer for inter‑program
+                settlement, inventory sourcing, and cross‑brand redemption.
+              </p>
+              <ul class="mt-6 space-y-2 text-white/80 list-disc pl-5 fade-in opacity-0">
+                <li>Program‑to‑program swaps with risk controls</li>
+                <li>Issuer &amp; acquirer roles with transparency</li>
+                <li>Real‑time quotes or fixed tables</li>
+                <li>Catalog, pricing, and availability APIs</li>
+              </ul>
+            </div>
+            <a
+              href="/solutions/universal-exchange.html"
+              class="rounded-2xl border p-6 uv-surface uv-glow-soft"
+            >
+              <h3 class="text-lg md:text-xl font-semibold text-white fade-in opacity-0">Who benefits</h3>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">
+                  Banks &amp; Issuers
+                </div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">
+                  Travel &amp; Retail Coalitions
+                </div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Large Merchants</div>
+                <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Marketplaces</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- MERCHANT ONBOARDING -->
+      <section
+        id="merchant-onboarding"
+        class="border-y border-white/10 py-16 md:py-20 lg:py-24"
+      >
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">Merchant Onboarding</h2>
+            <p class="mt-4 text-white/80 fade-in opacity-0">
+              Go live in days — start with hosted checkout, then scale with SDKs or APIs. Minimal
+              lift, maximum reach.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <ul class="mt-6 space-y-2 text-white/80 list-disc pl-5 fade-in opacity-0">
+              <li>Fast KYC &amp; sandbox access</li>
+              <li>Drop-in hosted checkout link</li>
+              <li>Split-pay (rewards + card) out of the box</li>
+              <li>Realtime quotes, confirmations, and receipts</li>
+            </ul>
+
+            <div class="mt-6 sm:flex sm:flex-wrap gap-3">
+              <a
+                href="/contact/"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden btn-light text-center mt-3 sm:mt-0 fade-in opacity-0"
+                >Get Started</a
+              >
+              <a
+                href="/docs/hosted"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
+                >See Hosted Guide</a
+              >
+            </div>
+          </div>
+
+          <div class="rounded-2xl border uv-glow p-6 uv-surface">
+            <h3 class="text-lg md:text-xl font-semibold text-white fade-in opacity-0">What you’ll need</h3>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Store details</div>
+              <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Settlement prefs</div>
+              <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">Webhook URL</div>
+              <div class="rounded-xl p-4 text-white/80 uv-surface fade-in opacity-0">
+                Brand assets (optional)
+              </div>
+            </div>
+          </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section
+        id="how-it-works"
+        class="bg-white border-y border-white/10 py-16 md:py-20 lg:py-24"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-[var(--brand-bg)] text-center fade-in opacity-0">How it works</h2>
+          <p class="mt-4 text-center text-[var(--brand-accent)] mx-auto fade-in opacity-0">
+            Start hosted, then move to components or headless APIs—no replatforming.
+          </p>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <a href="/docs/hosted.html" class="block rounded-2xl border p-6 uv-glow-soft fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">1. Hosted Checkout</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Drop‑in link. We handle auth, quotes, split‑pay, confirmations.
+              </p>
+            </a>
+            <a href="/docs/sdk.html" class="block rounded-2xl border p-6 uv-glow-soft fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">2. Lightweight SDK</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Embed components. Control UX with our value layer underneath.
+              </p>
+            </a>
+            <a href="/docs/api.html" class="block rounded-2xl border p-6 uv-glow-soft fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">3. APIs &amp; POS</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">Go headless or connect supported POS for scale.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- MERCHANT OUTCOMES -->
+      <section class="border-y border-white/10 py-16 md:py-20 lg:py-24" id="merchant-outcomes">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">Outcomes that matter</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="rounded-2xl border p-6 uv-surface uv-glow fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-white">Higher Conversion</h3>
+              <p class="mt-2 text-white/80">
+                Capture customers who prefer to redeem value they already hold.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border p-6 uv-surface uv-glow fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-white">Bigger Baskets</h3>
+              <p class="mt-2 text-white/80">
+                Split-pay and top-ups increase AOV while preserving margins.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border p-6 uv-surface uv-glow fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-white">Repeat Visits</h3>
+              <p class="mt-2 text-white/80">Auto-earn rules drive customers back to you.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEVELOPER CTA -->
+      <section id="developer" class="bg-[var(--brand-accent)] text-white py-16 md:py-20 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight fade-in opacity-0">Developers</h2>
+            <p class="mt-4 fade-in opacity-0">
+              Start with hosted checkout, then move to components or headless APIs. Sandbox mirrors
+              production.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/developers.html"
+                class=""
+                >Visit Our Developer Page</a
+              >
+            </div>
+          </div>
+          <div class="rounded-2xl border uv-glow p-6 bg-[var(--brand-bg)] w-full max-w-full overflow-x-auto fade-in opacity-0">
+            <pre class="text-sm"><code>// Create a Federated Value quote
+POST /api/fv/quotes
+{
+  "cartTotal": "129.00",
+  "currency": "USD",
+  "allowedTenders": ["points","giftcard","card"],
+  "splitPay": true
+}</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>

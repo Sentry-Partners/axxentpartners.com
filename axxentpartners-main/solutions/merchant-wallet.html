@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link id="brand-css" rel="stylesheet" href="/assets/css/brand.css?v=5" />
+
+    <script>
+      window.PAGE_META = {
+        title: "Merchant Wallet & Payouts – Axxent Partners",
+        description:
+          "Consolidate settlements, automate reconciliation, control FX and payout cadence.",
+        image: "/assets/img/og-image.svg",
+        version: "5",
+      };
+    </script>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>  </head>
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
+    <div id="site-header"></div>
+
+    <main class="py-16">
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-semibold text-white">Merchant Wallet &amp; Payouts</h1>
+        <p class="mt-4 text-white/80 max-w-3xl">
+          Consolidate settlement from cards, rewards, and alternative tenders into a single wallet.
+          Automate reconciliation and control FX.
+        </p>
+
+        <ul class="mt-8 list-disc pl-5 text-white/80 space-y-2">
+          <li>Daily or intraday payouts</li>
+          <li>Multi-currency with clear FX</li>
+          <li>Program-level reporting &amp; ledgering</li>
+          <li>Program-aware dispute &amp; refund flows</li>
+        </ul>
+
+        <div class="mt-10 flex gap-4">
+          <a
+            href="/contact/"
+            class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 uv-glow"
+            >Request a Demo</a
+          >
+          <a href="/docs/api" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+            >See Payout API</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>

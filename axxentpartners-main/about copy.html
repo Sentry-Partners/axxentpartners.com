@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style id="uv-hero-gate">
+      :root {
+        --header-h: 128px;
+      }
+      #site-header {
+        min-height: var(--header-h);
+      }
+      /* gate only the visible hero/above-the-fold section */
+      [data-uv-hero-gate] {
+        opacity: 0;
+        transform: translateY(4px);
+        transition:
+          opacity 0.18s ease,
+          transform 0.18s ease;
+        will-change: opacity, transform;
+      }
+      html.uv-hydrated [data-uv-hero-gate] {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+
+    <script>
+      window.PAGE_META = {
+        title: "About – Axxent Partners",
+        description: "Turn loyalty from a cost center to a growth engine.",
+        image: "/assets/img/og-image.svg",
+        version: "8",
+      };
+    </script>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>  </head>
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased style="background:#0B0F17; color:#E6E9EF;"">
+    <div id="svg-defs"></div> <!-- defs go here, before any visible SVG -->
+    <div id="site-header"></div>
+
+    <!-- About – Hero (three-legs-to-UV-core) -->
+    <section class="relative overflow-hidden py-20" data-uv-hero-gate>
+      <!-- LAYER 1: background (grid, 3 legs, core, connectors to x=940 + dots) -->
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <svg
+          viewBox="0 0 1200 420"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-labelledby="aTitle aDesc"
+          class="w-full h-full"
+        >
+          <title id="aTitle">
+            Universal Value: Enterprise, SMB/SME, and Developers powering the Customer
+          </title>
+          <desc id="aDesc">
+            Three animated value streams flow into a UV core, then out to the Customer.
+          </desc>
+
+
+
+          <!-- wash + grid -->
+          <rect x="0" y="0" width="1200" height="420" fill="url(#wash)" />
+          <g class="grid">
+            <line x1="120" y1="60" x2="120" y2="360" />
+            <line x1="360" y1="60" x2="360" y2="360" />
+            <line x1="600" y1="60" x2="600" y2="360" />
+            <line x1="840" y1="60" x2="840" y2="360" />
+            <line x1="1080" y1="60" x2="1080" y2="360" />
+            <line x1="60" y1="120" x2="1140" y2="120" />
+            <line x1="60" y1="210" x2="1140" y2="210" />
+            <line x1="60" y1="300" x2="1140" y2="300" />
+          </g>
+
+          <!-- THREE LEGS (start at chip right edge ~ x=192) -->
+          <path d="M192,120 C320,120 440,150 560,180" class="leg slow" />
+          <!-- middle leg gets an underlay track + animated stroke -->
+          <path
+            d="M192,203 C320,206 440,210 560,210"
+            stroke="#ffffff"
+            stroke-opacity="0.14"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M192,203 C320,206 440,210 560,210"
+            stroke="url(#uv)"
+            stroke-width="7"
+            stroke-linecap="round"
+            stroke-opacity=".95"
+            filter="url(#glow)"
+            style="
+              stroke-dasharray: 80 220;
+              animation: flow 3s linear infinite;
+              animation-delay: 0.2s;
+            "
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              values="0;-320"
+              dur="3s"
+              repeatCount="indefinite"
+              begin="0s"
+            />
+          </path>
+          <path d="M192,300 C320,300 440,260 560,240" class="leg" style="animation-delay: 0.4s" />
+
+          <!-- UV core + subtle burst -->
+          <g transform="translate(600,210)">
+            <circle r="62" class="core pulse" />
+            <circle r="92" class="burst" />
+          </g>
+
+          <!-- Connectors core → card LEFT EDGE (x=940) + dots -->
+          <path d="M662,188 C760,160 820,160 940,190" class="out" style="animation-delay: 0.15s" />
+          <!-- middle connector: track + animated stroke (behind the card) -->
+          <path
+            d="M662,210 C780,210 900,210 940,210"
+            stroke="#ffffff"
+            stroke-opacity="0.14"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M662,210 C780,210 900,210 940,210"
+            stroke="url(#uv)"
+            stroke-width="7"
+            stroke-linecap="round"
+            stroke-opacity=".95"
+            filter="url(#glow)"
+            style="
+              stroke-dasharray: 40 60;
+              animation: flow 1.6s linear infinite;
+              animation-delay: 0.3s;
+            "
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              values="0;-100"
+              dur="1.6s"
+              repeatCount="indefinite"
+              begin="0s"
+            />
+          </path>
+          <path d="M662,232 C760,260 820,260 940,230" class="out" style="animation-delay: 0.45s" />
+          <circle cx="940" cy="190" r="4.5" fill="url(#uv)" opacity=".95" filter="url(#glow)" />
+          <circle cx="940" cy="230" r="4.5" fill="url(#uv)" opacity=".95" filter="url(#glow)" />
+        </svg>
+      </div>
+
+      <!-- CONTENT: glass trimmed (76%) and nudged ~10% right -->
+      <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl">
+            <div
+              class="w-[76%] ml-[10%] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-[2px] p-8 text-center"
+            >
+              <h1 class="text-4xl md:text-5xl font-semibold">About Axxent</h1>
+              <p class="mt-4 text-lg text-white/80">
+                The Universal Value Platform gives <span class="font-semibold">enterprises</span>,
+                <span class="font-semibold">SMBs/SMEs</span>, and
+                <span class="font-semibold">developers</span>
+                the tools to deliver customer experiences that retain, delight, and grow loyalty.
+              </p>
+              <div class="mt-6 md:mt-8 sm:flex sm:flex-col sm:flex-row gap-3 sm:justify-center">
+                <a
+                  href="/platform.html"
+                  class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+                  >Explore the Platform</a
+                >
+                <a
+                  href="/results.html"
+                  class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+                  >See the Results</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAYER 2: overlay chips + Customer card + over-card center segment (940→1040) -->
+      <div class="absolute inset-0 z-20 pointer-events-none">
+        <svg
+          viewBox="0 0 1200 420"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full h-full"
+          role="img"
+          aria-label="Overlay chips and customer"
+        >
+          <!-- defs for overlay -->
+          <defs>
+            <linearGradient id="uv2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#6366f1" />
+              <stop offset="100%" stop-color="#22d3ee" />
+            </linearGradient>
+            <filter id="glow2" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b" />
+              <feMerge>
+                <feMergeNode in="b" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <style>
+              .chip {
+                fill: #ffffff;
+                fill-opacity: 0.09;
+                stroke: #ffffff;
+                stroke-opacity: 0.28;
+              }
+              .t {
+                fill: #fff;
+                font-family:
+                  ui-sans-serif,
+                  system-ui,
+                  -apple-system,
+                  Segoe UI,
+                  Roboto,
+                  Arial;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+              }
+
+              .over {
+                stroke: url(#uv2);
+                stroke-width: 6;
+                stroke-linecap: round;
+                stroke-opacity: 0.9;
+                filter: url(#glow2);
+                stroke-dasharray: 40 60; /* 100px total segment */
+                animation: overFlow 1.6s linear infinite;
+              }
+              @keyframes overFlow {
+                from {
+                  stroke-dashoffset: 0;
+                }
+                to {
+                  stroke-dashoffset: -100;
+                }
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .over {
+                  animation: none;
+                }
+              }
+            </style>
+          </defs>
+
+          <!-- Left chips (above glass) -->
+          <g transform="translate(72,100)">
+            <rect width="140" height="28" rx="8" class="chip" />
+            <text x="12" y="18" class="t">Enterprise</text>
+          </g>
+          <g transform="translate(72,190)">
+            <rect width="140" height="28" rx="8" class="chip" />
+            <text x="12" y="18" class="t">Developers</text>
+          </g>
+          <g transform="translate(72,280)">
+            <rect width="140" height="28" rx="8" class="chip" />
+            <text x="12" y="18" class="t">SMB / SME</text>
+          </g>
+
+          <!-- Customer card (right) -->
+          <g transform="translate(940,170)">
+            <rect width="200" height="80" rx="14" class="chip" />
+            <text x="16" y="32" class="t" style="font-weight: 700">Customer</text>
+            <text x="16" y="54" class="t" style="opacity: 0.85">Experience &amp; Loyalty</text>
+          </g>
+
+          <!-- Over-card center continuation + center dot -->
+          <!-- middle hop OVER the card (940 → 1040) -->
+        </svg>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-6">
+      <h1 class="text-4xl font-extrabold">About</h1>
+      <p class="text-white/80 max-w-3xl">
+        Axxent is taking the baton from the Bakkt loyalty business—doubling down on focus, speed,
+        and member value. Our mission is simple: turn loyalty from a cost center into a growth
+        engine.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="uv-card uv-glow-soft p-6">
+          <h3 class="font-semibold text-white">Focus</h3>
+          <p class="text-white/70 mt-1">One mandate: Universal Value.</p>
+        </div>
+
+        <div class="uv-card uv-glow-soft p-6">
+          <h3 class="font-semibold text-white">Velocity</h3>
+          <p class="text-white/70 mt-1">
+            Rapid launches with pre-built catalogs. SDK's and API's for all services.
+          </p>
+        </div>
+
+        <div class="uv-card uv-glow-soft p-6">
+          <h3 class="font-semibold text-white">Trust</h3>
+          <p class="text-white/70 mt-1">
+            Enterprise security &amp; SLAs adaptable to all business levels.
+          </p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="uv-card uv-glow-soft p-6">
+          <h3 class="font-semibold text-white">Team</h3>
+          <p class="text-white/70 mt-1">Meet our experienced leadership.</p>
+        </div>
+
+        <div class="uv-card uv-glow-soft p-6">
+          <h3 class="font-semibold text-white">Locations</h3>
+          <p class="text-white/70 mt-1">We are headquartered in Timbuktu.</p>
+        </div>
+
+        <a
+          href="/contact.html"
+          class="uv-card uv-glow-strong block no-underline focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]"
+        >
+          <h3 class="font-semibold text-white">Contact</h3>
+          <p class="text-white/70 mt-1">Contact us Here.</p>
+        </a>
+      </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <!-- optional footer injection -->
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>

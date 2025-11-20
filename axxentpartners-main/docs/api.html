@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link id="brand-css" rel="stylesheet" href="/assets/css/brand.css?v=5" />
+    <script>
+      window.PAGE_META = {
+        title: "APIs & POS – Axxent Partners",
+        description: "Go headless or connect supported POS for scale.",
+        image: "/assets/img/og-image.svg",
+        version: "5",
+      };
+    </script>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>  </head>
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
+    <div id="site-header"></div>
+
+    <main class="py-16">
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-semibold text-white">APIs & POS</h1>
+        <p class="mt-4 text-white/80">
+          Placeholder page. Content coming soon on API endpoints and POS integrations.
+        </p>
+      </section>
+      <section class="py-24 text-center">
+        <img
+          src="/assets/img/under-construction.svg"
+          alt="Page in progress"
+          class="mx-auto max-w-6xl w-full h-auto"
+        />
+        <p class="mt-6 text-white/70">
+          This page is being connected to the Universal Value Platform. Please check back soon.
+        </p>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+/* Tailwind v4 style */
+@import "tailwindcss";
+
+/* Tell Tailwind where to scan for classnames */
+@source "./**/*.{html,js,ts,tsx}";

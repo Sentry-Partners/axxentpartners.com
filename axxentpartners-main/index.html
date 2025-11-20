@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script>
+      window.PAGE_META = {
+        title: "Home – Axxent Partners",
+        description: "Axxent Loyalty—Universal Value for loyalty rewards.",
+        image: "/assets/img/og-image.svg"
+      };
+    </script>
+
+    <!-- keep these until the script is wired up properly -->
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+
+    <script>
+      (function () {
+        function goFS(el) {
+          if (el && el.requestFullscreen) return el.requestFullscreen();
+          if (el && el.webkitRequestFullscreen) return el.webkitRequestFullscreen(); // Safari
+        }
+        function wire(container) {
+          const btn = container.querySelector(".uv-fs");
+          const video = container.querySelector("video");
+          if (!btn) return;
+
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            // iOS Safari prefers fullscreen on the <video> element itself
+            if (video && video.webkitEnterFullscreen && !document.fullscreenEnabled) {
+              try {
+                video.webkitEnterFullscreen();
+                return;
+              } catch (err) {}
+            }
+            goFS(video || container);
+          });
+
+          // Optional: double-click the media area to fullscreen
+          container.addEventListener("dblclick", () => btn.click());
+
+          // Fallback class if FS API isn’t available
+          document.addEventListener("fullscreenchange", () => {
+            container.classList.toggle("is-fullscreen", !!document.fullscreenElement);
+          });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".uv-media").forEach(wire);
+        });
+      })();
+    </script>
+
+  </head>
+
+
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
+    <div id="site-header"></div>
+
+    <style>
+      /* Wrap text + emblem together so the emblem is positioned relative to the text */
+      .hero-wrap {
+        display: inline-grid; /* Shrinks to content; anchors to the left */
+        grid-template-columns: minmax(0, 1fr) auto; /* Left = text grows, right = emblem auto */
+        align-items: start;
+        column-gap: 2rem; /* Space between text and emblem */
+        position: relative; /* For future positioning if needed */
+        max-width: 56rem; /* ≈ max-w-3xl; adjust to your taste */
+      }
+      .hero-copy {
+        min-width: 0;
+      } /* Allow text to wrap nicely */
+      .hero-emblem {
+        width: clamp(22rem, 24vw, 30rem); /* Responsive emblem sizing */
+        pointer-events: none;
+        user-select: none;
+        filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.35));
+        opacity: 0.9;
+      }
+      /* Optional: hide emblem on small screens */
+      @media (max-width: 767px) {
+        .hero-wrap {
+          display: block;
+        }
+        .hero-emblem {
+          display: none;
+        }
+      }
+    </style>
+    <!-- Headline -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
+
+      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
+        <div class="md:flex md:items-start md:justify-center md:gap-x-12 lg:gap-x-20">
+          
+          <!-- Emblem / motion -->
+          <!-- RIGHT: emblem video (desktop) + emblem image (mobile) -->
+          <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" aria-label="Prism with facets, refraction, and rainbow chips" class="md:order-1 fade-in opacity-0">
+            <defs>
+              <!-- Neon/glow -->
+              <filter id="uvGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+
+              <!-- Core aura -->
+              <radialGradient id="aura" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#fff" stop-opacity=".38"/>
+                <stop offset="60%" stop-color="#60a5fa" stop-opacity=".2"/>
+                <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+              </radialGradient>
+
+              <!-- Glass tint -->
+              <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8ab4ff" stop-opacity=".16"/>
+                <stop offset="100%" stop-color="#22d3ee" stop-opacity=".10"/>
+              </linearGradient>
+
+              <!-- Spectrum gradients -->
+              <linearGradient id="spBlue"   x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#93c5fd"/></linearGradient>
+              <linearGradient id="spGreen"  x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#86efac"/></linearGradient>
+              <linearGradient id="spYellow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#facc15"/><stop offset="1" stop-color="#fde68a"/></linearGradient>
+              <linearGradient id="spPink"   x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f9a8d4"/><stop offset="1" stop-color="#fbcfe8"/></linearGradient>
+              <linearGradient id="spRed"    x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f87171"/><stop offset="1" stop-color="#fca5a5"/></linearGradient>
+              <linearGradient id="spViolet" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#c4b5fd"/></linearGradient>
+
+              <style>
+              .t {
+                fill: #ffffff;
+                fill-opacity: 1;   /* ensure not semi-transparent */
+                font: 700 13px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+                letter-spacing: .02em;
+                filter: drop-shadow(0 0 2px rgba(255,255,255,.7));
+
+              }
+                .facet{fill:url(#glass);stroke:#ffffff88;stroke-width:.8}
+                .chip{stroke:#ffffff4f;stroke-width:1;rx:10}
+                .spectrum{fill:none;stroke-width:4;stroke-linecap:round;stroke-dasharray:160 240;animation:flow 3.2s linear infinite}
+                @keyframes flow{to{stroke-dashoffset:-400}}
+              </style>
+            </defs>
+
+            <!-- Inbound beam into apex -->
+            <g transform="translate(200,50)">
+              <rect x="-3" y="-42" width="6" height="20" fill="#fff" filter="url(#uvGlow)">
+                <animate attributeName="y" from="-60" to="0" dur="1.8s" repeatCount="indefinite"/>
+              </rect>
+              <circle r="10" stroke="#fff" stroke-width="2" fill="none" filter="url(#uvGlow)" opacity="0">
+                <animate attributeName="r" from="10" to="60" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" from="0.9" to="0" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+
+
+              <circle r="10" fill="#0b1020" stroke="#fff" stroke-width="4" filter="url(#uvGlow)"/>
+            </g>
+
+            <!-- Upright prism with 4 internal glass facets -->
+            <!-- UPRIGHT PRISM (apex at local 0,0) -->
+            <!-- UPRIGHT PRISM (apex at local 0,0) -->
+            <g id="prism" transform="translate(200,60)">
+              <defs>
+                <!-- Individual facet tints -->
+                <linearGradient id="glass1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#93c5fd" stop-opacity=".18"/>
+                  <stop offset="100%" stop-color="#60a5fa" stop-opacity=".10"/>
+                </linearGradient>
+                <linearGradient id="glass2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#22d3ee" stop-opacity=".18"/>
+                  <stop offset="100%" stop-color="#14b8a6" stop-opacity=".10"/>
+                </linearGradient>
+                <linearGradient id="glass3" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a78bfa" stop-opacity=".18"/>
+                  <stop offset="100%" stop-color="#6366f1" stop-opacity=".10"/>
+                </linearGradient>
+                <linearGradient id="glass4" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f472b6" stop-opacity=".18"/>
+                  <stop offset="100%" stop-color="#ec4899" stop-opacity=".10"/>
+                </linearGradient>
+                <clipPath id="prismClip">
+                  <polygon points="0,0 -150,300 150,300"/>
+                </clipPath>
+              </defs>
+
+              <!-- Outer prism outline -->
+              <polygon
+                points="0,0 -150,300 150,300"
+                fill="none"
+                stroke="#60a5fa"
+                stroke-width="1.8"
+                filter="url(#uvGlow)"
+              />
+              <!-- Facet 4 (base): Existing Tech & Catalog -->
+              <polygon points="0,180 -140,290 140,290" fill="url(#glass4)" stroke="#ffffff55" stroke-width=".9"/>
+              <text class="t" x="0" y="284" text-anchor="middle" dominant-baseline="alphabetic">
+                Existing Tech &amp; Catalog
+              </text>
+
+              <!-- Facet 3: New Tech & Services -->
+              <polygon points="0,120 -120,260 120,260" fill="url(#glass3)" stroke="#ffffff77" stroke-width=".9"/>
+              <text class="t" x="0" y="254" text-anchor="middle" dominant-baseline="alphabetic">
+                New Tech &amp; Services
+              </text>
+
+              <!-- Facet 2: SDKs, APIs, Plug-ins -->
+              <polygon points="0,70 -110,228 110,228" fill="url(#glass2)" stroke="#ffffff99" stroke-width=".9"/>
+              <text class="t" x="0" y="222" text-anchor="middle" dominant-baseline="alphabetic">
+                SDKs, APIs, Plug-ins
+              </text>
+
+              <!-- Facet 1 (near apex): Marketing Framework -->
+              <polygon points="0,30 -95,200 95,200" fill="url(#glass1)" stroke="#ffffffbb" stroke-width=".9"/>
+              <text class="t" x="0" y="194" text-anchor="middle" dominant-baseline="alphabetic">
+                Marketing Framework
+              </text>
+
+              <!-- Refraction rays clipped to prism -->
+              <g clip-path="url(#prismClip)" stroke="#fff" stroke-width="3" stroke-linecap="round" filter="url(#uvGlow)" opacity=".95">
+                <path d="M 0,12 L -68,118"/>
+                <path d="M 0,12 L   0,158" stroke-width="3.5"/>
+                <path d="M 0,12 L  68,118"/>
+              </g>
+
+              <!-- Re-stroke outer edge last for crispness -->
+              <polygon points="0,0 -150,300 150,300" fill="none" stroke="#ffffff77" stroke-width="1.1"/>
+            </g>
+
+
+            <!-- Short spectrum beams out right side (fan) -->
+            <!-- Tight glow filter for beams -->
+            <defs>
+              <!-- Hotter neon glow -->
+              <filter id="uvGlowTight" x="-8%" y="-80%" width="116%" height="260%" color-interpolation-filters="sRGB">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="b"/>
+                <feMerge>
+                  <feMergeNode in="b"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+
+              <!-- Neon spectrum gradients -->
+              <linearGradient id="spBlue" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#38bdf8"/>   <!-- bright sky blue -->
+                <stop offset="100%" stop-color="#0ea5e9"/> <!-- vivid cyan -->
+              </linearGradient>
+
+              <linearGradient id="spGreen" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#4ade80"/>   <!-- neon lime -->
+                <stop offset="100%" stop-color="#22c55e"/> <!-- bright green -->
+              </linearGradient>
+
+              <linearGradient id="spYellow" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#facc15"/>   <!-- golden yellow -->
+                <stop offset="100%" stop-color="#fbbf24"/> <!-- richer amber -->
+              </linearGradient>
+
+              <linearGradient id="spPink" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#f472b6"/>   <!-- hot pink -->
+                <stop offset="100%" stop-color="#ec4899"/> <!-- neon magenta -->
+              </linearGradient>
+
+              <linearGradient id="spRed" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ef4444"/>   <!-- bright red -->
+                <stop offset="100%" stop-color="#dc2626"/> <!-- deeper neon red -->
+              </linearGradient>
+
+              <linearGradient id="spViolet" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#a855f7"/>   <!-- vivid violet -->
+                <stop offset="100%" stop-color="#8b5cf6"/> <!-- electric purple -->
+              </linearGradient>
+            </defs>
+
+
+            <style>
+            .beamCore {
+              fill: none;
+              stroke: #ffffff;
+              stroke-width: 1.2;        /* thin white filament */
+              stroke-linecap: round;
+              opacity: .45;             /* subtle — tweak per color below */
+              pointer-events: none;
+              stroke-dasharray: .6 .4;
+              animation: flow 3.2s linear infinite;
+
+            }
+              .spectrum {
+                fill: none;
+                stroke-width: 4;
+                stroke-linecap: round;
+                stroke-dasharray: .6 .4;  /* fractions, works with pathLength="1" */
+                animation: flow 3.2s linear infinite;
+              }
+              @keyframes flow { to { stroke-dashoffset: -1; } }
+            </style>
+
+            <!-- Spectrum beams -->
+            <g stroke-linecap="round">
+              <!-- BLUE -->
+              <path d="M250,210 L438,158" class="spectrum" stroke="url(#spBlue)"   pathLength="1" filter="url(#uvGlowTight)"/>
+              <path d="M250,210 L438,158" class="beamCore"  pathLength="1"/>
+
+              <!-- GREEN -->
+              <path d="M260,230 L438,200" class="spectrum" stroke="url(#spGreen)"  pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.1s"/>
+              <path d="M260,230 L438,200" class="beamCore"  pathLength="1"/>
+
+              <!-- YELLOW (keep slight slope to avoid scanline fade; core a bit lighter) -->
+              <path d="M273,250 L438,238" class="spectrum" stroke="url(#spYellow)" pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.2s"/>
+              <path d="M273,250 L438,238" class="beamCore"  pathLength="1" style="opacity:.35"/>
+
+              <!-- PINK -->
+              <path d="M278,280 L438,276" class="spectrum" stroke="url(#spPink)"   pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.3s"/>
+              <path d="M278,280 L438,276" class="beamCore"  pathLength="1"/>
+
+              <!-- RED -->
+              <path d="M288,308 L438,310" class="spectrum" stroke="url(#spRed)"    pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.4s"/>
+              <path d="M288,308 L438,310" class="beamCore"  pathLength="1"/>
+
+              <!-- VIOLET -->
+              <path d="M298,335 L438,350" class="spectrum" stroke="url(#spViolet)" pathLength="1" filter="url(#uvGlowTight)" style="animation-delay:.5s"/>
+              <path d="M298,335 L438,350" class="beamCore"  pathLength="1"/>
+            </g>
+
+            <!-- Rainbow glass chips (match line colors) -->
+            <g transform="translate(456,140)">
+              <g transform="translate(0,0)">
+                <rect class="chip" width="130" height="28" fill="url(#spBlue)" fill-opacity=".35"/>
+                <text class="t" x="10" y="18">Customers</text>
+              </g>
+              <g transform="translate(0,40)">
+                <rect class="chip" width="130" height="28" fill="url(#spGreen)" fill-opacity=".35"/>
+                <text class="t" x="10" y="18">Merchants</text>
+              </g>
+              <g transform="translate(0,80)">
+                <rect class="chip" width="130" height="28" fill="url(#spYellow)" fill-opacity=".55"/>
+                <text class="t" x="10" y="18">Partners</text>
+              </g>
+              <g transform="translate(0,120)">
+                <rect class="chip" width="130" height="28" fill="url(#spPink)" fill-opacity=".55"/>
+                <text class="t" x="10" y="18">Programs</text>
+              </g>
+              <g transform="translate(0,160)">
+                <rect class="chip" width="130" height="28" fill="url(#spRed)" fill-opacity=".65"/>
+                <text class="t" x="10" y="18">Solutions</text>
+              </g>
+              <g transform="translate(0,200)">
+                <rect class="chip" width="130" height="28" fill="url(#spViolet)" fill-opacity=".75"/>
+                <text class="t" x="10" y="18">Developers</text>
+              </g>
+            </g>
+          </svg>
+
+          <div class="min-w-0 max-w-2xl text-center md:text-left md:order-0">
+            <div class="chip mb-6 inline-block">Prism</div>
+
+            <!-- Headline -->
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 fade-in opacity-0">Prism by Axxent Partners:</h1>
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight fade-in opacity-0">delivering constant value to all our customers.</h2>
+            
+
+            <!-- Subhead: inherits Bakkt breadth + your benefit -->
+            <p class="mt-6 text-lg text-white/80 fade-in opacity-0">
+              Axxent powers loyalty across the full range of value, digital assets and experiences, so every
+              point turns into real purchasing power.
+            </p>
+
+            <p class="mt-3 text-sm text-white/70 fade-in opacity-0">
+              Prism is Axxent’s federated loyalty commerce platform.  Your bridge from today's legacy value to tomorrow's value,
+              much more than a marketplace.
+            </p>
+
+            <!-- CTA hierarchy: discover first, sales second -->
+            <div class="mt-4 sm:flex gap-4 sm:justify-center sm:justify-start">
+              <a
+                href="/solutions.html"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0"
+              >
+                Explore Solutions
+              </a>
+              <a
+                href="/partners.html"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
+              >
+                Explore Partnerships with us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- stats row (icon-less) -->
+    <section class="py-16 md:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+        <div class="uv-card uv-card-sm uv-glow-soft bg-[var(--brand-bg)] fade-in opacity-0">
+          <!-- <span class="material-symbols-outlined">layers</span> -->
+          <div class="text-xl md:text-2xl lg:text-3xl font-extrabold text-[var(--brand-bg)]">Over 2M</div>
+          <div class="mt-2 text-[var(--brand-accent)] text-base">Items in our merchandise catalog</div>
+        </div>
+        <div class="uv-card uv-card-sm uv-glow-soft bg-[var(--brand-bg)] fade-in opacity-0">
+          <div class="text-xl md:text-2xl lg:text-3xl font-extrabold text-[var(--brand-bg)]">400+</div>
+          <div class="mt-2 text-[var(--brand-accent)] text-base">Gift card brands: digital &amp; physical</div>
+        </div>
+        <div class="uv-card uv-card-sm uv-glow-soft bg-[var(--brand-bg)] fade-in opacity-0">
+          <div class="text-xl md:text-2xl lg:text-3xl font-extrabold text-[var(--brand-bg)]">Points · Cash · Split‑pay</div>
+          <div class="mt-2 text-[var(--brand-accent)] text-base">Flexible, easy checkout customers love</div>
+        </div>
+        <div class="uv-card uv-card-sm uv-glow-soft bg-[var(--brand-bg)] fade-in opacity-0">
+          <div class="text-xl md:text-2xl lg:text-3xl font-extrabold text-[var(--brand-bg)]">Enterprise APIs</div>
+          <div class="mt-2 text-[var(--brand-accent)] text-base">Security, SLAs, and integrations at scale</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category tiles  --->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="text-3xl font-bold text-white sm:text-4xl fade-in opacity-0">
+          Everything in one loyalty commerce platform
+        </h2>
+        <p class="mt-4 text-white/80 fade-in opacity-0">
+          Travel, gift cards, and over two million merchandise items—redeem with points,
+          cash, or both.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Travel -->
+        <a
+          href="/solutions/travel.html"
+          class="uv-card uv-card-link uv-glow overflow-hidden fade-in opacity-0"
+        >
+          <img
+            src="/assets/img/tiles/travel.jpg"
+            alt="Travel rewards—flights and hotels"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white">Travel Rewards</h3>
+            <p class="mt-2 text-base text-white/80">
+              Flights, hotels, rentals, activities, cruises.
+            </p>
+            <span
+              class="mt-4 inline-block text-sm font-semibold text-white/80 group-hover:underline"
+              >Explore →</span
+            >
+          </div>
+        </a>
+
+        <!-- Merchandise -->
+        <a
+          href="/solutions/merchandise.html"
+          class="uv-card uv-card-link uv-glow overflow-hidden fade-in opacity-0"
+        >
+          <img
+            src="/assets/img/tiles/merch.jpg"
+            alt="Merchandise—electronics and lifestyle"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white">Merchandise Rewards</h3>
+            <p class="mt-2 text-base text-white/80">A modern catalog with over 1M items.</p>
+            <span
+              class="mt-4 inline-block text-sm font-semibold text-white/80 group-hover:underline"
+              >Explore →</span
+            >
+          </div>
+        </a>
+
+        <!-- Gift Cards -->
+        <a
+          href="/solutions/gift-cards.html"
+          class="uv-card uv-card-link uv-glow overflow-hidden fade-in opacity-0"
+        >
+          <img
+            src="/assets/img/tiles/giftcards.jpg"
+            alt="Gift cards fan"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white">Gift Card Rewards</h3>
+            <p class="mt-2 text-base text-white/80">Choose from 400+ top brands.</p>
+            <span
+              class="mt-4 inline-block text-sm font-semibold text-white/80 group-hover:underline"
+              >Explore →</span
+            >
+          </div>
+        </a>
+
+        <!-- Apple -->
+        <a
+          href="/solutions/apple.html"
+          class="uv-card uv-card-link uv-glow overflow-hidden fade-in opacity-0"
+        >
+          <img
+            src="/assets/img/tiles/apple.jpg"
+            alt="Apple products"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white">Apple® Rewards</h3>
+            <p class="mt-2 text-base text-white/80">An authentic Apple shopping experience.</p>
+            <span
+              class="mt-4 inline-block text-sm font-semibold text-white/80 group-hover:underline"
+              >Explore →</span
+            >
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- What is UV -->
+    <section class="border-t border-white/10 py-16 md:py-20 lg:py-24 bg-[var(--brand-accent)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+
+          <!-- RIGHT: your video -->
+          <div class="md:col-span-6 md:order-1 fade-in opacity-0">
+            <div class="uv-card uv-card-link uv-glow-strong overflow-hidden">
+              <video
+                class="w-full aspect-video"
+                autoplay
+                muted
+                playsinline
+                loop
+                preload="metadata"
+                poster="/assets/img/uv-vision-poster-play.jpg"
+              >
+                <source src="/assets/video/uv-vision.mp4" type="video/mp4" />
+              </video>
+            </div>
+            </div>
+
+          <!-- LEFT: wider text column -->
+          <div class="md:col-span-6 md:order-0">
+            <div class="chip mb-4 inline-block px-5 py-2 fade-in opacity-0">What is the Prism Platform?</div>
+            <h2 class="text-3xl md:text-4xl font-bold fade-in opacity-0">
+              A federated platform for loyalty commerce
+            </h2>
+            <p class="mt-4 font-medium fade-in opacity-0">
+              The Prism Platform is the business and technology layer that lets programs treat value
+              like real money: blending points, cards, and approved rails into a single, compliant
+              payment experience. Built for bank-grade scale, designed to extend into new channels
+              without losing brand control.
+            </p>
+
+            <div class="mt-8 grid gap-6 sm:grid-cols-2">
+              <div class="fade-in opacity-0">
+                <div class="text-xl font-bold">Payment orchestration</div>
+                <p class="mt-1 text-sm font-medium">
+                  Points, cards, and approved digital assets combined cleanly at checkout.
+                </p>
+              </div>
+              <div class="fade-in opacity-0">
+                <div class="text-xl font-bold">Catalog & partnerships</div>
+                <p class="mt-1 text-sm font-medium">
+                  Travel, Apple®, gift cards, 2M+ items curated and program-controlled.
+                </p>
+              </div>
+              <div class="fade-in opacity-0">
+                <div class="text-xl font-bold">APIs & SDKs</div>
+                <p class="mt-1 text-sm font-medium">
+                  Plug into Shopify/Amazon/commerce stacks or go custom with APIs.
+                </p>
+              </div>
+              <div class="fade-in opacity-0">
+                <div class="text-xl font-bold">Governance & compliance</div>
+                <p class="mt-1 text-sm font-medium">
+                  Brand safety, approvals, SLAs, and reporting at enterprise depth.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-6 text-sm font-medium fade-in opacity-0">
+              Platform-controlled support for emerging rails (e.g., tokenized value, wallets) keeps
+              you future-ready without exposing members to complexity.
+            </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY UV (sequence on the LEFT, text on the RIGHT) -->
+    <section class="border-t border-white/10 bg-white/[0.04] py-16 md:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <!-- LEFT: media (lg:5/12) -->
+          <div
+            class="md:col-span-6 uv-media relative rounded-2xl border border-white/10 overflow-hidden bg-white/[0.03]"
+            id="uvStoryboard"
+            aria-label="Storyboard: Universal Value in action"
+            data-frame-path="/assets/img/uv-story/frame_"
+            data-frame-ext=".png"
+            data-frame-start="1"
+            data-frame-pad="2"
+            data-frame-count="14"
+            data-fps="1"
+          >
+            <!-- Static still for first paint + reduced-motion -->
+            <img
+              id="uvFrame"
+              src="/assets/img/uv-story/frame_01.png"
+              alt="Storyboard frame showing the Universal Value flow"
+              class="w-full aspect-video object-cover select-none pointer-events-none fade-in opacity-0"
+              decoding="async"
+              loading="eager"
+            />
+
+            <!-- Optional: fullscreen button (hide if not desired) -->
+            <button
+              class="uv-fs absolute top-2 right-2 z-10 px-3 py-1.5 text-xs rounded-md border border-white/20 bg-black/40 backdrop-blur hover:bg-black/60 fade-in opacity-0"
+              aria-label="View full size"
+              type="button"
+            >
+              ⤢ View full size
+            </button>
+
+            <noscript>
+              <a
+                class="uv-fs-fallback block p-3 text-center text-sm"
+                href="/assets/img/uv-story/frame_01.png"
+              >
+                Open full size
+              </a>
+            </noscript>
+          </div>
+
+          <!-- RIGHT: wider text column (lg:7/12) -->
+          <div class="md:col-span-6 text-center lg:text-left">
+            <div class="chip mb-4 inline-block px-5 py-2 fade-in opacity-0">Why Prism delivers Universal Value</div>
+            <h2 class="text-3xl md:text-4xl font-bold fade-in opacity-0">
+              A platform members instantly understand
+            </h2>
+            <p class="mt-4 text-white/80 fade-in opacity-0">
+              Prism turns every point into purchasing power across the full range of
+              loyalty currencies and experiences.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-2 text-sm text-white/80 fade-in opacity-0">
+              <span class="px-5 py-2 rounded-full border border-white/15">Points + Cash</span>
+              <span class="px-5 py-2 rounded-full border border-white/15">Travel</span>
+              <span class="px-5 py-2 rounded-full border border-white/15">Gift Cards</span>
+              <span class="px-5 py-2 rounded-full border border-white/15">M+ Items</span>
+              <span class="px-5 py-2 rounded-full border border-white/15">…and more</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDY (centered highlight) -->
+    <section class="bg-[var(--brand-accent)] border-t border-white/10 py-16 md:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-12 gap-10 items-center">
+          <div class="mx-auto md:col-span-5 md:order-1">
+            <img
+              src="/assets/img/case-studies/apple-promo.png"
+              alt="Apple® Rewards promotion"
+              class="w-full fade-in opacity-0"
+            />
+          </div>
+
+          <div class="mt-8 mx-auto md:col-span-7 md: md:pr-10 md:order-0">
+            <div class="chip mb-3 inline-block fade-in opacity-0">Case Studies</div>
+            <h3 class="text-3xl md:text-4xl font-bold fade-in opacity-0">Global leaders like Apple alongside travel, retail, and financial services brands leverage Prism to deliver richer, more flexible reward experiences.</h3>
+            <p class="mt-3 font-medium max-w-2xl mx-auto fade-in opacity-0">
+              Familiar shopping experiences drives faster adoption and higher order values.
+            </p>
+            <a
+              href="/resources/case-studies/apple-rewards/"
+              class="w-full sm:w-auto mt-6 inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] font-semibold relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden btn-light text-center fade-in opacity-0"
+            >
+              Read the Story
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- CREDIBILITY Strip -->
+    <section class="py-16 md:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-xl border border-white/10 p-6 fade-in opacity-0">
+          <div class="flex items-center gap-3">
+            <svg
+              class="w-10 h-10 text-[var(--brand-bg)]"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M12 2l9 4-9 4-9-4 9-4zm9 8l-9 4-9-4v8l9 4 9-4v-8z" />
+            </svg>
+            <h5 class="text-base font-semibold text-[var(--brand-bg)]">IATA accredited travel operations</h5>
+          </div>
+          <p class="mt-2 text-sm text-[var(--brand-accent)]">
+            Experienced agents and accredited processes for scale and compliance.
+          </p>
+        </div>
+        <div class="rounded-xl border border-white/10 p-6 fade-in opacity-0">
+          <div class="flex items-center gap-3">
+            <svg
+              class="w-10 h-10 text-[var(--brand-bg)]"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-7 9v-2a5 5 0 0110 0v2H5z" />
+            </svg>
+            <h5 class="text-base font-semibold text-[var(--brand-bg)]">U.S. based service & support</h5>
+          </div>
+          <p class="mt-2 text-sm text-[var(--brand-accent)]">
+            Real humans for complex bookings and post‑purchase care.
+          </p>
+        </div>
+        <div class="rounded-xl border border-white/10 p-6 fade-in opacity-0">
+          <div class="flex items-center gap-3">
+            <svg
+              class="w-10 h-10 text-[var(--brand-bg)]"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M12 1l9 5v6c0 5-4 9-9 11-5-2-9-6-9-11V6l9-5z" />
+            </svg>
+            <h5 class="text-base font-semibold text-[var(--brand-bg)]">Enterprise ready by design</h5>
+          </div>
+          <p class="mt-2 text-sm text-[var(--brand-accent)]">
+            Security reviews, SLAs, APIs, and flexible integrations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Optional: trusted logos (hide this entire block until real logos are ready) -->
+      <!-- --
+      <div class="max-w-7xl mx-auto px-6 mt-8">
+        <div class="text-white/60 text-sm mb-3">
+          Trusted by leading financial institutions and brands
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 opacity-80">
+          <img src="/assets/img/logos/logo1.svg" alt="Partner logo 1" class="h-8 object-contain" />
+          <img src="/assets/img/logos/logo2.svg" alt="Partner logo 2" class="h-8 object-contain" />
+          <img src="/assets/img/logos/logo3.svg" alt="Partner logo 3" class="h-8 object-contain" />
+          <img src="/assets/img/logos/logo4.svg" alt="Partner logo 4" class="h-8 object-contain" />
+        </div>
+      </div>
+      -->
+    </section>
+
+    <div id="site-footer"></div>
+    <!-- optional footer injection -->
+    <script src="/assets/js/include.js"></script>
+    <!-- Neon glow utility (CSS) -->
+    <style id="neon-glow">
+      .glow-box {
+        border-color: rgba(96, 165, 250, 0.7) !important; /* ~tailwind sky-400/70 */
+        box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+        transition:
+          box-shadow 0.2s ease,
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease;
+        will-change: box-shadow, transform;
+      }
+      .glow-box:hover {
+        box-shadow: 0 0 25px rgba(96, 165, 250, 0.8);
+      }
+    </style>
+
+    <script>
+      // Add neon glow to all “boxes” without manual search/replace
+      document.addEventListener("DOMContentLoaded", () => {
+        // Targets: tiles, cards, stat boxes, credibility boxes, etc.
+        const candidates = document.querySelectorAll(".rounded-2xl.border, .rounded-xl.border");
+
+        candidates.forEach((el) => {
+          // Skip any elements you already styled with an inline shadow utility
+          if (el.className.includes("shadow-[")) return;
+          el.classList.add("glow-box");
+        });
+      });
+    </script>
+    <!-- Lightweight JS: PNG sequence loop with reduced-motion support + optional fullscreen -->
+    <script>
+      (() => {
+        const el = document.getElementById("uvStoryboard");
+        if (!el) return;
+
+        const img = document.getElementById("uvFrame");
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const path = el.dataset.framePath || "/assets/img/uv-story/frame_";
+        const ext = el.dataset.frameExt || ".png";
+        const start = parseInt(el.dataset.frameStart || "1", 10);
+        const pad = parseInt(el.dataset.framePad || "2", 10);
+        const count = parseInt(el.dataset.frameCount || "1", 10);
+        const fps = parseInt(el.dataset.fps || "12", 10);
+
+        // Helper to build frame filename
+        const fn = (n) => {
+          const s = String(n).padStart(pad, "0");
+          return `${path}${s}${ext}`;
+          // Example yields /assets/img/uv-story/frame_01.png when pad=2
+        };
+
+        // Idle on first frame if reduced motion
+        if (prefersReduced || count <= 1) {
+          img.src = fn(start);
+          return;
+        }
+
+        // Preload frames (best-effort)
+        const frames = [];
+        for (let i = start; i < start + count; i++) {
+          const pre = new Image();
+          pre.src = fn(i);
+          frames.push(pre);
+        }
+
+        // Simple loop
+        let i = start;
+        const interval = 2000 / fps;
+        let last = performance.now();
+
+        function tick(now) {
+          if (now - last >= interval) {
+            i = i + 1;
+            if (i >= start + count) i = start;
+            img.src = fn(i);
+            last = now;
+          }
+          requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+
+        // Optional fullscreen handler
+        const fsBtn = el.querySelector(".uv-fs");
+        if (fsBtn && img.requestFullscreen) {
+          fsBtn.addEventListener("click", () => {
+            // Open the current frame in a simple fullscreen overlay
+            const wrap = document.createElement("div");
+            wrap.style.cssText =
+              "position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:9999";
+            const big = document.createElement("img");
+            big.src = img.src;
+            big.alt = img.alt || "Storyboard";
+            big.style.cssText = "max-width:95vw;max-height:90vh;object-fit:contain";
+            wrap.appendChild(big);
+            document.body.appendChild(wrap);
+            wrap.addEventListener("click", () => wrap.remove());
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accessibility Statement – Axxent Partners</title>
+    <meta name="description" content="Axxent Loyalty—Universal Value for enterprise rewards." />
+    <meta property="og:title" content="Accessibility Statement – Axxent Partners" />
+    <meta
+      property="og:description"
+      content="Axxent Loyalty—Universal Value for enterprise rewards."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/img/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon / app icons (these must stay at site root) -->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/assets/img/mask-icon.svg" color="#0d47a1" />
+    <link rel="manifest" href="/assets/img/site.webmanifest" />
+    <meta name="theme-color" content="#0d47a1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>html.tw-wait{visibility:hidden}</style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+
+    <style>
+      html,
+      body {
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+    </style>
+  </head>
+
+  <!-- keep your global body classes so background/typography match the site -->
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
+    <!-- header injected by your site script/build -->
+    <div id="site-header"></div>
+
+    <!-- Accessibility Statement – Hero (three-legs-to-UV-core) -->
+    <section class="relative overflow-hidden py-16 md:py-20 lg:py-24" data-defer-hero>
+      <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
+      <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 fade-in opacity-0">Accessibility Statement</h1>
+          <h4 class="mb-0 text-lg md:text-xl font-medium fade-in opacity-0"><strong>Last reviewed:</strong> [Insert Date]</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 md:py-20 lg:py-24 text-[var(--brand-bg)]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <p class="mb-6 fade-in opacity-0">
+        <strong>Axxent Partners, Inc.</strong> is committed to providing a website that is
+        accessible to the widest possible audience, regardless of technology or ability. We are
+        actively working to increase the accessibility and usability of our site and in doing so
+        adhere to many of the available standards and guidelines.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">Standards We Follow</h3>
+      <ul class="list-disc list-inside space-y-2 fade-in opacity-0">
+        <li>We aim to conform to <strong>WCAG 2.2 Level AA</strong> guidelines.</li>
+        <li>
+          We follow relevant best practices from <strong>WAI-ARIA</strong> for interactive
+          components.
+        </li>
+        <li>We test with keyboard-only navigation and common screen readers where feasible.</li>
+      </ul>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">What We’ve Implemented</h3>
+      <ul class="list-disc list-inside space-y-2 fade-in opacity-0">
+        <li>
+          <strong>Consistent structure:</strong> Semantic HTML for headings, landmarks, and lists.
+        </li>
+        <li>
+          <strong>Keyboard support:</strong> Navigable menus, modals, and controls with visible
+          focus indicators.
+        </li>
+        <li>
+          <strong>Color &amp; contrast:</strong> Text and interactive elements meet or exceed AA
+          contrast ratios.
+        </li>
+        <li>
+          <strong>Images &amp; media:</strong> Informative images include alt text; decorative
+          images are marked accordingly. Videos include captions where provided.
+        </li>
+        <li>
+          <strong>Forms:</strong> Associated labels, clear error messaging, and helpful
+          instructions.
+        </li>
+        <li>
+          <strong>Links &amp; buttons:</strong> Meaningful names and accessible names for icons.
+        </li>
+        <li>
+          <strong>Responsive design:</strong> Content reflows without loss of functionality on small
+          screens or zoom up to 200%.
+        </li>
+        <li>
+          <strong>Skip links:</strong> A “Skip to content” link is provided to bypass repetitive
+          navigation.
+        </li>
+      </ul>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">Assistive Technology &amp; Browser Support</h3>
+      <p class="mb-6 fade-in opacity-0">
+        We strive to support current versions of major browsers (Chrome, Safari, Firefox, Edge) and
+        common assistive technologies (for example, VoiceOver, NVDA). Performance may vary depending
+        on your system configuration.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">Third‑Party Content</h3>
+      <p class="mb-6 fade-in opacity-0">
+        Our site may include third‑party integrations (e.g., embedded videos, analytics, payment
+        widgets). While we encourage our partners to meet accessibility standards, some third‑party
+        content may be outside our control.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">Known Limitations</h3>
+      <p class="mb-2 fade-in opacity-0">We are aware of the following items and are working to improve them:</p>
+      <ul class="list-disc list-inside space-y-2 fade-in opacity-0">
+        <li>Certain legacy media assets may not yet include full captions or transcripts.</li>
+        <li>Occasional non‑critical contrast variances in archived pages.</li>
+      </ul>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">Feedback &amp; Requests</h3>
+      <p class="mb-6 fade-in opacity-0">
+        We welcome your feedback on the accessibility of our site. If you experience barriers or
+        need content in an alternative format (such as a PDF, large print, or plain text), please
+        contact us:
+      </p>
+      <p class="mb-6 fade-in opacity-0">
+        <strong>Axxent Partners, Inc.</strong><br />
+        1912 Capitol Ave<br />
+        Ste. 500<br />
+        Cheyenne, WY 82001<br />
+        United States<br />
+        <a href="mailto:admin@sentry.partners" class="link">admin@sentry.partners</a><br />
+        [Phone Placeholder]
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">Response Time</h3>
+      <p class="mb-6 fade-in opacity-0">
+        We aim to acknowledge accessibility inquiries within <strong>5 business days</strong> and
+        provide a resolution or update within <strong>15 business days</strong>, depending on
+        complexity.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">Continuous Improvement</h3>
+      <p class="mb-6 fade-in opacity-0">
+        Accessibility is an ongoing effort. We conduct periodic audits, remediate issues as they are
+        identified, and incorporate accessibility checks into our design and development workflows.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">Preparation of This Statement</h3>
+      <ul class="list-disc list-inside space-y-2 fade-in opacity-0">
+        <li>
+          <strong>Assessment methods:</strong> Manual testing, automated scans, and user feedback.
+        </li>
+        <li>
+          <strong>Scope:</strong> Public pages under the <em>axxentpartners.com</em> domain and
+          subpages managed by our team.
+        </li>
+        <li>
+          <strong>Review cadence:</strong> At least annually, and after significant site updates.
+        </li>
+      </ul>
+      </div>
+    </section>
+
+    <!-- footer injected by your site script/build -->
+    <div id="site-footer"></div>
+    <!-- optional footer injection -->
+    <script src="/assets/js/include.js"></script>
+    <!-- Neon glow utility (CSS) -->
+  </body>
+</html>

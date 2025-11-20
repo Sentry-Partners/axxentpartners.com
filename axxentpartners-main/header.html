@@ -1,0 +1,366 @@
+<header class="sticky top-0 z-50 border-b border-white/10" id="uvSiteHeader">
+  <style id="uv-fallback">
+    /* Only hide things explicitly [hidden] */
+    #uvSiteHeader [hidden] {
+      display: none !important;
+    }
+
+    /* MOBILE: hide desktop nav below 768px */
+    @media (max-width: 767.98px) {
+      #uvSiteHeader nav[aria-label="Primary"] {
+        display: none !important;
+      }
+    }
+
+    /* DESKTOP: show desktop nav and hide burger at ≥768px */
+    @media (min-width: 768px) {
+      #uvSiteHeader nav[aria-label="Primary"] {
+        display: flex !important;
+      }
+      #uvSiteHeader #uvNavToggle {
+        display: none !important;
+      }
+    }
+
+    /* helpers */
+    #uvSiteHeader .absolute {
+      position: absolute;
+    }
+    #uvSiteHeader .inset-0 {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    #uvSiteHeader .pointer-events-none {
+      pointer-events: none;
+    }
+  </style>
+
+  <div class="relative">
+    <!-- gradient background layer -->
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#04060b] from-0% via-[#0b132b] via-8% to-[#12224a]/95 to-80%"
+    ></div>
+
+    <!-- header content -->
+    <div class="relative backdrop-blur">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- keep your existing grid + brand/nav/cta -->
+        <div class="flex md:grid [grid-template-columns:1fr_auto_1fr] items-center h-20 md:h-24 lg:h-28 gap-4">
+          <!-- COL 1: brand (unchanged) -->
+          <div class="flex justify-start">
+            <a href="/index.html" class="flex items-center focus:outline-none gap-1 min-w-0">
+              <span class="relative block h-[64px] w-[64px] md:h-[82px] md:w-[82px] shrink-0 -translate-y-0 mr-2">
+                <span
+                  class="absolute left-1/2 top-1/2 h-[34px] w-[44px] md:h-[40px] md:w-[55px] -translate-x-1/2 -translate-y-[54%] rounded-[10px] bg-white/90 shadow-sm"
+                ></span>
+                <img
+                  src="/assets/img/axxent-logo.png"
+                  alt="Axxent Icon"
+                  class="absolute left-1/2 top-1/2 w-[64px] md:w-[82px] h-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                />
+              </span>
+              <span class="leading-none shrink-0 -translate-y-0">
+                <span class="block text-xl md:text-2xl font-extrabold tracking-tight">AXXENT</span>
+                <span class="block text-xs md:text-sm tracking-[0.10em] opacity-80">PARTNERS</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- COL 2: centered nav (unchanged) -->
+          <nav
+            class="hidden md:flex justify-center items-center gap-8 text-base min-w-0"
+            aria-label="Primary"
+          >
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/solutions.html">Solutions</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/platform.html">Platform</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/industries.html">Industries</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/results.html">Results</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/developers.html">Developers</a>
+            <a class="text-white/90 hover:text-[var(--brand-accent-2)]" href="/about.html">About</a>
+            <!-- If you have Press at /press/ keep it here too -->
+            <!-- <a class="hover:text-white/90" href="/press/">Press</a> -->
+          </nav>
+
+          <!-- COL 3: CTA + mobile burger -->
+          <div class="flex justify-end items-center gap-3 ml-auto">
+            <!-- Desktop CTA only -->
+            <a
+              class="relative hidden md:inline-flex px-6 py-2.5 rounded-lg bg-white text-[var(--brand-bg)] font-medium shadow-lg transition duration-300 hover:scale-105 overflow-hidden btn-light"
+              href="/contact.html"
+            >
+              Book an Appt.
+            </a>
+
+            <!-- Mobile hamburger only -->
+            <button
+              class="inline-flex md:hidden items-center justify-center w-10 h-10 rounded-lg border border-white/10 text-white/90"
+              id="uvNavToggle"
+              aria-label="Open menu"
+              aria-expanded="false"
+              aria-controls="uvMobilePanel"
+              type="button"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-[22px] h-[22px]">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile overlay + panel (inside the SAME header) -->
+  <style>
+    /* Minimal scoped styles for mobile menu behaviour; no global pollution */
+    #uvSiteHeader .uv-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.18s ease,
+        visibility 0s linear 0.18s;
+    }
+    #uvSiteHeader .uv-panel {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 80px;
+      background: #003264;
+      border-top: 1px solid rgb(0, 147, 211, 0.6);
+      transform: translateY(-8px);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        transform 0.18s ease,
+        opacity 0.18s ease,
+        visibility 0s linear 0.18s;
+      padding: 14px 16px;
+      max-height: calc(100dvh - 80px);
+      overflow: auto;
+    }
+    #uvSiteHeader .uv-panel a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+    #uvSiteHeader .uv-panel a:hover {
+      background: rgb(0, 147, 211, 0.6);
+    }
+    #uvSiteHeader .uv-group {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0.9;
+    }
+    #uvSiteHeader.uv-open .uv-overlay {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.18s ease;
+    }
+    #uvSiteHeader.uv-open .uv-panel {
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      transition:
+        transform 0.18s ease,
+        opacity 0.18s ease;
+    }
+    @media (min-width: 768px) {
+      #uvSiteHeader .uv-overlay,
+      #uvSiteHeader .uv-panel {
+        display: none;
+      }
+    }
+  </style>
+
+<div class="uv-overlay" id="uvOverlay"></div>
+  <nav id="uvMobilePanel" class="uv-panel" aria-label="Mobile">
+    <a href="/solutions.html">Solutions</a>
+    <a href="/platform.html">Platform</a>
+    <a href="/industries.html">Industries</a>
+    <a href="/results.html">Results</a>
+    <a href="/developers.html">Developers</a>
+    <a href="/about.html">About</a>
+    <!-- Optional: Press -->
+    <!-- <a href="/press/">Press</a> -->
+
+    <!-- Secondary / legal -->
+    <div class="uv-group" aria-label="Legal">
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms-of-service.html">Terms of Service</a>
+      <a href="/cookie-policy.html">Cookie Policy</a>
+      <a href="/accessibility.html">Accessibility</a>
+      <a href="/security.html">Security &amp; Compliance</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+
+    <!-- Mobile CTA at bottom -->
+    <div class="uv-group">
+      <a class="bg-white text-[var(--brand-bg)] font-medium text-center" href="/contact.html">Book an Appt.</a>
+    </div>
+  </nav>
+
+  <!-- one-of-each (deduped) -->
+  <link rel="stylesheet" href="/assets/css/brand.css" />
+  <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=favorite,home,search,settings" rel="stylesheet" />
+
+  <!-- Hidden global SVG defs (load once per page) -->
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    width="0"
+    height="0"
+    style="position: absolute; left: -9999px; top: -9999px"
+  >
+    <defs>
+      <linearGradient id="uv" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#6366f1" />
+        <stop offset="100%" stop-color="#22d3ee" />
+      </linearGradient>
+      <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b" />
+        <feMerge>
+          <feMergeNode in="b" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+      <radialGradient id="wash" cx="50%" cy="50%" r="70%">
+        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.16" />
+        <stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
+      </radialGradient>
+      <style>
+        .grid {
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 1;
+        }
+        .leg,
+        .out {
+          stroke: url(#uv);
+          stroke-width: 4;
+          stroke-linecap: round;
+          filter: url(#glow);
+          stroke-opacity: 0.6;
+          stroke-dasharray: 80 220;
+          animation: flow 3s linear infinite;
+        }
+        .out {
+          stroke-opacity: 0.7;
+        }
+        .leg.slow {
+          animation-duration: 4.2s;
+        }
+        .core {
+          fill: url(#uv);
+          filter: url(#glow);
+        }
+        .burst {
+          stroke: url(#uv);
+          stroke-width: 3;
+          stroke-linecap: round;
+          stroke-opacity: 0.45;
+          fill: none;
+          filter: url(#glow);
+        }
+        @keyframes flow {
+          from {
+            stroke-dashoffset: 0;
+          }
+          to {
+            stroke-dashoffset: -320;
+          }
+        }
+        @keyframes pulse {
+          0%,
+          100% {
+            r: 56;
+            opacity: 0.65;
+          }
+          50% {
+            r: 68;
+            opacity: 0.35;
+          }
+        }
+        .pulse {
+          animation: pulse 3.6s ease-in-out infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .leg,
+          .out,
+          .pulse {
+            animation: none;
+          }
+        }
+      </style>
+    </defs>
+  </svg>
+
+  <script>
+    (function () {
+      const header = document.getElementById("uvSiteHeader");
+      const btn = header && header.querySelector("#uvNavToggle");
+      const overlay = header && header.querySelector("#uvOverlay");
+      const panel = header && header.querySelector("#uvMobilePanel");
+      if (!header || !btn || !overlay || !panel) return;
+      const show = (el) => {
+        el.hidden = false;
+        el.style.display = "";
+        el.classList.remove("hidden");
+      };
+      const hide = (el) => {
+        el.hidden = true;
+        el.style.display = "none";
+        el.classList.add("hidden");
+      };
+
+      // Ensure overlay/panel sit above header gradient
+      overlay.style.zIndex = "9998";
+      panel.style.zIndex = "9999";
+
+      const setPanelTop = () => {
+        const h = header.offsetHeight || 128; // your header is h-32 (128px)
+        panel.style.top = h + "px";
+        panel.style.maxHeight = `calc(100dvh - ${h}px)`;
+      };
+      setPanelTop();
+      window.addEventListener("resize", setPanelTop, { passive: true });
+
+      const open = () => {
+        setPanelTop();
+        header.classList.add("uv-open");
+        btn.setAttribute("aria-expanded", "true");
+        btn.setAttribute("aria-label", "Close menu");
+        show(overlay);
+        show(panel);
+        const first = panel.querySelector("a");
+        first && first.focus({ preventScroll: true });
+      };
+
+      const close = () => {
+        header.classList.remove("uv-open");
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-label", "Open menu");
+        setTimeout(() => {
+          hide(overlay);
+          hide(panel);
+        }, 200);
+        btn.focus({ preventScroll: true });
+      };
+
+      btn.addEventListener("click", () =>
+        header.classList.contains("uv-open") ? close() : open()
+      );
+      overlay.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && header.classList.contains("uv-open")) close();
+      });
+    })();
+  </script>
+</header>

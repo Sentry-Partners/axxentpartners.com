@@ -1,0 +1,17 @@
+name: Link Check
+
+on:
+  pull_request:
+    branches: [ dev, main ]
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lychee Link Checker
+        uses: lycheeverse/lychee-action@v1.10.0
+        with:
+          args: --verbose --no-progress --exclude-mail --accept 200,999 .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

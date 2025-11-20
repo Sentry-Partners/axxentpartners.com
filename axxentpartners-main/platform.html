@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style id="uv-preload-hero">
+      :root {
+        --header-h: 128px;
+      } /* matches h-32 */
+      #site-header {
+        min-height: var(--header-h);
+      } /* reserve space so header injection doesn't push content */
+      /* hide hero until we finish injecting header/footer (no layout shift) */
+      [data-defer-hero] {
+        opacity: 0;
+        transform: translateY(4px);
+        transition:
+          opacity 0.18s ease,
+          transform 0.18s ease;
+        will-change: opacity, transform;
+      }
+      html.uv-hydrated [data-defer-hero] {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+    <script>
+      window.PAGE_META = {
+        title: "Platform – Axxent Partners",
+        description:
+          "One platform: Hosted, Components, or Headless. Accept, issue, swap, and settle loyalty value with governed APIs.",
+        image: "/assets/img/og-image.svg",
+        version: "7",
+      };
+    </script>
+    <!-- 1) Tiny anti-FOUC base (inline so it applies immediately) -->
+    <style>
+      html.tw-wait {
+        visibility: hidden;
+      }
+    </style>
+
+    <!-- 2) Tailwind (compiled locally) — render-blocking on purpose to avoid blink -->
+    <link id="twcss" rel="stylesheet" href="/assets/css/tailwind.css" />
+
+    <!-- 3) Your custom layers AFTER Tailwind so they can override it -->
+    <link rel="stylesheet" href="/assets/css/brand.css" />
+    <link rel="stylesheet" href="/assets/css/glow.css" />
+
+    <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
+    <script src="/assets/js/head-meta.js" defer></script>
+  </head>
+
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased" data-defer-hero>
+    <div id="site-header"></div>
+
+    <main id="platform">
+      <!-- HERO — Bridge from fragmented → UV Platform → Future-ready pillars -->
+      <!-- HERO — Federated Value Bridge (SVG) -->
+      <section class="relative overflow-hidden py-16 md:py-20 lg:py-24">
+        <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 fade-in opacity-0">Prism : The Federated Value Platform</h1>
+            <p class="mt-4 text-lg text-white/80 fade-in opacity-0">
+              A bridge from today’s fragmented value—points, miles, gift, cards, crypto— to a future
+              where everything behaves like a digital asset.
+            </p>
+            <div class="mt-6 md:mt-8 sm:flex sm:flex-col sm:flex-row gap-3 sm:justify-center">
+              <a
+                href="#exploded"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0"
+                >See what’s inside</a
+              >
+              <a
+                href="#architecture"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
+                >See reference architecture</a
+              >
+            </div>
+          </div>
+
+          <!-- Responsive SVG diagram -->
+          <div class="mt-14 fade-in opacity-0">
+            <svg
+              viewBox="0 0 1200 420"
+              role="img"
+              aria-labelledby="uvBridgeTitle uvBridgeDesc"
+              class="w-full h-auto"
+            >
+              <title id="uvBridgeTitle">Federated Value Platform Bridge</title>
+              <desc id="uvBridgeDesc">
+                Fragmented value sources on the left flow through a governed Federated Value
+                platform in the center, then out to three pillars on the right: Business, Developer,
+                and Financial.
+              </desc>
+
+              <!-- ====== defs: gradients, glow, animation ====== -->
+              <defs>
+                <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2" />
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.9" />
+                </linearGradient>
+
+                <radialGradient id="bridgeGlow" cx="50%" cy="50%" r="0.9">
+                  <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#60a5fa" stop-opacity="0" />
+                </radialGradient>
+
+                <!-- subtle drop glow -->
+                <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+
+                <style>
+                  /* Flow animation */
+                  @keyframes dashFlow {
+                    from {
+                      stroke-dashoffset: 0;
+                    }
+                    to {
+                      stroke-dashoffset: -220;
+                    }
+                  }
+                  .flow {
+                    stroke: url(#flowGrad);
+                    stroke-width: 3;
+                    stroke-linecap: round;
+                    stroke-dasharray: 60 180;
+                    animation: dashFlow 2.2s linear infinite;
+                  }
+                  .arrowHead {
+                    stroke: url(#flowGrad);
+                    stroke-width: 3;
+                    stroke-linecap: round;
+                  }
+                  .panel {
+                    fill: rgba(255, 255, 255, 0.03);
+                    stroke: rgba(255, 255, 255, 0.15);
+                  }
+                  .badge {
+                    fill: rgba(255, 255, 255, 0.06);
+                    stroke: rgba(255, 255, 255, 0.15);
+                  }
+                  .label {
+                    fill: #fff;
+                    opacity: 0.92;
+                    font:
+                      600 14px ui-sans-serif,
+                      system-ui,
+                      -apple-system,
+                      Segoe UI,
+                      Roboto,
+                      Arial,
+                      "Apple Color Emoji",
+                      "Segoe UI Emoji";
+                  }
+                  .sublabel {
+                    fill: #fff;
+                    opacity: 0.72;
+                    font:
+                      400 12px ui-sans-serif,
+                      system-ui,
+                      -apple-system,
+                      Segoe UI,
+                      Roboto,
+                      Arial;
+                  }
+                  .sectionTitle {
+                    fill: #fff;
+                    opacity: 0.88;
+                    font:
+                      600 16px ui-sans-serif,
+                      system-ui,
+                      -apple-system,
+                      Segoe UI,
+                      Roboto,
+                      Arial;
+                  }
+                  /* Accessibility: respect reduced motion */
+                  @media (prefers-reduced-motion: reduce) {
+                    .flow {
+                      animation: none;
+                    }
+                  }
+                </style>
+              </defs>
+
+              <!-- ====== left: fragmented value sources ====== -->
+              <g id="fragmented" transform="translate(36,36)">
+                <rect x="0" y="0" width="315" height="348" rx="16" class="panel" />
+                <text x="16" y="26" class="sectionTitle">Fragmented Value (Today)</text>
+
+                <!-- badges grid -->
+                <g transform="translate(16,48)">
+                  <!-- row 1 -->
+                  <g transform="translate(0,0)">
+                    <rect width="130" height="40" rx="10" class="badge" />
+                    <text x="12" y="25" class="label">Points</text>
+                  </g>
+                  <g transform="translate(154,0)">
+                    <rect width="130" height="40" rx="10" class="badge" />
+                    <text x="12" y="25" class="label">Miles</text>
+                  </g>
+                  <!-- row 2 -->
+                  <g transform="translate(0,56)">
+                    <rect width="130" height="40" rx="10" class="badge" />
+                    <text x="12" y="25" class="label">Gift Balance</text>
+                  </g>
+                  <g transform="translate(154,56)">
+                    <rect width="130" height="40" rx="10" class="badge" />
+                    <text x="12" y="25" class="label">Brand Credit</text>
+                  </g>
+                  <!-- row 3 -->
+                  <g transform="translate(0,112)">
+                    <rect width="130" height="40" rx="10" class="badge" />
+                    <text x="12" y="25" class="label">Cards</text>
+                  </g>
+                  <g transform="translate(154,112)">
+                    <rect width="130" height="40" rx="10" class="badge" />
+                    <text x="12" y="25" class="label">Digital Assets</text>
+                  </g>
+                  <!-- row 4 -->
+                  <g transform="translate(0,168)">
+                    <rect width="130" height="40" rx="10" class="badge" />
+                    <text x="12" y="25" class="label">Coupons</text>
+                  </g>
+                  <g transform="translate(154,168)">
+                    <rect width="130" height="40" rx="10" class="badge" />
+                    <text x="12" y="25" class="label">Gift Cards</text>
+                  </g>
+                </g>
+              </g>
+
+              <!-- ====== center: UV platform bridge ====== -->
+              <g id="bridge" transform="translate(450,16)">
+                <!-- glow backdrop -->
+                <circle
+                  cx="150"
+                  cy="194"
+                  r="150"
+                  fill="url(#bridgeGlow)"
+                  filter="url(#softGlow)"
+                  opacity=".3"
+                />
+
+                <!-- stack -->
+                <g transform="translate(20,40)">
+                  <rect x="0" y="0" width="260" height="56" rx="12" class="badge" />
+                  <text x="16" y="34" class="label">Governance &amp; Policy</text>
+
+                  <rect x="0" y="68" width="260" height="56" rx="12" class="badge" />
+                  <text x="16" y="102" class="label">Valuation &amp; Quotes</text>
+
+                  <rect x="0" y="136" width="260" height="56" rx="12" class="badge" />
+                  <text x="16" y="170" class="label">Payment Orchestration</text>
+
+                  <rect x="0" y="204" width="260" height="56" rx="12" class="badge" />
+                  <text x="16" y="238" class="label">Settlement &amp; Payouts</text>
+
+                  <rect x="0" y="272" width="260" height="56" rx="12" class="badge" />
+                  <text x="16" y="306" class="label">Events, Webhooks, Reporting</text>
+                </g>
+
+                <!-- caption -->
+                <text x="150" y="18" text-anchor="middle" class="sectionTitle">
+                  Prism Federated Value Platform
+                </text>
+              </g>
+
+              <!-- ====== right: future-ready pillars (4 compact, 1-line) ====== -->
+              <g id="pillars" transform="translate(884,36)">
+                <!-- taller outer panel to fit 4 cards comfortably -->
+                <rect x="0" y="0" width="280" height="360" rx="16" class="panel" />
+                <text x="16" y="26" class="sectionTitle">Future-ready (Who benefits)</text>
+
+                <!-- Customer (primary) -->
+                <g id="pillarCustomer" transform="translate(16,52)">
+                  <rect width="248" height="64" rx="12" class="badge" />
+                  <text x="14" y="28" class="label">Customer</text>
+                  <text
+                    x="14"
+                    y="48"
+                    class="sublabel"
+                    style="font-weight: 400; font-size: 12px; opacity: 0.72"
+                  >
+                    Simple pay &amp; earn with real ownership.
+                  </text>
+                </g>
+
+                <!-- Business -->
+                <g id="pillarBusiness" transform="translate(16,124)">
+                  <rect width="248" height="64" rx="12" class="badge" />
+                  <text x="14" y="28" class="label">Business</text>
+                  <text
+                    x="14"
+                    y="48"
+                    class="sublabel"
+                    style="font-weight: 400; font-size: 12px; opacity: 0.72"
+                  >
+                    Accept any value; settle your way.
+                  </text>
+                </g>
+
+                <!-- Developer -->
+                <g id="pillarDev" transform="translate(16,196)">
+                  <rect width="248" height="64" rx="12" class="badge" />
+                  <text x="14" y="28" class="label">Developer</text>
+                  <text
+                    x="14"
+                    y="48"
+                    class="sublabel"
+                    style="font-weight: 400; font-size: 12px; opacity: 0.72"
+                  >
+                    APIs &amp; SDKs for any stack.
+                  </text>
+                </g>
+
+                <!-- Financial -->
+                <g id="pillarFin" transform="translate(16,268)">
+                  <rect width="248" height="64" rx="12" class="badge" />
+                  <text x="14" y="28" class="label">Financial</text>
+                  <text
+                    x="14"
+                    y="48"
+                    class="sublabel"
+                    style="font-weight: 400; font-size: 12px; opacity: 0.72"
+                  >
+                    Rails, treasury, and risk controls.
+                  </text>
+                </g>
+              </g>
+
+              <!-- ====== flows: left → bridge → pillars ====== -->
+              <!-- left to bridge -->
+              <g transform="translate(336,210)">
+                <path d="M0 0 C 60 0, 100 -20, 140 -20" class="flow" />
+                <path d="M140 -20 L128 -30 M140 -20 L128 -10" class="arrowHead" />
+                <path d="M0 0 C 60 0, 100  20, 140  20" class="flow" transform="translate(0,18)" />
+                <path d="M140 38 L128 28 M140 38 L128 48" class="arrowHead" />
+              </g>
+
+              <!-- bridge to pillars -->
+              <g transform="translate(710,210)">
+                <path d="M0 0 C 50 0, 100 0, 160 0" class="flow" />
+                <path d="M160 0 L148 -10 M160 0 L148 10" class="arrowHead" />
+
+                <!-- split to 3 pillars -->
+                <path
+                  d="M0 0 C 60 -10, 110 -30, 160 -60"
+                  class="flow"
+                  transform="translate(0,-28)"
+                />
+                <path d="M160 -88 L148 -98 M160 -88 L148 -78" class="arrowHead" />
+                <path d="M0 0 C 60 10, 110 30, 160 60" class="flow" transform="translate(0,28)" />
+                <path d="M160 88 L148 78 M160 88 L148 98" class="arrowHead" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- quick links under diagram -->
+          <div class="mt-6 flex flex-wrap gap-4 justify-center text-sm fade-in opacity-0">
+            <a href="/developers.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">For developers →</a>
+            <a href="/partners.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">For partners →</a>
+            <a href="#exploded" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Explore platform modules →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPLODED VIEW — Technology + Business tools -->
+      <section id="exploded" class="py-16 md:py-20 lg:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">
+              Inside the Prism Federated Value Platform
+            </h2>
+            <p class="mt-3 fade-in opacity-0">
+              Technology building blocks for developers + business controls for operators—governed
+              in one layer.
+            </p>
+          </div>
+
+          <div class="mt-12 grid lg:grid-cols-12 gap-6">
+            <!-- Left column: Tech stack (layers) -->
+            <div class="lg:col-span-6 space-y-3">
+              <div class="">
+                <div class="chip mb-3 inline-block fade-in opacity-0">Technology</div>
+                <h3 class="text-xl font-semibold fade-in opacity-0">Composable building blocks</h3>
+                <p class="mt-2 text-white/80 text-sm fade-in opacity-0">
+                  Use hosted flows, drop-in components, or go headless with APIs.
+                </p>
+
+                <div class="mt-5 space-y-2">
+                  <div class="rounded-lg p-3 uv-surface fade-in opacity-0">
+                    <div class="font-medium">APIs &amp; Webhooks</div>
+                    <div class="text-sm text-white/70">
+                      Orders, quotes, valuation, settlement, events.
+                    </div>
+                  </div>
+                  <div class="rounded-lg p-3 uv-surface fade-in opacity-0">
+                    <div class="font-medium">SDK &amp; Components</div>
+                    <div class="text-sm text-white/70">
+                      Acceptance UI, wallet/payout modules, exchange widgets.
+                    </div>
+                  </div>
+                  <div class="rounded-lg p-3 uv-surface fade-in opacity-0">
+                    <div class="font-medium">Orchestration</div>
+                    <div class="text-sm text-white/70">
+                      Split-pay routing, tender priority, fraud/risk hooks.
+                    </div>
+                  </div>
+                  <div class="rounded-lg p-3 uv-surface fade-in opacity-0">
+                    <div class="font-medium">Data &amp; Reporting</div>
+                    <div class="text-sm text-white/70">
+                      Events, ledgers, exports; BI-ready schemas.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-5 flex gap-3 text-sm fade-in opacity-0">
+                  <a href="/docs/sdk.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">SDK guide →</a>
+                  <a href="/docs/api.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">API reference →</a>
+                  <a href="/docs/hosted.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Hosted setup →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right column: Business tools -->
+            <div class="lg:col-span-6 space-y-3">
+              <div class="">
+                <div class="chip mb-3 inline-block fade-in opacity-0">Business</div>
+                <h3 class="text-xl font-semibold fade-in opacity-0">Operational control &amp; governance</h3>
+                <p class="mt-2 text-white/80 text-sm fade-in opacity-0">
+                  Run programs safely across merchants, issuers, and partners.
+                </p>
+
+                <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                  <div class="rounded-lg p-3 uv-surface fade-in opacity-0">
+                    <div class="font-medium">Payouts &amp; Settlement</div>
+                    <div class="text-sm text-white/70">
+                      Cadence, FX prefs, reconciliation, refunds.
+                    </div>
+                  </div>
+                  <div class="rounded-lg p-3 uv-surface fade-in opacity-0">
+                    <div class="font-medium">Policy Guardrails</div>
+                    <div class="text-sm text-white/70">
+                      Limits, categories, returns; program-aware risk.
+                    </div>
+                  </div>
+                  <div class="rounded-lg p-3 uv-surface fade-in opacity-0">
+                    <div class="font-medium">Catalog &amp; Inventory</div>
+                    <div class="text-sm text-white/70">Travel, Apple®, gift cards, 1M+ items.</div>
+                  </div>
+                  <div class="rounded-lg p-3 uv-surface fade-in opacity-0">
+                    <div class="font-medium">Dashboards &amp; SLAs</div>
+                    <div class="text-sm text-white/70">Uptime, response, incident management.</div>
+                  </div>
+                </div>
+
+                <div class="mt-5 text-sm fade-in opacity-0">
+                  <a href="#governance" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]"
+                    >Governance &amp; SLAs →</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modules callouts (ties back to Solutions) -->
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <a href="/solutions/loyalty-acceptance.html" class="uv-card uv-card-link uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold">Loyalty Acceptance</h3>
+              <p class="mt-2 text-white/80 text-sm">
+                Redeem points/miles/gift/credit at checkout with split-pay and instant confirmation.
+              </p>
+              <span class="mt-4 inline-block text-sm underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Explore →</span>
+            </a>
+            <a href="/solutions/merchant-wallet.html" class="uv-card uv-card-link uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold">Merchant Wallet &amp; Payouts</h3>
+              <p class="mt-2 text-white/80 text-sm">
+                Consolidate settlement, control FX, automate reconciliation and refunds.
+              </p>
+              <span class="mt-4 inline-block text-sm underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Explore →</span>
+            </a>
+            <a href="/solutions/universal-exchange.html" class="uv-card uv-card-link uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold">Federated Exchange</h3>
+              <p class="mt-2 text-white/80 text-sm">
+                Governed swaps across programs; inventory sourcing and cross-brand redemption.
+              </p>
+              <span class="mt-4 inline-block text-sm underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Explore →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section id="overview" class="bg-[var(--brand-accent)] py-16 md:py-20 lg:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">Overview</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6">
+              <h3 class="text-lg md:text-xl font-semibold text-white fade-in opacity-0">Hosted</h3>
+              <p class="mt-2 text-white/80 fade-in opacity-0">
+                Fastest time‑to‑value. Drop‑in pages and prebuilt flows for acceptance, redemption,
+                and payouts.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-white">Components</h3>
+              <p class="mt-2 text-white/80">
+                Mix‑and‑match modules (Acceptance, Wallet &amp; Payouts, Exchange) into your site or
+                app.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-white">Headless</h3>
+              <p class="mt-2 text-white/80">
+                Full API control with webhooks, auth, and governed settlement for complex enterprise
+                stacks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modules -->
+      <section id="modules" class="bg-white py-16 md:py-20 lg:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center text-[var(--brand-bg)] fade-in opacity-0">Platform modules</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Loyalty Acceptance</h3>
+              <ul class="mt-3 space-y-2 text-[var(--brand-accent)] list-disc list-inside">
+                <li>Redeem points, miles, gift balance, and brand credit at checkout</li>
+                <li>Split‑pay with cards, wallets, or bank rails</li>
+                <li>Real‑time value quotes and risk controls</li>
+              </ul>
+              <a href="/results.html" class="mt-4 inline-block underline underline-offset-4 text-[var(--brand-bg)] hover:text-[var(--brand-accent)]"
+                >See how it works →</a
+              >
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Merchant Wallet &amp; Payouts</h3>
+              <ul class="mt-3 space-y-2 text-[var(--brand-accent)] list-disc list-inside">
+                <li>Instant settlement to your preferred rails</li>
+                <li>Refunds and reconciliation that actually reconcile</li>
+                <li>Disbursements to customers, partners, and suppliers</li>
+              </ul>
+              <a
+                href="/platform.html#payouts"
+                class="mt-4 inline-block underline underline-offset-4 text-[var(--brand-bg)] hover:text-[var(--brand-accent)]"
+                >Payout options →</a
+              >
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Federated Exchange</h3>
+              <ul class="mt-3 space-y-2 text-[var(--brand-accent)] list-disc list-inside">
+                <li>Governed swaps across points, brand credit, gift, and digital assets</li>
+                <li>Program‑to‑program settlement with guardrails</li>
+                <li>Enterprise reporting and SLAs</li>
+              </ul>
+              <a
+                href="/platform.html#governance"
+                class="mt-4 inline-block underline underline-offset-4 text-[var(--brand-bg)] hover:text-[var(--brand-accent-2)]"
+                >Governance &amp; SLAs →</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture -->
+      <section id="architecture" class="py-16 md:py-20 lg:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">Reference architecture</h2>
+          <p class="mt-4 text-white/80 text-center max-w-3xl mx-auto fade-in opacity-0">
+            A governed Federated Value layer sits between your channels and partner programs. APIs,
+            webhooks, and policies ensure safe acceptance, conversion, and settlement—without
+            touching your core systems.
+          </p>
+          <div class="mt-6 sm:mt-8 md:mt-10 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-white">Channels</h3>
+              <p class="mt-2 text-white/80">Web, app, POS, marketplace, call center.</p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-white">Federated Value Layer</h3>
+              <p class="mt-2 text-white/80">
+                Valuation, policy, risk, orchestration, and eventing.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-white">Programs &amp; Rails</h3>
+              <p class="mt-2 text-white/80">
+                Banks/issuers, loyalty programs, wallets, card/bank rails.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLAs / Governance -->
+      <section id="governance" class="bg-white py-16 md:py-20 lg:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-[var(--brand-bg)] text-center fade-in opacity-0">Governance &amp; SLAs</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Policy guardrails</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Program‑level rules for value limits, categories, and returns.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0" id="payouts">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Settlement &amp; payouts</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Configurable timing and rails; clear reconciliation and dispute flows.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Support tiers</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                SLA options for uptime, response, and incident handling.
+              </p>
+            </div>
+          </div>
+          <div class="mt-6 sm:mt-8 md:mt-10 text-center">
+            <a
+              href="/contact/"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 mt-3 md:mt-0 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden btn-dark fade-in opacity-0"
+              >Talk to Sales</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/include.js"></script>
+  </body>
+</html>
