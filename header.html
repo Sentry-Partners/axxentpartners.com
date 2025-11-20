@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-50 border-b border-white/10" id="uvSiteHeader">
+<header class="sticky top-0 z-50" id="uvSiteHeader">
   <style id="uv-fallback">
     /* Only hide things explicitly [hidden] */
     #uvSiteHeader [hidden] {
@@ -118,7 +118,7 @@
     #uvSiteHeader .uv-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      /* background: rgba(0, 50, 100, 0.45); */
       opacity: 0;
       visibility: hidden;
       transition:
@@ -130,7 +130,7 @@
       left: 0;
       right: 0;
       top: 80px;
-      background: #003264;
+      background: rgb(0, 50, 100);
       border-top: 1px solid rgb(0, 147, 211, 0.6);
       transform: translateY(-8px);
       opacity: 0;
@@ -140,6 +140,7 @@
         opacity 0.18s ease,
         visibility 0s linear 0.18s;
       padding: 14px 16px;
+      height: calc(100dvh - 80px);
       max-height: calc(100dvh - 80px);
       overflow: auto;
     }
@@ -153,9 +154,9 @@
       background: rgb(0, 147, 211, 0.6);
     }
     #uvSiteHeader .uv-group {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
       opacity: 0.9;
     }
     #uvSiteHeader.uv-open .uv-overlay {

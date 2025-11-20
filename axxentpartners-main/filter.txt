@@ -1,1 +1,0 @@
-perspective=x0='W/2-(W/2)*cos(PI*t/2)':y0=0:x1='W/2+(W/2)*cos(PI*t/2)':y1=0:x2='W/2-(W/2)*cos(PI*t/2)':y2=H:x3='W/2+(W/2)*cos(PI*t/2)':y3=H,format=yuva420p
