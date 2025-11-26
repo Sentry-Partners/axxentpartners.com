@@ -36,14 +36,15 @@
     <!-- 4) Fonts/meta helper; defer so scripts don't block paint -->
     <script src="/assets/js/head-meta.js" defer></script>
   </head>
-  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased style="background:#0B0F17; color:#E6E9EF;"">
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <div id="svg-defs"></div> <!-- defs go here, before any visible SVG -->
     <div id="site-header"></div>
 
     <!-- About – Hero (three-legs-to-UV-core) -->
-    <section class="relative overflow-hidden py-20" data-defer-hero>
+    <section class="relative overflow-hidden py-16 md:py-20 lg:py-24" data-defer-hero>
+      <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
       <!-- LAYER 1: background (grid, 3 legs, core, connectors to x=940 + dots) -->
-      <div class="absolute inset-0 z-0 pointer-events-none">
+      <div class="absolute inset-0 z-0 pointer-events-none fade-in opacity-0">
         <svg
           viewBox="0 0 1200 420"
           xmlns="http://www.w3.org/2000/svg"
@@ -57,8 +58,6 @@
           <desc id="aDesc">
             Three animated value streams flow into a UV core, then out to the Customer.
           </desc>
-
-
 
           <!-- wash + grid -->
           <rect x="0" y="0" width="1200" height="420" fill="url(#wash)" />
@@ -156,22 +155,22 @@
             <div
               class="w-[76%] ml-[10%] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-[2px] p-8 text-center"
             >
-              <h1 class="text-4xl md:text-5xl font-semibold">About Axxent</h1>
-              <p class="mt-4 text-lg text-white/80">
+              <h1 class="text-4xl md:text-5xl font-semibold fade-in opacity-0">About Axxent</h1>
+              <p class="mt-4 text-lg text-white/80 fade-in opacity-0">
                 The Federated Value Platform gives <span class="font-semibold">enterprises</span>,
                 <span class="font-semibold">SMBs/SMEs</span>, and
                 <span class="font-semibold">developers</span>
                 the tools to deliver customer experiences that retain, delight, and grow loyalty.
               </p>
-              <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+              <div class="mt-6 md:mt-8 sm:flex sm:flex-col sm:flex-row gap-3 sm:justify-center">
                 <a
                   href="/platform.html"
-                  class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+                  class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
                   >Explore the Platform</a
                 >
                 <a
                   href="/results.html"
-                  class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+                  class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
                   >See the Results</a
                 >
               </div>
@@ -275,52 +274,86 @@
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-6">
-      <h1 class="text-4xl font-extrabold">About</h1>
-      <p class="text-white/80 max-w-3xl">
+    <section class="bg-white py-16 md:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-[var(--brand-bg)] text-center sm:text-4xl fade-in opacity-0">About</h1>
+      <p class="mt-4 text-[var(--brand-accent)] max-w-3xl mx-auto fade-in opacity-0">
         Axxent is taking the baton from the Bakkt loyalty business—doubling down on focus, speed,
         and member value. Our mission is simple: turn loyalty from a cost center into a growth
         engine.
       </p>
 
       <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <div class="uv-card uv-glow-soft">
-          <h3 class="font-semibold text-white">Focus</h3>
-          <p class="text-white/70 mt-1">One mandate: Federated Value.</p>
+        <div class="uv-card uv-glow-soft overflow-hidden fade-in opacity-0">
+          <img
+            src="/assets/img/about/focus.jpg"
+            alt="Travel rewards—flights and hotels"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Focus</h3>
+            <p class="mt-2 text-base text-[var(--brand-accent)]">One mandate: Federated Value.</p>
+          </div>
         </div>
-
-        <div class="uv-card uv-glow-soft">
-          <h3 class="font-semibold text-white">Velocity</h3>
-          <p class="text-white/70 mt-1">
-            Rapid launches with pre-built catalogs. SDK's and API's for all services.
-          </p>
+        <div class="uv-card uv-glow-soft overflow-hidden fade-in opacity-0">
+          <img
+            src="/assets/img/about/velocity.jpg"
+            alt="Travel rewards—flights and hotels"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Velocity</h3>
+            <p class="mt-2 text-base text-[var(--brand-accent)]">Rapid launches with pre-built catalogs. SDK's and API's for all services.</p>
+          </div>
         </div>
-
-        <div class="uv-card uv-glow-soft">
-          <h3 class="font-semibold text-white">Trust</h3>
-          <p class="text-white/70 mt-1">
-            Enterprise security &amp; SLAs adaptable to all business levels.
-          </p>
+        <div class="uv-card uv-glow-soft overflow-hidden fade-in opacity-0">
+          <img
+            src="/assets/img/about/trust.jpg"
+            alt="Travel rewards—flights and hotels"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Trust</h3>
+            <p class="mt-2 text-base text-[var(--brand-accent)]">Enterprise security &amp; SLAs adaptable to all business levels.</p>
+          </div>
         </div>
       </div>
       <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <div class="uv-card uv-glow-soft">
-          <h3 class="font-semibold text-white">Team</h3>
-          <p class="text-white/70 mt-1">Meet our experienced leadership.</p>
+        <div class="uv-card uv-glow-soft overflow-hidden fade-in opacity-0">
+          <img
+            src="/assets/img/about/team.jpg"
+            alt="Travel rewards—flights and hotels"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Team</h3>
+            <p class="mt-2 text-base text-[var(--brand-accent)]">Meet our experienced leadership.</p>
+          </div>
         </div>
-
-        <div class="uv-card uv-glow-soft">
-          <h3 class="font-semibold text-white">Locations</h3>
-          <p class="text-white/70 mt-1">We are headquartered in Timbuktu.</p>
+        <div class="uv-card uv-glow-soft overflow-hidden fade-in opacity-0">
+          <img
+            src="/assets/img/about/location.jpg"
+            alt="Travel rewards—flights and hotels"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Locations</h3>
+            <p class="mt-2 text-base text-[var(--brand-accent)]">We are headquartered in Timbuktu.</p>
+          </div>
         </div>
+        <div class="uv-card uv-glow-soft overflow-hidden fade-in opacity-0">
+          <img
+            src="/assets/img/about/contact.jpg"
+            alt="Travel rewards—flights and hotels"
+            class="w-full h-70 object-cover opacity-90 group-hover:opacity-100"
+          />
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Contact</h3>
+            <p class="mt-2 text-base text-[var(--brand-accent)]">Contact us Here.</p>
+          </div>
+        </div>
+      </div>
 
-        <a
-          href="/contact.html"
-          class="uv-card uv-glow-strong block no-underline focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]"
-        >
-          <h3 class="font-semibold text-white">Contact</h3>
-          <p class="text-white/70 mt-1">Contact us Here.</p>
-        </a>
       </div>
     </section>
 

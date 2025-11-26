@@ -27,23 +27,33 @@
   </head>
 
   <!-- keep your global body classes so background/typography match the site -->
-  <body class="bg-[var(--brand-bg)] text-white">
+  <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <!-- header injected by your site script/build -->
     <div id="site-header"></div>
 
-    <!-- main content only -->
-    <main class="max-w-5xl mx-auto px-6 py-16 text-lg leading-relaxed text-white/90">
-      <h1 class="text-4xl font-bold mb-6">Security &amp; Compliance</h1>
-      <p class="mb-6"><strong>Last updated:</strong> [Insert Date]</p>
+    <!-- Security & Compliance – Hero (three-legs-to-UV-core) -->
+    <section class="relative overflow-hidden py-16 md:py-20 lg:py-24" data-defer-hero>
+      <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
+      <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 fade-in opacity-0">Security &amp; Compliance</h1>
+          <h4 class="mb-0 text-lg md:text-xl font-medium fade-in opacity-0"><strong>Last updated:</strong> [Insert Date]</h4>
+        </div>
+      </div>
+    </section>
 
-      <p class="mb-6">
+    <!-- main content only -->
+    <section class="bg-white py-16 md:py-20 lg:py-24 text-[var(--brand-bg)]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <p class="mb-6 fade-in opacity-0">
         At <strong>Axxent Partners, Inc.</strong> we take security and compliance seriously.
         Protecting customer data, maintaining trust, and meeting regulatory obligations are core
         principles guiding the design and operation of our Services.
       </p>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">1. Security Practices</h2>
-      <ul class="list-disc list-inside space-y-2">
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">1. Security Practices</h3>
+      <ul class="list-disc list-inside space-y-2 fade-in opacity-0">
         <li>
           <strong>Encryption:</strong> Data in transit is protected with TLS 1.2+; sensitive data at
           rest is encrypted with AES-256.
@@ -70,12 +80,12 @@
         </li>
       </ul>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">2. Compliance Frameworks</h2>
-      <p class="mb-6">
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">2. Compliance Frameworks</h3>
+      <p class="mb-6 fade-in opacity-0">
         We align our policies and controls with recognized standards and regulatory requirements
         relevant to our operations, including:
       </p>
-      <ul class="list-disc list-inside space-y-2">
+      <ul class="list-disc list-inside space-y-2 fade-in opacity-0">
         <li><strong>GDPR:</strong> European Union General Data Protection Regulation.</li>
         <li><strong>CCPA/CPRA:</strong> California Consumer Privacy Act / Privacy Rights Act.</li>
         <li>
@@ -92,8 +102,8 @@
         </li>
       </ul>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">3. Data Governance</h2>
-      <ul class="list-disc list-inside space-y-2">
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">3. Data Governance</h3>
+      <ul class="list-disc list-inside space-y-2 fade-in opacity-0">
         <li>
           Data classification and handling procedures for sensitive, confidential, and public
           information.
@@ -103,38 +113,38 @@
         <li>Vendor and third-party due diligence for security and compliance practices.</li>
       </ul>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">4. Incident Response</h2>
-      <p class="mb-6">
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">4. Incident Response</h3>
+      <p class="mb-6 fade-in opacity-0">
         We maintain a formal Incident Response Plan. In the event of a security incident, we will:
       </p>
-      <ul class="list-disc list-inside space-y-2">
+      <ul class="list-disc list-inside space-y-2 fade-in opacity-0">
         <li>Identify, contain, and remediate the incident promptly.</li>
         <li>Notify affected customers and regulators as required by law.</li>
         <li>Conduct post-incident reviews and implement corrective actions.</li>
       </ul>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">5. Employee Training &amp; Awareness</h2>
-      <p class="mb-6">
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">5. Employee Training &amp; Awareness</h3>
+      <p class="mb-6 fade-in opacity-0">
         All employees undergo security and compliance training, including secure coding practices,
         phishing awareness, and data handling obligations.
       </p>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">6. Customer Responsibilities</h2>
-      <p class="mb-6">
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">6. Customer Responsibilities</h3>
+      <p class="mb-6 fade-in opacity-0">
         Customers also play an important role in protecting their accounts and data. We encourage
         the use of strong, unique passwords, enabling multi-factor authentication, and promptly
         notifying us of suspicious activity.
       </p>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">7. Continuous Improvement</h2>
-      <p class="mb-6">
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">7. Continuous Improvement</h3>
+      <p class="mb-6 fade-in opacity-0">
         Security and compliance are ongoing processes. We regularly review and update our policies,
         practices, and controls to adapt to evolving threats and regulatory changes.
       </p>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">8. Contact Us</h2>
-      <p>Questions or concerns about security or compliance can be directed to:</p>
-      <p>
+      <h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 fade-in opacity-0">8. Contact Us</h3>
+      <p class="fade-in opacity-0">Questions or concerns about security or compliance can be directed to:</p>
+      <p class="fade-in opacity-0">
         <strong>Axxent Partners, Inc.</strong><br />
         1912 Capitol Ave<br />
         Ste. 500<br />
@@ -143,7 +153,8 @@
         <a href="mailto:admin@sentry.partners" class="link">admin@sentry.partners</a><br />
         [Phone Placeholder]
       </p>
-    </main>
+    </div>
+    </section>
 
     <!-- footer injected by your site script/build -->
     <div id="site-footer"></div>
