@@ -85,17 +85,18 @@
 
     <main id="industries">
       <!-- Hero -->
-      <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 class="text-4xl md:text-5xl font-semibold">Built for your industry</h1>
-          <p class="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
+      <section class="py-16 md:py-20 lg:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 fade-in opacity-0">Built for your industry</h1>
+          <p class="mt-4 text-lg text-white/80 max-w-3xl mx-auto fade-in opacity-0">
             Axxent blends proven, enterprise-grade loyalty commerce with a modern
             <em>Federated Value</em> layer. Start hosted, add components, or go headless—without a
             rip-and-replace.
           </p>
-          <div class="mt-12 flex justify-center">
+          <div class="mt-12 flex justify-center fade-in opacity-0">
             <svg
-              viewBox="0 0 1200 280"
+              viewBox="0 0 790 294"
               class="max-w-5xl w-full h-auto"
               role="img"
               aria-labelledby="industriesTitle industriesDesc"
@@ -107,7 +108,7 @@
               </desc>
 
               <!-- UV core + subtle burst (center at 200,140) -->
-              <g transform="translate(200,140)">
+              <g transform="translate(100,140)">
                 <circle r="62" class="core pulse" />
                 <circle r="92" class="burst" />
                 <text y="6" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">
@@ -116,12 +117,12 @@
               </g>
 
               <!-- Example leg lines now use shared gradient and styles -->
-              <line x1="280" y1="140" x2="420" y2="60" class="leg" />
-              <line x1="280" y1="140" x2="420" y2="140" class="leg slow" />
-              <line x1="280" y1="140" x2="420" y2="220" class="leg" />
+              <line x1="180" y1="140" x2="320" y2="60" class="leg" />
+              <line x1="180" y1="140" x2="320" y2="140" class="leg slow" />
+              <line x1="180" y1="140" x2="320" y2="220" class="leg" />
 
               <!-- Industry cards -->
-              <g transform="translate(440,40)">
+              <g transform="translate(340,40)">
                 <rect
                   width="200"
                   height="60"
@@ -140,7 +141,7 @@
                   Banking & Issuers
                 </text>
               </g>
-              <g transform="translate(440,120)">
+              <g transform="translate(340,120)">
                 <rect
                   width="200"
                   height="60"
@@ -159,7 +160,7 @@
                   Retail & eCommerce
                 </text>
               </g>
-              <g transform="translate(440,200)">
+              <g transform="translate(340,200)">
                 <rect
                   width="200"
                   height="60"
@@ -178,7 +179,7 @@
                   Travel & Hospitality
                 </text>
               </g>
-              <g transform="translate(660,120)">
+              <g transform="translate(560,120)">
                 <rect
                   width="220"
                   height="60"
@@ -207,16 +208,16 @@
             </svg>
           </div>
 
-          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          <div class="mt-6 md:mt-8 sm:flex sm:flex-col sm:flex-row gap-3 sm:justify-center">
             <a
               href="/contact.html"
-              class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >
               Book a Demo
             </a>
             <a
               href="/contact.html"
-              class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >
               Talk to Sales
             </a>
@@ -225,25 +226,23 @@
       </section>
 
       <!-- Quick nav -->
-      <section class="py-6 border-t border-white/10">
+      <section class="bg-white py-6 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav class="flex flex-wrap gap-3 text-sm">
-            <a href="#banking" class="underline underline-offset-4">Banking &amp; Issuers</a>
-            <a href="#retail" class="underline underline-offset-4">Retail &amp; eCommerce</a>
-            <a href="#travel" class="underline underline-offset-4">Travel &amp; Hospitality</a>
-            <a href="#marketplaces" class="underline underline-offset-4"
-              >Marketplaces &amp; Platforms</a
-            >
+          <nav class="flex flex-wrap gap-3 text-base fade-in opacity-0">
+            <a href="#banking" class="underline underline-offset-4 text-[var(--brand-bg)] hover:text-[var(--brand-accent)]">Banking &amp; Issuers</a>
+            <a href="#retail" class="underline underline-offset-4 text-[var(--brand-bg)] hover:text-[var(--brand-accent)]">Retail &amp; eCommerce</a>
+            <a href="#travel" class="underline underline-offset-4 text-[var(--brand-bg)] hover:text-[var(--brand-accent)]">Travel &amp; Hospitality</a>
+            <a href="#marketplaces" class="underline underline-offset-4 text-[var(--brand-bg)] hover:text-[var(--brand-accent)]">Marketplaces &amp; Platforms</a>
           </nav>
         </div>
       </section>
 
       <!-- Banking & Issuers -->
-      <section id="banking" class="py-20 border-t border-white/10">
+      <section id="banking" class="bg-[var(--brand-dark-blue)] py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="md:flex md:items-start md:justify-between">
-            <div class="md:max-w-2xl">
-              <h2 class="text-3xl font-semibold">Banking &amp; Issuers</h2>
+            <div class="md:max-w-2xl fade-in opacity-0">
+              <h3 class="text-2xl md:text-3xl font-semibold">Banking &amp; Issuers</h3>
               <p class="mt-4 text-white/80">
                 Expand card utility and program engagement with real-time redemption at checkout,
                 governed program-to-program exchange, and transparent settlement.
@@ -254,16 +253,16 @@
                 <li>Fraud/risk controls and issuer-friendly refund flows</li>
               </ul>
               <div class="mt-6 flex flex-wrap gap-3">
-                <a href="/solutions.html#how-it-works" class="underline underline-offset-4"
+                <a href="/solutions.html#how-it-works" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]"
                   >How it works →</a
                 >
-                <a href="/results.html" class="underline underline-offset-4">Outcomes →</a>
-                <a href="/developers.html" class="underline underline-offset-4">Developers →</a>
+                <a href="/results.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Outcomes →</a>
+                <a href="/developers.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Developers →</a>
               </div>
             </div>
             <div class="mt-10 md:mt-0 md:w-[40%]">
-              <div class="uv-card uv-glow">
-                <h3 class="text-xl font-medium text-white">Blended proof points</h3>
+              <div class="uv-card uv-glow p-6 fade-in opacity-0">
+                <h3 class="text-lg md:text-xl font-semibold text-white">Blended proof points</h3>
                 <p class="mt-2 text-white/80">
                   Carry forward issuer-grade governance and reporting from the legacy stack, paired
                   with Axxent’s modern APIs and webhooks.
@@ -280,11 +279,11 @@
       </section>
 
       <!-- Retail & eCommerce -->
-      <section id="retail" class="py-20 border-t border-white/10">
+      <section id="retail" class="py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="md:flex md:items-start md:justify-between">
-            <div class="md:max-w-2xl">
-              <h2 class="text-3xl font-semibold">Retail &amp; eCommerce</h2>
+            <div class="md:max-w-2xl fade-in opacity-0">
+              <h3 class="text-2xl md:text-3xl font-semibold">Retail &amp; eCommerce</h3>
               <p class="mt-4 text-white/80">
                 Turn points, miles, gift balance, and brand credit into instant purchasing power at
                 checkout.
@@ -295,20 +294,20 @@
                 <li>Policy guardrails minimize post-purchase churn</li>
               </ul>
               <div class="mt-6 flex flex-wrap gap-3">
-                <a href="/solutions/merchandise.html" class="underline underline-offset-4"
+                <a href="/solutions/merchandise.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]"
                   >Merchandise Rewards →</a
                 >
-                <a href="/solutions/gift-cards.html" class="underline underline-offset-4"
+                <a href="/solutions/gift-cards.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]"
                   >Gift Card Rewards →</a
                 >
-                <a href="/case-studies/exclusive-offers.html" class="underline underline-offset-4"
+                <a href="/case-studies/exclusive-offers.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]"
                   >Exclusive Offers case →</a
                 >
               </div>
             </div>
             <div class="mt-10 md:mt-0 md:w-[40%]">
-              <div class="uv-card uv-glow">
-                <h3 class="text-xl font-medium text-white">Why it works for retail</h3>
+              <div class="uv-card uv-glow p-6 fade-in opacity-0">
+                <h4 class="text-lg md:text-xl font-semibold text-white">Why it works for retail</h4>
                 <p class="mt-2 text-white/80">
                   Customers feel less friction spending value they already earned.
                 </p>
@@ -324,11 +323,11 @@
       </section>
 
       <!-- Travel & Hospitality -->
-      <section id="travel" class="py-20 border-t border-white/10">
+      <section id="travel" class="bg-[var(--brand-dark-blue)] py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="md:flex md:items-start md:justify-between">
-            <div class="md:max-w-2xl">
-              <h2 class="text-3xl font-semibold">Travel &amp; Hospitality</h2>
+            <div class="md:max-w-2xl fade-in opacity-0">
+              <h3 class="text-2xl md:text-3xl font-semibold">Travel &amp; Hospitality</h3>
               <p class="mt-4 text-white/80">
                 Accept multiple program balances at booking, let members bridge fare gaps with
                 split-pay, and govern refund/cancellation flows.
@@ -339,15 +338,15 @@
                 <li>Program-compliant refunds and cancellations</li>
               </ul>
               <div class="mt-6 flex flex-wrap gap-3">
-                <a href="/solutions/travel.html" class="underline underline-offset-4"
+                <a href="/solutions/travel.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]"
                   >Travel Rewards →</a
                 >
-                <a href="/results.html" class="underline underline-offset-4">Outcomes →</a>
+                <a href="/results.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Outcomes →</a>
               </div>
             </div>
             <div class="mt-10 md:mt-0 md:w-[40%]">
-              <div class="uv-card uv-glow">
-                <h3 class="text-xl font-medium text-white">Operational confidence</h3>
+              <div class="uv-card uv-glow p-6 fade-in opacity-0">
+                <h4 class="text-lg md:text-xl font-semibold text-white">Operational confidence</h4>
                 <p class="mt-2 text-white/80">
                   From call center to chargeback, the governed layer preserves program rules and
                   creates a clean audit trail.
@@ -364,11 +363,11 @@
       </section>
 
       <!-- Marketplaces & Platforms -->
-      <section id="marketplaces" class="py-20 border-t border-white/10">
+      <section id="marketplaces" class="py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="md:flex md:items-start md:justify-between">
-            <div class="md:max-w-2xl">
-              <h2 class="text-3xl font-semibold">Marketplaces &amp; Platforms</h2>
+            <div class="md:max-w-2xl fade-in opacity-0">
+              <h3 class="text-2xl md:text-3xl font-semibold">Marketplaces &amp; Platforms</h3>
               <p class="mt-4 text-white/80">
                 Add loyalty acceptance and wallet payouts across multi-tenant catalogs.
               </p>
@@ -378,15 +377,13 @@
                 <li>Policy guardrails for categories, limits, and returns</li>
               </ul>
               <div class="mt-6 flex flex-wrap gap-3">
-                <a href="/platform.html" class="underline underline-offset-4"
-                  >Platform overview →</a
-                >
-                <a href="/developers.html" class="underline underline-offset-4">Developers →</a>
+                <a href="/platform.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Platform overview →</a>
+                <a href="/developers.html" class="underline underline-offset-4 hover:text-[var(--brand-accent-2)]">Developers →</a>
               </div>
             </div>
             <div class="mt-10 md:mt-0 md:w-[40%]">
-              <div class="uv-card uv-glow">
-                <h3 class="text-xl font-medium text-white">From legacy to headless</h3>
+              <div class="uv-card uv-glow p-6 fade-in opacity-0">
+                <h4 class="text-lg md:text-xl font-semibold text-white">From legacy to headless</h4>
                 <p class="mt-2 text-white/80">
                   Borrow the trust signals and content scale from the legacy era, deploy them
                   through modern headless patterns.
@@ -403,22 +400,22 @@
       </section>
 
       <!-- CTA -->
-      <section class="py-20 border-t border-white/10">
+      <section class="bg-[var(--brand-accent)] py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl font-semibold">See it for your industry</h2>
-          <p class="mt-2 text-white/80">
+          <h3 class="text-2xl md:text-3xl font-semibold fade-in opacity-0">See it for your industry</h3>
+          <p class="mt-2 text-white/80 fade-in opacity-0">
             We’ll tailor a live demo and a sandbox program to your use case.
           </p>
-          <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <div class="mt-6 sm:flex sm:flex-col sm:flex-row gap-3 sm:justify-center">
             <a
               href="/demo/"
-              class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >
               Book a Demo
             </a>
             <a
               href="/sandbox/"
-              class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
             >
               Request Sandbox Access
             </a>

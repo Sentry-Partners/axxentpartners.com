@@ -54,9 +54,10 @@
 
     <main id="results">
       <!-- Hero -->
-      <section class="py-20 relative overflow-hidden">
+      <section class="py-16 md:py-20 lg:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
         <!-- BACKDROP SVG (now z-0, not negative) -->
-        <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 z-10 pointer-events-none">
           <svg viewBox="0 0 1200 300" class="w-full h-full">
             <defs>
               <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
@@ -104,7 +105,7 @@
             </defs>
 
             <!-- subtle gradient wash behind meters -->
-            <rect x="0" y="0" width="1200" height="300" fill="url(#wash)" />
+            <!-- <rect x="0" y="0" width="1200" height="300" fill="url(#wash)" /> -->
 
             <!-- three vertical “growth” meters -->
             <g>
@@ -131,21 +132,20 @@
 
         <!-- CONTENT (now above backdrop) -->
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 class="text-4xl md:text-5xl font-semibold">Outcomes that matter</h1>
-          <p class="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
-            Loyalty acceptance converts value customers already hold. The result: higher conversion,
-            larger baskets, and happier members.
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 fade-in opacity-0">Outcomes that matter</h1>
+          <p class="mt-4 text-lg text-white/80 max-w-3xl mx-auto fade-in opacity-0">
+            Loyalty acceptance converts value customers already hold.<br/>The result: higher conversion, larger baskets, and happier members.
           </p>
-          <div class="mt-8">
+          <div class="mt-6 md:mt-8">
             <a
               href="/demo/"
-              class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >
               Book a Demo
             </a>
           </div>
         </div>
-        <div class="mt-12">
+        <div class="mt-2 md:mt-0">
           <svg
             viewBox="0 0 1200 320"
             class="w-full h-auto"
@@ -356,82 +356,89 @@
       </section>
 
       <!-- Metric Cards -->
-      <section id="highlights" class="py-20 border-t border-white/10">
+      <section id="highlights" class="bg-white py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid md:grid-cols-3 gap-6 text-center">
-            <div class="uv-card uv-glow">
-              <div class="text-4xl font-semibold">↑ Conversion</div>
-              <p class="mt-2 text-white/80">
+          <div class="grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">question_answer</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Conversion</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
                 Capture checkouts otherwise lost to cost sensitivity.
               </p>
             </div>
-            <div class="uv-card uv-glow">
-              <div class="text-4xl font-semibold">↑ AOV</div>
-              <p class="mt-2 text-white/80">Members spend more when their points bridge the gap.</p>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">grade</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">AOV</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">Members spend more when their points bridge the gap.</p>
             </div>
-            <div class="uv-card uv-glow">
-              <div class="text-4xl font-semibold">↑ Satisfaction</div>
-              <p class="mt-2 text-white/80">Delight members with easy, instant redemption.</p>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">sentiment_very_satisfied</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Satisfaction</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">Delight members with easy, instant redemption.</p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">rule</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Policy guardrails</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Limits, returns, and category rules protect merchants & issuers.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">account_balance_wallet</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Evented ledger</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Every redemption is logged for audit, refunds, and BI reporting.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">assured_workload</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">SLA-backed uptime</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Enterprise ops model with response and incident guarantees.
+              </p>
             </div>
           </div>
         </div>
-        <div class="mt-6 grid md:grid-cols-3 gap-6">
-          <div class="uv-card uv-glow">
-            <h3 class="text-xl font-medium text-white">Policy guardrails</h3>
-            <p class="mt-2 text-white/80">
-              Limits, returns, and category rules protect merchants & issuers.
-            </p>
-          </div>
-          <div class="uv-card uv-glow">
-            <h3 class="text-xl font-medium text-white">Evented ledger</h3>
-            <p class="mt-2 text-white/80">
-              Every redemption is logged for audit, refunds, and BI reporting.
-            </p>
-          </div>
-          <div class="uv-card uv-glow">
-            <h3 class="text-xl font-medium text-white">SLA-backed uptime</h3>
-            <p class="mt-2 text-white/80">
-              Enterprise ops model with response and incident guarantees.
-            </p>
-          </div>
-        </div>
-        <section class="py-20 border-t border-white/10">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-semibold">Turn outcomes into impact</h2>
-            <p class="mt-2 text-white/80">
+      </section>
+
+        <section class="py-16 md:py-20 lg:py-24 border-t border-white/10 relative overflow-hidden">
+          <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight fade-in opacity-0">Turn outcomes into impact</h2>
+            <p class="mt-2 text-white/80 fade-in opacity-0">
               Request a sandbox or a tailored ROI model for your industry.
             </p>
-            <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <div class="mt-6 sm:flex sm:flex-col sm:flex-row gap-3 sm:justify-center">
               <a
                 href="/demo/"
-                class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
               >
                 Book a Demo
               </a>
               <a
                 href="/sandbox/"
-                class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0"
               >
                 Request Sandbox Access
               </a>
               <a
                 href="/contact.html"
-                class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
               >
                 Talk to Sales
               </a>
             </div>
           </div>
         </section>
-      </section>
 
       <!-- Vignettes -->
-      <section id="stories" class="py-20 border-t border-white/10">
+      <section id="stories" class="py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Short stories, big impact</h2>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <article class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Electronics retailer</h3>
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">Short stories, big impact</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <article class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">bolt</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">Electronics retailer</h3>
               <p class="mt-2 text-white/80">
                 Enabled split-pay with points + card. More carts crossed the line—especially near
                 price thresholds.
@@ -441,8 +448,9 @@
                 <li>Smoother refunds via policy guardrails</li>
               </ul>
             </article>
-            <article class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Travel marketplace</h3>
+            <article class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">travel_luggage_and_bags</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">Travel marketplace</h3>
               <p class="mt-2 text-white/80">
                 Accepted multiple program balances at checkout. Members bridged fare gaps without
                 hunting promo codes.
@@ -452,8 +460,9 @@
                 <li>Higher NPS from “use it now” redemption</li>
               </ul>
             </article>
-            <article class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Gift &amp; brand credit</h3>
+            <article class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">featured_seasonal_and_gifts</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">Gift &amp; brand credit</h3>
               <p class="mt-2 text-white/80">
                 Unified gift balance and store credit flows. Finance loved the reconciliation;
                 customers loved the speed.
@@ -468,31 +477,34 @@
       </section>
 
       <!-- Proof / Why it works -->
-      <section id="why" class="py-20 border-t border-white/10">
+      <section id="why" class="bg-white py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Why it works</h2>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Value already earned</h3>
-              <p class="mt-2 text-white/80">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center text-[var(--brand-bg)] fade-in opacity-0">Why it works</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">loyalty</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)] fade-in opacity-0">Value already earned</h3>
+              <p class="mt-2 text-[var(--brand-accent)] fade-in opacity-0">
                 Members feel less friction spending points than cash.
               </p>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Real-time quotes</h3>
-              <p class="mt-2 text-white/80">Transparent valuation builds trust at checkout.</p>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">stream</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Real-time quotes</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">Transparent valuation builds trust at checkout.</p>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Governed settlement</h3>
-              <p class="mt-2 text-white/80">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">post_add</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Governed settlement</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
                 Clear policies reduce risk, fraud, and post-purchase churn.
               </p>
             </div>
           </div>
-          <div class="mt-10 text-center">
+          <div class="mt-6 sm:mt-8 md:mt-10 text-center">
             <a
               href="/contact/"
-              class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >
               Talk to Sales
             </a>

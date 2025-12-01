@@ -42,7 +42,8 @@
     <main id="developers">
       <!-- Hero -->
       <!-- Developers – Hero (3 tabs → UV core → Customer edge) -->
-      <section class="py-20 relative overflow-hidden">
+      <section class="py-16 md:py-20 lg:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30 brand-gradient blur-3xl z-0"></div>
         <!-- LAYER 1: background (grid, 3 inbound legs, pulsing core, 3 outbound connectors to x=940 + 3 dots) -->
         <div class="absolute inset-0 z-0 pointer-events-none">
           <svg
@@ -54,7 +55,7 @@
 
 
             <!-- wash + grid (hide if you already have a page grid) -->
-            <rect x="0" y="0" width="1200" height="420" fill="url(#wash)" />
+            <!-- <rect x="0" y="0" width="1200" height="420" fill="url(#wash)" /> -->
             <g class="grid">
               <line x1="120" y1="60" x2="120" y2="360" />
               <line x1="360" y1="60" x2="360" y2="360" />
@@ -138,25 +139,25 @@
               <div
                 class="w-[73%] ml-[8%] mx-auto max-w-3xl rounded-2xl border border-white/10 bg-white/5 backdrop-blur-[2px] p-8 text-center"
               >
-                <h1 class="text-4xl md:text-5xl font-semibold">Build with Federated Value</h1>
-                <p class="mt-4 text-lg text-white/80">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 fade-in opacity-0">Build with Federated Value</h1>
+                <p class="mt-4 text-lg text-white/80 fade-in opacity-0">
                   Get sandbox access, wire up OAuth, subscribe to events, and ship loyalty acceptance,
                   payouts, and exchanges in days—not months.
                 </p>
-                <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                <div class="mt-6 md:mt-8 sm:flex sm:flex-col sm:flex-row gap-3 sm:justify-center">
                   <a
                     href="/sandbox/"
-                    class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+                    class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
                     >Request Sandbox Access</a
                   >
                   <a
                     href="/contact.html"
-                    class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+                    class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
                     >Book a Demo</a
                   >
                 </div>
               </div>
-            <//div>
+            </div>
           </div>
         </div>
 
@@ -226,37 +227,40 @@
       </section>
 
       <!-- Sandbox -->
-      <section id="sandbox" class="py-20 border-t border-white/10">
+      <section id="sandbox" class="bg-white py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Sandbox</h2>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">What you get</h3>
-              <ul class="mt-3 space-y-2 text-white/80 list-disc list-inside">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center text-[var(--brand-bg)] fade-in opacity-0">Sandbox</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">api</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">What you get</h3>
+              <ul class="mt-3 space-y-2 text-[var(--brand-accent)] list-disc list-inside">
                 <li>API keys, OAuth clients, and test programs</li>
                 <li>Postman collection &amp; example requests</li>
                 <li>Webhook simulator and event replays</li>
               </ul>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Quickstart</h3>
-              <ol class="mt-3 space-y-2 text-white/80 list-decimal list-inside">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">start</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Quickstart</h3>
+              <ol class="mt-3 space-y-2 text-[var(--brand-accent)] list-decimal list-inside">
                 <li>Request access → receive keys</li>
                 <li>Authenticate and call valuation/acceptance</li>
                 <li>Subscribe to checkout + payout events</li>
               </ol>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Support</h3>
-              <p class="mt-2 text-white/80">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">support_agent</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Support</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
                 Office hours, email support, and SLA’d tiers for production.
               </p>
             </div>
           </div>
-          <div class="mt-10 text-center">
+          <div class="mt-6 sm:mt-8 md:mt-10 text-center">
             <a
               href="/sandbox/"
-              class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >
               Request Sandbox
             </a>
@@ -265,24 +269,27 @@
       </section>
 
       <!-- Auth & Security -->
-      <section id="auth" class="py-20 border-t border-white/10">
-        <div class="max-ww-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Auth &amp; security</h2>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">OAuth 2.0 / OIDC</h3>
+      <section id="auth" class="py-16 md:py-20 lg:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center fade-in opacity-0">Auth &amp; security</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">password_2</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">OAuth 2.0 / OIDC</h3>
               <p class="mt-2 text-white/80">
                 Client credentials and authorization code flows with scoped tokens.
               </p>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Scopes &amp; roles</h3>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">docs</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">Scopes &amp; roles</h3>
               <p class="mt-2 text-white/80">
                 Fine‑grained permissions for acceptance, payouts, exchange, and reporting.
               </p>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Webhooks</h3>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">deployed_code</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">Webhooks</h3>
               <p class="mt-2 text-white/80">
                 Signed events, retries with exponential backoff, and replay UI.
               </p>
@@ -292,40 +299,43 @@
       </section>
 
       <!-- API Areas -->
-      <section id="apis" class="py-20 border-t border-white/10">
+      <section id="apis" class="bg-white py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">APIs &amp; events</h2>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Valuation &amp; quotes</h3>
-              <p class="mt-2 text-white/80">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center text-[var(--brand-bg)] fade-in opacity-0">APIs &amp; events</h2>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">redeem</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Valuation &amp; quotes</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
                 Get live quotes for points, miles, gift balance, and brand credit.
               </p>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Acceptance &amp; checkout</h3>
-              <p class="mt-2 text-white/80">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">shopping_cart_checkout</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Acceptance &amp; checkout</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
                 Authorize, capture, split‑pay, refund. Events for each state change.
               </p>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Payouts &amp; settlement</h3>
-              <p class="mt-2 text-white/80">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">send_money</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Payouts &amp; settlement</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
                 Disburse funds; reconcile with structured ledger events.
               </p>
             </div>
           </div>
 
-          <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+          <div class="mt-6 md:mt-8 lg:mt-10 flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="/developers.html#samples"
-              class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-dark mt-3 sm:mt-0 fade-in opacity-0"
             >
               Sample apps
             </a>
             <a
               href="/contact/"
-              class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >
               Talk to Sales
             </a>
@@ -334,37 +344,40 @@
       </section>
 
       <!-- Samples / SDKs -->
-      <section id="samples" class="py-20 border-t border-white/10">
+      <section id="samples" class="bg-[var(--brand-accent)] py-16 md:py-20 lg:py-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-semibold text-center">Sample apps &amp; SDKs</h2>
-          <p class="mt-4 text-white/80 text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center fade-in opacity-0">Sample apps &amp; SDKs</h2>
+          <p class="mt-4 text-white/80 text-center mx-auto fade-in opacity-0">
             Use our reference checkout, Postman collection, and light SDKs to accelerate
             integration. Copy, paste, ship.
           </p>
-          <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Checkout reference</h3>
+          <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">host</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">Checkout reference</h3>
               <p class="mt-2 text-white/80">
                 Hosted and component versions with split‑pay and refunds.
               </p>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">Postman &amp; scripts</h3>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">local_post_office</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">Postman &amp; scripts</h3>
               <p class="mt-2 text-white/80">
                 Env presets for sandbox; runnable cURL and Node snippets.
               </p>
             </div>
-            <div class="uv-card uv-glow">
-              <h3 class="text-xl font-medium text-white">SDKs (light)</h3>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-white text-xl md:text-2xl lg:text-3xl absolute right-5 top-4" style="font-size: 2rem;">sdk</span>
+              <h3 class="text-lg md:text-xl font-semibold text-white">SDKs (light)</h3>
               <p class="mt-2 text-white/80">
                 JavaScript &amp; server examples; bring your own stack.
               </p>
             </div>
           </div>
-          <div class="mt-10 text-center">
+          <div class="mt-6 sm:mt-8 md:mt-10 text-center">
             <a
               href="/sandbox/"
-              class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
             >
               Get Sandbox Access
             </a>
