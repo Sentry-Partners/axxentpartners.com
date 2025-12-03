@@ -33,37 +33,36 @@
   <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <div id="site-header"></div>
 
-    <main class="py-16">
+    <main class="py-0">
       <!-- HERO -->
-      <section class="relative overflow-hidden">
+      <section class="relative flex flex-wrap items-center justify-center py-16 md:py-20 lg:py-24">
         <!-- Background image placeholder -->
         <img
-          src="/assets/img/apple/hero.jpg"
+          src="/assets/img/apple/apple-banner.webp"
           alt="Apple Rewards"
-        <img class="absolute inset-0 w-full h-full object-cover z-0 brightness-[.3]" />
-        />
-        <div class="absolute inset-0 bg-black/50"></div>
+        class="absolute inset-0 w-full h-full object-cover z-0" />
+        <div class="absolute inset-0 opacity-50 bg-black blur-3xl z-0"></div>
 
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="py-24 sm:py-32 text-center hero-copy">
-            <p class="uppercase tracking-wide text-white/100 text-lg">
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-16 sm:my-20 md:my-24 lg:my-28 xl:my-32">
+          <div class="text-center">
+            <p class="uppercase tracking-wide text-white/100 text-lg fade-in opacity-0">
               An authentic Apple® shopping experience
             </p>
-            <h1 class="mt-2 text-4xl font-semibold text-white">Apple® Rewards</h1>
-            <p class="mt-4 text-white/80 text-lg max-w-2xl mx-auto">
+            <h1 class="mt-4 text-4xl sm:text-6xl md:text-7xl max-w-5xl mx-auto font-bold text-white fade-in opacity-0">Apple® Rewards</h1>
+            <p class="mt-4 text-white/80 text-lg max-w-2xl mx-auto fade-in opacity-0">
               Inside your program, members can use loyalty currency, split-pay, or card to get the
               latest Apple products. Powered by the
               <span class="font-medium">Prism Federated Value</span> platform.
             </p>
-            <div class="mt-8 flex items-center justify-center gap-3">
+            <div class="mt-6 sm:flex gap-4 sm:justify-center sm:justify-center">
               <a
                 href="/contact"
-                class="inline-flex items-center rounded-xl px-4 py-2 text-lg font-medium text-white bg-white/10 ring-1 ring-white/20 hover:bg-white/15 transition"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
                 >Let’s Talk</a
               >
               <a
                 href="/assets/pdfs/apple-rewards-fact-sheet.pdf"
-                class="inline-flex items-center rounded-xl px-4 py-2 text-lg font-medium text-white/90 hover:text-white transition"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0"
                 >Product Fact Sheet</a
               >
             </div>
@@ -72,186 +71,183 @@
       </section>
 
       <!-- 4-UP VALUE (mirrors the Bakkt layout, Prism voice) -->
-      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="sr-only">Why Apple® Rewards</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
-            <img
-              src="/assets/img/apple/apple-authentic.png"
-              alt=""
-              class="w-10 h-10 mb-3 opacity-90"
-            />
-            <h3 class="text-white font-medium">Authentic Experience</h3>
-            <p class="mt-2 text-sm text-white/70">
-              Apple-branded storefront embedded in your program.
-            </p>
-          </div>
+      <section class="bg-white relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl sm:text-4xl font-bold text-[var(--brand-bg)] text-center fade-in opacity-0">Why Apple® Rewards</h2>
+          <div class="mt-6 md:mt-7 lg:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-4 top-4" style="font-size: 2rem;">workspace_premium</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Authentic<br/>Experience</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Apple-branded storefront embedded in your program.
+              </p>
+            </div>
 
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
-            <img
-              src="/assets/img/apple/apple-seamless.png"
-              alt=""
-              class="w-10 h-10 mb-3 opacity-90"
-            />
-            <h3 class="text-white font-medium">Seamless Interface</h3>
-            <p class="mt-2 text-sm text-white/70">
-              UX aligns to Apple design language; simple & intuitive.
-            </p>
-          </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-4 top-4" style="font-size: 2rem;">tab_inactive</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Seamless<br/>Interface</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                UX aligns to Apple design language; simple & intuitive.
+              </p>
+            </div>
 
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
-            <img
-              src="/assets/img/apple/apple-flexible.png"
-              alt=""
-              class="w-10 h-10 mb-3 opacity-90"
-            />
-            <h3 class="text-white font-medium">Flexible Payment</h3>
-            <p class="mt-2 text-sm text-white/70">
-              Points, split-pay, or card—set thresholds to fit your model.
-            </p>
-          </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-4 top-4" style="font-size: 2rem;">payments</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Flexible<br/>Payment</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Points, split-pay, or card—set thresholds to fit your model.
+              </p>
+            </div>
 
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5">
-            <img
-              src="/assets/img/apple/apple-performance.png"
-              alt=""
-              class="w-10 h-10 mb-3 opacity-90"
-            />
-            <h3 class="text-white font-medium">Powerful Performance</h3>
-            <p class="mt-2 text-sm text-white/70">
-              Boost engagement, increase redemption, and lift NPS.
-            </p>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-4 top-4" style="font-size: 2rem;">altitude</span>
+              <h3 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Powerful<br/>Performance</h3>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Boost engagement, increase redemption, and lift NPS.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- DETAILS (authentic Apple shopping + bullets) -->
-      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 class="text-2xl font-semibold text-white">
-              An authentic Apple® shopping experience
-            </h2>
-            <p class="mt-4 text-white/75">
-              Deliver a storefront aligned with Apple’s brand and product cadence—fully integrated
-              into your loyalty ecosystem.
-            </p>
-            <ul class="mt-6 space-y-2 text-sm text-white/75">
-              <li>• Access to 2,000+ Apple products</li>
-              <li>• Newly released products as soon as they’re available</li>
-              <li>• Option to attach AppleCare+ on eligible items</li>
-              <li>• Apple Media product trials when available</li>
-            </ul>
-          </div>
-          <div>
-            <img
-              src="/assets/img/apple/storefront.png"
-              alt="Apple storefront inside your program"
-              class="rounded-2xl bg-white/5 ring-1 ring-white/10 w-full h-auto"
-            />
+      <section class="relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- IMAGE LEFT -->
+            <div class="md:order-1 fade-in opacity-0">
+              <img
+                src="/assets/img/apple/storefront.png"
+                alt="Apple storefront inside your program"
+                class="w-full h-auto"
+              />
+            </div>
+            <!-- TEXT RIGHT -->
+            <div class="md:order-0">
+              <h2 class="text-3xl sm:text-4xl font-bold text-white fade-in opacity-0">
+                An authentic Apple® shopping experience
+              </h2>
+              <p class="mt-4 text-white/80 fade-in opacity-0">
+                Deliver a storefront aligned with Apple’s brand and product cadence—fully integrated
+                into your loyalty ecosystem.
+              </p>
+              <ul class="mt-6 space-y-2 text-white/80 fade-in opacity-0">
+                <li>• Access to 2,000+ Apple products</li>
+                <li>• Newly released products as soon as they’re available</li>
+                <li>• Option to attach AppleCare+ on eligible items</li>
+                <li>• Apple Media product trials when available</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- SIMPLE INTERACTIONS -->
-      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- IMAGE LEFT -->
-          <div>
-            <img
-              src="/assets/img/apple/seamless.png"
-              alt="Seamless interface"
-              class="rounded-2xl bg-white/5 ring-1 ring-white/20 w-full h-auto"
-            />
-          </div>
-          <!-- TEXT RIGHT -->
-          <div>
-            <h2 class="text-2xl font-semibold text-white">Simple, seamless interactions</h2>
-            <ul class="mt-4 space-y-2 text-sm text-white/75">
-              <li>• Interface mirrors Apple brand for confidence and ease</li>
-              <li>• Build and deploy incentives & promos quickly</li>
-              <li>• Embed within your existing loyalty platform</li>
-            </ul>
+      <section class="bg-[var(--brand-dark-blue)] relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- IMAGE LEFT -->
+            <div class="fade-in opacity-0">
+              <img
+                src="/assets/img/apple/seamless.png"
+                alt="Seamless interface"
+                class="w-full h-auto"
+              />
+            </div>
+            <!-- TEXT RIGHT -->
+            <div>
+              <h2 class="text-3xl sm:text-4xl font-bold text-white fade-in opacity-0">Simple, seamless interactions</h2>
+              <ul class="mt-4 space-y-2 text-white/80 fade-in opacity-0">
+                <li>• Interface mirrors Apple brand for confidence and ease</li>
+                <li>• Build and deploy incentives & promos quickly</li>
+                <li>• Embed within your existing loyalty platform</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- FLEXIBLE PAYMENT -->
-      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- TEXT LEFT -->
-          <div>
-            <h2 class="text-2xl font-semibold text-white">Flexible ways to pay</h2>
-            <ul class="mt-4 space-y-2 text-sm text-white/75">
-              <li>• Rewards-only, split-pay, or card-only transactions</li>
-              <li>• Custom point-usage thresholds and rules</li>
-            </ul>
-          </div>
-          <!-- IMAGE RIGHT -->
-          <div>
-            <img
-              src="/assets/img/apple/flexible.png"
-              alt="Flexible payment options"
-              class="rounded-2xl bg-white/5 ring-1 ring-white/20 w-full h-auto"
-            />
+      <section class="relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- IMAGE RIGHT -->
+            <div class="md:order-1 fade-in opacity-0">
+              <img
+                src="/assets/img/apple/flexible.png"
+                alt="Flexible payment options"
+                class="w-full h-auto"
+              />
+            </div>
+            <!-- TEXT LEFT -->
+            <div class="md:order-0">
+              <h2 class="text-3xl sm:text-4xl font-bold text-white fade-in opacity-0">Flexible ways to pay</h2>
+              <ul class="mt-4 space-y-2 text-white/80 fade-in opacity-0">
+                <li>• Rewards-only, split-pay, or card-only transactions</li>
+                <li>• Custom point-usage thresholds and rules</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- THREE LANES (Enterprise / SMB / Developers) -->
-      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-semibold text-white text-center">
-          Built on Prism for Three Lanes
-        </h2>
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 uv-glow">
-            <h3 class="text-white font-medium">Enterprise / Institutional</h3>
-            <p class="mt-2 text-sm text-white/70">
-              Global catalogs, KYC/AML, SLAs, analytics, multi-region ops.
-            </p>
-          </div>
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 uv-glow">
-            <h3 class="text-white font-medium">SMB / SME</h3>
-            <p class="mt-2 text-sm text-white/70">
-              Fast onboarding, prebuilt promos, clear reporting & settlement.
-            </p>
-          </div>
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 uv-glow">
-            <h3 class="text-white font-medium">Developers</h3>
-            <p class="mt-2 text-sm text-white/70">
-              SDKs, sandbox, webhooks, and UV-native app incentives.
-            </p>
+      <section class="bg-white relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl sm:text-4xl font-bold text-[var(--brand-bg)] text-center fade-in opacity-0">
+            Built on Prism for Three Lanes
+          </h2>
+          <div class="mt-6 md:mt-7 lg:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-4 top-4" style="font-size: 2rem;">analytics</span>
+              <h4 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Enterprise / Institutional</h4>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Global catalogs, KYC/AML, SLAs, analytics, multi-region ops.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-4 top-4" style="font-size: 2rem;">docs</span>
+              <h4 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">SMB / SME</h4>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                Fast onboarding, prebuilt promos, clear reporting & settlement.
+              </p>
+            </div>
+            <div class="uv-card uv-glow p-6 fade-in opacity-0">
+              <span class="material-symbols-outlined text-[var(--brand-bg)] text-xl md:text-2xl lg:text-3xl absolute right-4 top-4" style="font-size: 2rem;">code_blocks</span>
+              <h4 class="text-lg md:text-xl font-semibold text-[var(--brand-bg)]">Developers</h4>
+              <p class="mt-2 text-[var(--brand-accent)]">
+                SDKs, sandbox, webhooks, and UV-native app incentives.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- CTA -->
-      <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-2xl font-semibold text-white">Request a Demo</h2>
-        <p class="mt-3 text-white/75 max-w-2xl mx-auto">
-          See how Apple® Rewards runs on the Prism Federated Value platform across enterprise, SMB,
-          and developer experiences.
-        </p>
-        <div class="mt-6 flex items-center justify-center gap-3">
-          <a
-            href="/contact"
-            class="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium text-white bg-white/10 ring-1 ring-white/20 hover:bg-white/15 transition"
-            >Let’s Talk</a
-          >
-          <a
-            href="/partners"
-            class="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium text-white/90 hover:text-white transition"
-            >Explore Partnerships</a
-          >
+      <section class="bg-[var(--brand-accent)] relative py-16 md:py-20 lg:py-24 text-center">
+         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white text-center fade-in opacity-0">Request a Demo</h2>
+          <p class="mt-3 text-white/80 max-w-2xl mx-auto fade-in opacity-0">
+            See how Apple® Rewards runs on the Prism Federated Value platform across enterprise, SMB,
+            and developer experiences.
+          </p>
+          <div class="mt-6 sm:flex sm:flex-wrap sm:justify-center gap-3">
+            <a
+              href="/contact"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden mt-3 sm:mt-0 btn-light fade-in opacity-0"
+              >Let’s Talk</a
+            >
+            <a
+              href="/partners"
+              class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden mt-3 sm:mt-0 btn-dark fade-in opacity-0"
+              >Explore Partnerships</a
+            >
+          </div>
+          <!-- LEGAL NOTE -->
+           <p class="mt-8 text-sm text-white/80 fade-in opacity-0">
+            Apple® and AppleCare+ are trademarks of Apple Inc.<br/>The availability of specific products, services, and trials may vary by region and partner.
+          </p>
         </div>
-      </section>
-
-      <!-- LEGAL NOTE -->
-      <section class="mt-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-xs text-white/50">
-          Apple® and AppleCare+ are trademarks of Apple Inc. The availability of specific products,
-          services, and trials may vary by region and partner.
-        </p>
       </section>
     </main>
 

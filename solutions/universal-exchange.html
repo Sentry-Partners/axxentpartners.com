@@ -34,34 +34,57 @@
   <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <div id="site-header"></div>
 
-    <main class="py-16">
-      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-semibold text-white">Universal Exchange (Enterprise)</h1>
-        <p class="mt-4 text-white/80 max-w-3xl">
-          Compliant exchange layer for inter-program settlement, inventory sourcing, and cross-brand
-          redemption.
-        </p>
+    <main class="py-0">
 
-        <ul class="mt-8 list-disc pl-5 text-white/80 space-y-2">
-          <li>Program-to-program swaps with risk controls</li>
-          <li>Issuer &amp; acquirer roles with transparency</li>
-          <li>Real-time quotes or fixed tables</li>
-          <li>Catalog, pricing, and availability APIs</li>
-        </ul>
+      <!-- HERO -->
+      <section class="relative min-h-[320px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[610px] object-cover overflow-hidden flex flex-wrap items-center justify-center">
+        <!-- background image -->
+        <img
+          src="/assets/img/merlinflow/Digital-Wallets.png"
+          alt="Loyalty Acceptance"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <!-- dark overlay (tweak /30 to /40, /50 for more contrast) -->
+        <div class="absolute inset-0 bg-black/50"></div>
 
-        <div class="mt-10 flex gap-4">
-          <a
-            href="/contact/"
-            class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 uv-glow"
-            >Talk to Enterprise Sales</a
-          >
-          <a href="/docs/api" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
-            >Explore APIs</a
-          >
+        <!-- foreground content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="py-24 sm:py-32 text-center">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-8 fade-in opacity-0">Universal Exchange (Enterprise)</h1>
+            <p class="mt-4 text-white/80 max-w-2xl mx-auto font-medium text-lg sm:text-xl fade-in opacity-0">
+              <span class="font-medium text-white/80">Compliant exchange layer for inter-program settlement, inventory sourcing, and cross-brand redemption.
+            </p>
+          </div>
         </div>
-        <div class="max-w-6xl mx-auto">
+      </section>
+
+      <section class="bg-white relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="sm:flex sm:flex-wrap sm:justify-center">
+            <div>
+              <ul class="list-disc pl-5 text-[var(--brand-bg)] space-y-2">
+                <li>Program-to-program swaps with risk controls</li>
+                <li>Issuer &amp; acquirer roles with transparency</li>
+                <li>Real-time quotes or fixed tables</li>
+                <li>Catalog, pricing, and availability APIs</li>
+              </ul>
+
+              <div class="mt-6 sm:flex sm:flex-wrap sm:justify-center gap-3">
+                <a
+                  href="/contact/"
+                  class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0"
+                  >Talk to Enterprise Sales</a
+                >
+                <a href="/docs/api" class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] text-white border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden text-center btn-dark mt-3 sm:mt-0 fade-in opacity-0"
+                  >Explore APIs</a
+                >
+              </div>
+            </div>
+          </div>
+
           <!-- Prism Payment Flow — 7-step horizontal sequence -->
-          <!-- Prism Flow: 2 columns x 3 + bottom, glass panes + labeled arrows -->
+      <!-- Prism Flow: 2 columns x 3 + bottom, glass panes + labeled arrows -->
+        <div class="mt-10 md:mt-12 lg:mt-16 rounded-2xl border uv-glow overflow-hidden fade-in opacity-0">
           <svg
             viewBox="0 0 1200 820"
             xmlns="http://www.w3.org/2000/svg"
@@ -275,8 +298,11 @@
             <text class="label" x="850" y="665" text-anchor="end">6. Payout</text>
           </svg>
           <!-- paste the raw <svg>…</svg> here -->
+           </div>
+
         </div>
       </section>
+
     </main>
 
     <div id="site-footer"></div>

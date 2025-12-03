@@ -29,30 +29,53 @@
   <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <div id="site-header"></div>
 
-    <main class="py-16">
-      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-semibold text-white">Merchant Wallet &amp; Payouts</h1>
-        <p class="mt-4 text-white/80 max-w-3xl">
-          Consolidate settlement from cards, rewards, and alternative tenders into a single wallet.
-          Automate reconciliation and control FX.
-        </p>
+    <main class="py-0">
 
-        <ul class="mt-8 list-disc pl-5 text-white/80 space-y-2">
-          <li>Daily or intraday payouts</li>
-          <li>Multi-currency with clear FX</li>
-          <li>Program-level reporting &amp; ledgering</li>
-          <li>Program-aware dispute &amp; refund flows</li>
-        </ul>
+      <!-- HERO -->
+      <section class="relative min-h-[320px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[610px] object-cover overflow-hidden flex flex-wrap items-center justify-center">
+        <!-- background image -->
+        <img
+          src="/assets/img/merch/merchant-wallet-payouts.jpg"
+          alt="Merchant Wallet & Payouts"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <!-- dark overlay (tweak /30 to /40, /50 for more contrast) -->
+        <div class="absolute inset-0 bg-black/40"></div>
 
-        <div class="mt-10 flex gap-4">
-          <a
-            href="/contact/"
-            class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 uv-glow"
-            >Request a Demo</a
-          >
-          <a href="/docs/api" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
-            >See Payout API</a
-          >
+        <!-- foreground content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-0 sm:my-12 md:my-16 lg:my-20 xl:my-24">
+          <div class="py-24 sm:py-32 text-center">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl max-w-5xl mx-auto font-bold text-white fade-in opacity-0">Merchant Wallet &amp; Payouts</h1>
+            <p class="mt-4 text-white/80 max-w-2xl mx-auto font-medium text-lg sm:text-xl fade-in opacity-0">
+              Consolidate settlement from cards, rewards, and alternative tenders into a single wallet. Automate reconciliation and control FX.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto sm:flex sm:flex-wrap sm:justify-center px-4 sm:px-6 lg:px-8">
+
+          <div>
+            <ul class="text-lg list-disc text-[var(--brand-bg)] pl-5 space-y-2 fade-in opacity-0">
+              <li>Daily or intraday payouts</li>
+              <li>Multi-currency with clear FX</li>
+              <li>Program-level reporting &amp; ledgering</li>
+              <li>Program-aware dispute &amp; refund flows</li>
+            </ul>
+
+            <div class="mt-6 sm:flex sm:flex-wrap sm:justify-center gap-3">
+              <a
+                href="/contact/"
+                class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0"
+                >Request a Demo</a
+              >
+              <a href="/docs/api" class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] text-white border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden text-center btn-dark mt-3 sm:mt-0 fade-in opacity-0"
+                >See Payout API</a
+              >
+            </div>
+          </div>
+
         </div>
       </section>
     </main>

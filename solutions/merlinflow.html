@@ -34,125 +34,137 @@
   <body class="bg-[var(--brand-bg)] text-[var(--brand-fg)] antialiased">
     <div id="site-header"></div>
 
-    <main class="py-16">
-      <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-12">
-        <div class="text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-slate-100">
-            Merlin: Prism Managed Wallets in Action
-          </h1>
-          <p class="mt-4 text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
-            <span class="font-medium text-slate-100">Merlin</span> is a specialized
-            <span class="font-medium text-slate-100">facet of Prism</span>, delivered via the
-            Federated Value Platform (FVP). It transforms blocked or complex transactions
-            into seamless, compliant checkouts—routing payments through stablecoins, fiat
-            ramps, or programmable settlements while handling compliance and customer
-            education in the background.
-          </p>
-          <p class="mt-4 text-slate-300/80 max-w-2xl mx-auto">
-            The result: merchants recover sales that would otherwise fail, and consumers
-            complete purchases with one-click confidence—without needing to understand
-            crypto or alternative rails.
-          </p>
-        </div>
-      </section>
+    <main class="py-0">
 
-      <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div>
-            <h2 class="text-3xl font-semibold tracking-tight text-slate-100">Unlock every checkout, compliantly.</h2>
-            <p class="mt-3 text-slate-300/90">
-              Merlin is a specialized facet of Prism. It turns blocked or complex payments into
-              compliant, one-click checkouts—routing across stablecoins, fiat ramps, and split settlement,
-              while handling KYC/AML and user education behind the scenes.
+      <!-- HERO -->
+      <section class="relative min-h-[320px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[610px] object-cover overflow-hidden flex flex-wrap items-center justify-center">
+        <!-- background image -->
+        <img
+          src="/assets/img/merlinflow/Digital-Wallets.png"
+          alt="Loyalty Acceptance"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <!-- dark overlay (tweak /30 to /40, /50 for more contrast) -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- foreground content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="py-24 sm:py-32 text-center">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl max-w-5xl mx-auto font-bold text-white mb-8 fade-in opacity-0">Merlin: Prism Managed Wallets in Action</h1>
+            <p class="mt-4 text-white/80 max-w-5xl mx-auto font-medium text-lg sm:text-xl fade-in opacity-0">
+              <span class="font-medium text-slate-100">Merlin</span> is a specialized Federated Value Platform (FVP). It transforms blocked or complex transactions into seamless, compliant checkouts—routing payments through stablecoins, fiat ramps, or programmable settlements while handling compliance and customer education in the background.
             </p>
-            <div class="mt-6 flex gap-3">
-              <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-sky-400/90 px-4 py-2 font-medium text-slate-900 hover:bg-sky-300">Talk to Sales</a>
-              <a href="#merlin-flow-title" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 font-medium text-slate-100 hover:bg-white/10">See the Flow</a>
-            </div>
-
-            <dl class="mt-8 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <dt class="font-semibold text-slate-100">More approved checkouts</dt>
-                <dd class="mt-1 text-slate-300/90">Recover sales when cards are blocked or rails are restricted.</dd>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <dt class="font-semibold text-slate-100">Compliance baked in</dt>
-                <dd class="mt-1 text-slate-300/90">Jurisdiction-aware KYC/AML tiers, enforced per route.</dd>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <dt class="font-semibold text-slate-100">Any rail, same UX</dt>
-                <dd class="mt-1 text-slate-300/90">USDC, BTC, fiat ramps—Merlin chooses and explains the path.</dd>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <dt class="font-semibold text-slate-100">Programmable settlement</dt>
-                <dd class="mt-1 text-slate-300/90">Split payouts, rev-share wallets, and scheduled settlement.</dd>
-              </div>
-            </dl>
+            <p class="mt-4 text-white/80 max-w-5xl mx-auto font-medium text-lg sm:text-xl fade-in opacity-0">
+              <span class="font-medium text-slate-100">The result: merchants recover sales that would otherwise fail, and consumers complete purchases with one-click confidence—without needing to understand crypto or alternative rails.
+            </p>
           </div>
-
-          <div class="lg:pl-10 space-y-5">
-            <h3 class="text-2xl font-semibold text-slate-100 mb-4">Merlin Use Case — USDC Checkout</h3>
-
-            <!-- Step cards -->
-            <div class="space-y-4">
-              <div class="rounded-2xl border border-cyan-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
-                <h4 class="font-semibold text-cyan-200">1. Blocked Checkout</h4>
-                <p class="mt-1 text-slate-300/90">Consumer finds items cannot be purchased with a credit card.</p>
-              </div>
-
-              <div class="rounded-2xl border border-fuchsia-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(217,70,239,0.3)]">
-                <h4 class="font-semibold text-fuchsia-200">2. Merlin Option</h4>
-                <p class="mt-1 text-slate-300/90">Merchant’s Merlin-enabled cart offers <span class="font-medium text-slate-100">“Pay with USDC”</span>.</p>
-              </div>
-
-              <div class="rounded-2xl border border-amber-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(251,191,36,0.3)]">
-                <h4 class="font-semibold text-amber-200">3. Wallet & Compliance</h4>
-                <p class="mt-1 text-slate-300/90">Prism Managed Wallet activates and checks rules. Purchase &lt; $1000 → no KYC required. Profile shows status transparently.</p>
-              </div>
-
-              <div class="rounded-2xl border border-violet-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(167,139,250,0.3)]">
-                <h4 class="font-semibold text-violet-200">4. Invoice in USDC</h4>
-                <p class="mt-1 text-slate-300/90">Invoice updates to show all items in USDC. User clicks <span class="font-medium text-slate-100">“Ready to Pay”</span>.</p>
-              </div>
-
-              <div class="rounded-2xl border border-emerald-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(52,211,153,0.3)]">
-                <h4 class="font-semibold text-emerald-200">5. Payment Window</h4>
-                <p class="mt-1 text-slate-300/90">QR code appears. User pays directly from their wallet.</p>
-              </div>
-
-              <div class="rounded-2xl border border-sky-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
-                <h4 class="font-semibold text-sky-200">6. USDC Store (if needed)</h4>
-                <p class="mt-1 text-slate-300/90">Not enough balance? Merlin routes to USDC Store to top-up with a credit card.</p>
-              </div>
-
-              <div class="rounded-2xl border border-lime-300/40 bg-white/5 backdrop-blur p-4 shadow-[0_0_20px_rgba(132,204,22,0.3)]">
-                <h4 class="font-semibold text-lime-200">7. Settlement & Proof</h4>
-                <p class="mt-1 text-slate-300/90">DefiPay settles funds, verifies on blockchain, issues proof of purchase, and handles splits/commissions automatically.</p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-semibold text-white">The Merlin Processing flow <h1>
-        <p class="mt-4 text-white/80 max-w-3xl">
+       <section class="relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 lg:items-center gap-4 md:gap-6 lg:gap-8">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-6 fade-in opacity-0">Unlock every checkout, compliantly.</h2>
+              <p class="mt-3 text-white/80 fade-in opacity-0">
+                Merlin is a specialized facet of Prism. It turns blocked or complex payments into compliant, one-click checkouts—routing across stablecoins, fiat ramps, and split settlement, while handling KYC/AML and user education behind the scenes.
+              </p>
+              <div class="mt-6 sm:flex gap-4 sm:justify-center sm:justify-center">
+                <a href="#contact" class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-white text-[var(--brand-bg)] border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden text-center btn-light mt-3 sm:mt-0 fade-in opacity-0">Talk to Sales</a>
+                <a href="#merlin-flow-title" class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0">See the Flow</a>
+              </div>
+
+              <dl class="mt-8 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <dt class="text-lg md:text-xl font-semibold text-white">More approved checkouts</dt>
+                  <dd class="mt-1 text-white/80">Recover sales when cards are blocked or rails are restricted.</dd>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <dt class="text-lg md:text-xl font-semibold text-white">Compliance baked in</dt>
+                  <dd class="mt-1 text-white/80">Jurisdiction-aware KYC/AML tiers, enforced per route.</dd>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <dt class="text-lg md:text-xl font-semibold text-white">Any rail, same UX</dt>
+                  <dd class="mt-1 text-white/80">USDC, BTC, fiat ramps—Merlin chooses and explains the path.</dd>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <dt class="text-lg md:text-xl font-semibold text-white">Programmable settlement</dt>
+                  <dd class="mt-1 text-white/80">Split payouts, rev-share wallets, and scheduled settlement.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="lg:pl-10 space-y-5 mt-8 md:mt-0">
+              <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-8 fade-in opacity-0">Merlin Use Case — USDC Checkout</h2>
+
+              <!-- Step cards -->
+              <div class="">
+                <div class="uv-card uv-glow p-4 md:p-6 space-y-4 fade-in opacity-0">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <h4 class="text-lg md:text-xl font-semibold text-white">1. Blocked Checkout</h4>
+                  <p class="mt-1 text-white/80">Consumer finds items cannot be purchased with a credit card.</p>
+                </div>
+
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <h4 class="text-lg md:text-xl font-semibold text-white">2. Merlin Option</h4>
+                  <p class="mt-1 text-white/80">Merchant’s Merlin-enabled cart offers <span class="font-medium text-slate-100">“Pay with USDC”</span>.</p>
+                </div>
+
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <h4 class="text-lg md:text-xl font-semibold text-white">3. Wallet & Compliance</h4>
+                  <p class="mt-1 text-white/80">Prism Managed Wallet activates and checks rules. Purchase &lt; $1000 → no KYC required. Profile shows status transparently.</p>
+                </div>
+
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <h4 class="text-lg md:text-xl font-semibold text-white">4. Invoice in USDC</h4>
+                  <p class="mt-1 text-white/80">Invoice updates to show all items in USDC. User clicks <span class="font-medium text-slate-100">“Ready to Pay”</span>.</p>
+                </div>
+
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <h4 class="text-lg md:text-xl font-semibold text-white">5. Payment Window</h4>
+                  <p class="mt-1 text-white/80">QR code appears. User pays directly from their wallet.</p>
+                </div>
+
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <h4 class="text-lg md:text-xl font-semibold text-white">6. USDC Store (if needed)</h4>
+                  <p class="mt-1 text-white/80">Not enough balance? Merlin routes to USDC Store to top-up with a credit card.</p>
+                </div>
+
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 fade-in opacity-0">
+                  <h4 class="text-lg md:text-xl font-semibold text-white">7. Settlement & Proof</h4>
+                  <p class="mt-1 text-white/80">DefiPay settles funds, verifies on blockchain, issues proof of purchase, and handles splits/commissions automatically.</p>
+                </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       <section class="bg-white relative py-16 md:py-20 lg:py-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-[var(--brand-bg)] text-center fade-in opacity-0">The Merlin Processing flow </h2>
+        <p class="mt-4 text-[var(--brand-bg)] text-center max-w-3xl mx-auto fade-in opacity-0">
           The following is a graphical representation of the use case: A compliant federation layer for inter-program settlement, inventory sourcing, and cross-brand
           redemption.
         </p>
 
-        <div class="mt-10 flex gap-4">
+        <div class="mt-6 sm:flex sm:flex-wrap sm:justify-center gap-3">
           <a
             href="/contact/"
-            class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 uv-glow"
+            class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-accent)] border border-white/20 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 text-center overflow-hidden btn-light mt-3 sm:mt-0 fade-in opacity-0"
             >Talk to Enterprise Sales</a
           >
-          <a href="/docs/api" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10"
+          <a href="/docs/api" class="w-full sm:w-auto block sm:inline-block px-6 py-3 rounded-lg bg-[var(--brand-bg)] text-white border border-[var(--brand-bg)]/30 font-semibold hover:opacity-90 relative shadow-lg transition duration-300 hover:scale-105 overflow-hidden text-center btn-dark mt-3 sm:mt-0 fade-in opacity-0"
             >Explore APIs</a
           >
         </div>
-        <div class="max-w-6xl mx-auto">
+        </div>
+        </section>
+
+      <section class="relative pb-16 md:pb-20 lg:pb-24">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Prism Payment Flow — 7-step horizontal sequence -->
           <!-- Prism Flow: 2 columns x 3 + bottom, glass panes + labeled arrows -->
           <svg
@@ -160,6 +172,7 @@
             xmlns="http://www.w3.org/2000/svg"
             role="img"
             aria-label="Prism managed wallet payment flow"
+            class="fade-in opacity-0"
           >
             <defs>
               <!-- Dark tech background -->
@@ -368,226 +381,222 @@
             <text class="label" x="850" y="665" text-anchor="end">6. Payout</text>
           </svg>
 
-          <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-8">
+          <div class="mx-auto max-w-6xl py-16 md:py-20 lg:py-24">
             <div class="text-center">
-              <h2 class="text-3xl font-semibold tracking-tight text-slate-100">
+              <h2 class="text-3xl sm:text-4xl font-bold text-whitetext-center fade-in opacity-0">
                 Merlin Flow — Role-Based Swimlane
               </h2>
-              <p class="mt-4 text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
-                While the flow diagram shows Merlin at a high level, the
-                <span class="font-medium text-slate-100">swimlane view</span> goes deeper.
-                It identifies the <span class="font-medium text-slate-100">actors</span> in
-                each step—consumer, merchant, Prism Wallet, compliance services, route
-                providers, settlement layers—and shows how responsibilities hand off across
-                the transaction lifecycle.
+              <p class="mt-4 text-white/80 max-w-4xl mx-auto leading-relaxed fade-in opacity-0">
+                While the flow diagram shows Merlin at a high level, the <span class="font-bold">swimlane view</span> goes deeper.
+                It identifies the <span class="font-bold">actors</span> in each step—consumer, merchant, Prism Wallet, compliance services, route providers, settlement layers—and shows how responsibilities hand off across the transaction lifecycle.
               </p>
-              <p class="mt-4 text-slate-300/80 max-w-2xl mx-auto">
-                This detailed view serves as a <span class="font-medium text-slate-100">
-                blueprint for operators and developers</span>, clarifying where compliance,
-                routing, and AI support occur within the end-to-end payment journey.
+              <p class="mt-4 text-white/80 max-w-4xl mx-auto fade-in opacity-0">
+                This detailed view serves as a <span class="font-bold">blueprint for operators and developers</span>, clarifying where compliance, routing, and AI support occur within the end-to-end payment journey.
               </p>
             </div>
-          </section>
+          </div>
 
           <!-- paste the raw <svg>…</svg> here -->
-          <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prism swimlane payment flow">
-            <defs>
-              <radialGradient id="bg" cx="50%" cy="40%" r="80%">
-                <stop offset="0%" stop-color="#0b1220"/><stop offset="100%" stop-color="#060a14"/>
-              </radialGradient>
-              <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/>
-              </filter>
-              <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fff" stop-opacity=".28"/>
-                <stop offset="45%" stop-color="#fff" stop-opacity=".10"/>
-                <stop offset="100%" stop-color="#000" stop-opacity=".20"/>
-              </linearGradient>
-              <marker id="arrow" markerWidth="14" markerHeight="10" refX="12" refY="5" orient="auto">
-                <path d="M0,0 L12,5 L0,10 Z" fill="#9fb4d4"/>
-              </marker>
+           <div class="rounded-2xl border uv-glow overflow-hidden fade-in opacity-0">
+            <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prism swimlane payment flow" class="fade-in opacity-0">
+              <defs>
+                <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+                  <stop offset="0%" stop-color="#0b1220"/><stop offset="100%" stop-color="#060a14"/>
+                </radialGradient>
+                <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/>
+                </filter>
+                <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#fff" stop-opacity=".28"/>
+                  <stop offset="45%" stop-color="#fff" stop-opacity=".10"/>
+                  <stop offset="100%" stop-color="#000" stop-opacity=".20"/>
+                </linearGradient>
+                <marker id="arrow" markerWidth="14" markerHeight="10" refX="12" refY="5" orient="auto">
+                  <path d="M0,0 L12,5 L0,10 Z" fill="#9fb4d4"/>
+                </marker>
 
-              <!-- lane header pills -->
-              <linearGradient id="gHdr" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#caa3ff"/><stop offset="100%" stop-color="#a676ff"/>
-              </linearGradient>
-              <!-- box fills -->
-              <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff9fb1"/><stop offset="100%" stop-color="#ff6f85"/></linearGradient>
-              <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffd86a"/><stop offset="100%" stop-color="#ffbe3d"/></linearGradient>
-              <linearGradient id="gC" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffe88a"/><stop offset="100%" stop-color="#ffd257"/></linearGradient>
-              <linearGradient id="gD" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c9c5ff"/><stop offset="100%" stop-color="#a8a0ff"/></linearGradient>
-              <linearGradient id="gE" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a7f7d6"/><stop offset="100%" stop-color="#53e4b0"/></linearGradient>
-              <linearGradient id="gF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6fe389"/><stop offset="100%" stop-color="#35cc63"/></linearGradient>
-              <linearGradient id="gNote" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9fe8ff"/><stop offset="100%" stop-color="#63d0ff"/></linearGradient>
+                <!-- lane header pills -->
+                <linearGradient id="gHdr" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#caa3ff"/><stop offset="100%" stop-color="#a676ff"/>
+                </linearGradient>
+                <!-- box fills -->
+                <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff9fb1"/><stop offset="100%" stop-color="#ff6f85"/></linearGradient>
+                <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffd86a"/><stop offset="100%" stop-color="#ffbe3d"/></linearGradient>
+                <linearGradient id="gC" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffe88a"/><stop offset="100%" stop-color="#ffd257"/></linearGradient>
+                <linearGradient id="gD" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c9c5ff"/><stop offset="100%" stop-color="#a8a0ff"/></linearGradient>
+                <linearGradient id="gE" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a7f7d6"/><stop offset="100%" stop-color="#53e4b0"/></linearGradient>
+                <linearGradient id="gF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6fe389"/><stop offset="100%" stop-color="#35cc63"/></linearGradient>
+                <linearGradient id="gNote" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9fe8ff"/><stop offset="100%" stop-color="#63d0ff"/></linearGradient>
 
-              <style>
-                .bg { fill: url(#bg); }
-                .lane { fill: rgba(255,255,255,0.03); stroke: #ffffff20; }
-                .laneHdr { fill: url(#gHdr); filter: url(#shadow); }
-                .hdrText, .boxTitle {
-                  font: 600 16px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-                  fill:#0b1220; letter-spacing:.2px;
-                }
-                .box { filter:url(#shadow); opacity:.95; }
-                .outline { fill:none; stroke:#fff; stroke-opacity:.28; }
-                .label {
-                  font: 600 14px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-                  fill:#aecdff;
-                }
-                .small {
-                  font: 500 12px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-                  fill:#0b1220;
-                }
-                .arrow { stroke:#9fb4d4; stroke-width:1.5; fill:none; marker-end:url(#arrow); }
-                .dash { stroke-dasharray:6 6; }
-                .note { font:500 13px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; fill:#b9d4ff; }
-              </style>
-            </defs>
+                <style>
+                  .bg { fill: url(#bg); }
+                  .lane { fill: rgba(255,255,255,0.03); stroke: #ffffff20; }
+                  .laneHdr { fill: url(#gHdr); filter: url(#shadow); }
+                  .hdrText, .boxTitle {
+                    font: 600 16px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+                    fill:#0b1220; letter-spacing:.2px;
+                  }
+                  .box { filter:url(#shadow); opacity:.95; }
+                  .outline { fill:none; stroke:#fff; stroke-opacity:.28; }
+                  .label {
+                    font: 600 14px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+                    fill:#aecdff;
+                  }
+                  .small {
+                    font: 500 12px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+                    fill:#0b1220;
+                  }
+                  .arrow { stroke:#9fb4d4; stroke-width:1.5; fill:none; marker-end:url(#arrow); }
+                  .dash { stroke-dasharray:6 6; }
+                  .note { font:500 13px Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; fill:#b9d4ff; }
+                </style>
+              </defs>
 
-            <rect class="bg" x="0" y="0" width="1400" height="900"/>
+              <rect class="bg" x="0" y="0" width="1400" height="900"/>
 
-            <!-- layout constants -->
-            <!-- lanes: y0=80, each 100 tall, 7 lanes; content area x: 220..1320 -->
-            <!-- helper: function to draw lane header + band -->
-            <g id="lanes">
-              <!-- lane 1 -->
-              <rect class="lane" x="20" y="80" width="1550" height="100" rx="14"/>
-              <g transform="translate(20,80)">
-                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
-                <text class="hdrText" x="90" y="23" text-anchor="middle">Consumer</text>
-              </g>
-              <!-- lane 2 -->
-              <rect class="lane" x="20" y="180" width="1550" height="100" rx="14"/>
-              <g transform="translate(20,180)">
-                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
-                <text class="hdrText" x="90" y="23" text-anchor="middle">Merchant Checkout</text>
-              </g>
-              <!-- lane 3 -->
-              <rect class="lane" x="20" y="280" width="1550" height="100" rx="14"/>
-              <g transform="translate(20,280)">
-                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
-                <text class="hdrText" x="110" y="23" text-anchor="middle">Prism Managed Wallet</text>
-              </g>
-              <!-- lane 4 -->
-              <rect class="lane" x="20" y="380" width="1550" height="100" rx="14"/>
-              <g transform="translate(20,380)">
-                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
-                <text class="hdrText" x="90" y="23" text-anchor="middle">Compliance Services</text>
-              </g>
-              <!-- lane 5 -->
-              <rect class="lane" x="20" y="480" width="1550" height="100" rx="14"/>
-              <g transform="translate(20,480)">
-                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
-                <text class="hdrText" x="110" y="23" text-anchor="middle">Payment Route Provider</text>
-              </g>
-              <!-- lane 6 -->
-              <rect class="lane" x="20" y="580" width="1550" height="100" rx="14"/>
-              <g transform="translate(20,580)">
-                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
-                <text class="hdrText" x="90" y="23" text-anchor="middle">Settlement Layer</text>
-              </g>
-              <!-- lane 7 -->
-              <rect class="lane" x="20" y="680" width="1550" height="100" rx="14"/>
-              <g transform="translate(20,680)">
-                <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
-                <text class="hdrText" x="90" y="23" text-anchor="middle">Merchant</text>
-              </g>yea
-            </g>
-
-            <!-- step boxes -->
-            <!-- x positions for stages -->
-            <!-- xA=220, xB=420, xC=640, xD=880, xE=1120 -->
-            <!-- width=170, height=56 -->
-            <g>
-              <!-- Consumer -->
-              <g transform="translate(250,102)">
-                <rect class="box" width="170" height="56" rx="16" fill="url(#gA)"/>
-                <rect class="outline" width="170" height="56" rx="16"/>
-                <text class="boxTitle" x="85" y="34" text-anchor="middle">1) Initiate Checkout</text>
+              <!-- layout constants -->
+              <!-- lanes: y0=80, each 100 tall, 7 lanes; content area x: 220..1320 -->
+              <!-- helper: function to draw lane header + band -->
+              <g id="lanes">
+                <!-- lane 1 -->
+                <rect class="lane" x="20" y="80" width="1550" height="100" rx="14"/>
+                <g transform="translate(20,80)">
+                  <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                  <text class="hdrText" x="90" y="23" text-anchor="middle">Consumer</text>
+                </g>
+                <!-- lane 2 -->
+                <rect class="lane" x="20" y="180" width="1550" height="100" rx="14"/>
+                <g transform="translate(20,180)">
+                  <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                  <text class="hdrText" x="90" y="23" text-anchor="middle">Merchant Checkout</text>
+                </g>
+                <!-- lane 3 -->
+                <rect class="lane" x="20" y="280" width="1550" height="100" rx="14"/>
+                <g transform="translate(20,280)">
+                  <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                  <text class="hdrText" x="110" y="23" text-anchor="middle">Prism Managed Wallet</text>
+                </g>
+                <!-- lane 4 -->
+                <rect class="lane" x="20" y="380" width="1550" height="100" rx="14"/>
+                <g transform="translate(20,380)">
+                  <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                  <text class="hdrText" x="90" y="23" text-anchor="middle">Compliance Services</text>
+                </g>
+                <!-- lane 5 -->
+                <rect class="lane" x="20" y="480" width="1550" height="100" rx="14"/>
+                <g transform="translate(20,480)">
+                  <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                  <text class="hdrText" x="110" y="23" text-anchor="middle">Payment Route Provider</text>
+                </g>
+                <!-- lane 6 -->
+                <rect class="lane" x="20" y="580" width="1550" height="100" rx="14"/>
+                <g transform="translate(20,580)">
+                  <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                  <text class="hdrText" x="90" y="23" text-anchor="middle">Settlement Layer</text>
+                </g>
+                <!-- lane 7 -->
+                <rect class="lane" x="20" y="680" width="1550" height="100" rx="14"/>
+                <g transform="translate(20,680)">
+                  <rect class="laneHdr" x="0" y="0" width="220" height="36" rx="18"/>
+                  <text class="hdrText" x="90" y="23" text-anchor="middle">Merchant</text>
+                </g>yea
               </g>
 
-              <!-- Merchant Checkout -->
-              <g transform="translate(420,202)">
-                <rect class="box" width="170" height="56" rx="16" fill="url(#gD)"/>
-                <rect class="outline" width="170" height="56" rx="16"/>
-                <text class="boxTitle" x="85" y="26" text-anchor="middle">2) Plugin triggers</text>
-                <text class="small" x="85" y="42" text-anchor="middle">Prism offer</text>
+              <!-- step boxes -->
+              <!-- x positions for stages -->
+              <!-- xA=220, xB=420, xC=640, xD=880, xE=1120 -->
+              <!-- width=170, height=56 -->
+              <g>
+                <!-- Consumer -->
+                <g transform="translate(250,102)">
+                  <rect class="box" width="170" height="56" rx="16" fill="url(#gA)"/>
+                  <rect class="outline" width="170" height="56" rx="16"/>
+                  <text class="boxTitle" x="85" y="34" text-anchor="middle">1) Initiate Checkout</text>
+                </g>
+
+                <!-- Merchant Checkout -->
+                <g transform="translate(420,202)">
+                  <rect class="box" width="170" height="56" rx="16" fill="url(#gD)"/>
+                  <rect class="outline" width="170" height="56" rx="16"/>
+                  <text class="boxTitle" x="85" y="26" text-anchor="middle">2) Plugin triggers</text>
+                  <text class="small" x="85" y="42" text-anchor="middle">Prism offer</text>
+                </g>
+
+                <!-- Prism Managed Wallet -->
+                <g transform="translate(640,302)">
+                  <rect class="box" width="170" height="56" rx="16" fill="url(#gB)"/>
+                  <rect class="outline" width="170" height="56" rx="16"/>
+                  <text class="boxTitle" x="85" y="26" text-anchor="middle">3) Offer Prism route</text>
+                  <text class="small" x="85" y="42" text-anchor="middle">4) User confirms</text>
+                </g>
+
+                <!-- Compliance Services -->
+                <g transform="translate(880,402)">
+                  <rect class="box" width="170" height="56" rx="16" fill="url(#gC)"/>
+                  <rect class="outline" width="170" height="56" rx="16"/>
+                  <text class="boxTitle" x="85" y="26" text-anchor="middle">5) Select KYC/AML</text>
+                  <text class="small" x="85" y="42" text-anchor="middle">Rules enforced</text>
+                </g>
+
+                <!-- Payment Route Provider -->
+                <g transform="translate(1120,502)">
+                  <rect class="box" width="210" height="56" rx="16" fill="url(#gD)"/>
+                  <rect class="outline" width="200" height="56" rx="16"/>
+                  <text class="boxTitle" x="92" y="26" text-anchor="middle">6) Convert funding → asset</text>
+                  <text class="small" x="85" y="42" text-anchor="middle">e.g., card→USDC/BTC</text>
+                </g>
+
+                <!-- Settlement Layer -->
+                <g transform="translate(880,602)">
+                  <rect class="box" width="170" height="56" rx="16" fill="url(#gE)"/>
+                  <rect class="outline" width="170" height="56" rx="16"/>
+                  <text class="boxTitle" x="85" y="26" text-anchor="middle">7) Apply split rules</text>
+                  <text class="small" x="85" y="42" text-anchor="middle">settle + proof</text>
+                </g>
+
+                <!-- Merchant -->
+                <g transform="translate(640,702)">
+                  <rect class="box" width="170" height="56" rx="16" fill="url(#gF)"/>
+                  <rect class="outline" width="170" height="56" rx="16"/>
+                  <text class="boxTitle" x="85" y="34" text-anchor="middle">8) Payment received</text>
+                </g>
               </g>
 
-              <!-- Prism Managed Wallet -->
-              <g transform="translate(640,302)">
-                <rect class="box" width="170" height="56" rx="16" fill="url(#gB)"/>
-                <rect class="outline" width="170" height="56" rx="16"/>
-                <text class="boxTitle" x="85" y="26" text-anchor="middle">3) Offer Prism route</text>
-                <text class="small" x="85" y="42" text-anchor="middle">4) User confirms</text>
+              <!-- arrows (left→right progression across lanes) -->
+              <path class="arrow" d="M420,130 H540" />
+              <text class="label" x="475" y="120" text-anchor="middle">to checkout</text>
+
+              <path class="arrow" d="M590,230 H690" />
+              <text class="label" x="635" y="218" text-anchor="middle">Prism route</text>
+
+              <path class="arrow" d="M810,330 H900" />
+              <text class="label" x="845" y="318" text-anchor="middle">confirm</text>
+
+              <path class="arrow" d="M1050,430 H1140" />
+              <text class="label" x="1090" y="418" text-anchor="middle">approved</text>
+
+              <path class="arrow" d="M1205,558 V602" />
+              <text class="label" x="1220" y="582">for settlement</text>
+
+              <path class="arrow" d="M1050,630 H810" />
+              <text class="label" x="930" y="616" text-anchor="middle">proof & notify</text>
+
+              <path class="arrow" d="M725,780 V802" class="dash"/>
+              <text class="label" x="760" y="780">credit</text>
+
+              <!-- optional split fan-out from Settlement -->
+              <path class="arrow dash" d="M965,630 H1200 V670" />
+              <text class="label" x="1210" y="666">split to rev-share wallet</text>
+
+              <!-- Merlin AI note -->
+              <g transform="translate(50,805)">
+                <rect class="box" width="850" height="70" rx="18" fill="url(#gNote)"/>
+                <rect class="outline" width="850" height="70" rx="18"/>
+                <text class="boxTitle" x="420" y="30" text-anchor="middle">Merlin AI (parallel): fees & routing • compliance guidance • loyalty (5% Prism APR, merchant % cashback)</text>
+                <text class="small" x="300" y="50" text-anchor="middle">plain-language confirmations & receipts</text>
               </g>
-
-              <!-- Compliance Services -->
-              <g transform="translate(880,402)">
-                <rect class="box" width="170" height="56" rx="16" fill="url(#gC)"/>
-                <rect class="outline" width="170" height="56" rx="16"/>
-                <text class="boxTitle" x="85" y="26" text-anchor="middle">5) Select KYC/AML</text>
-                <text class="small" x="85" y="42" text-anchor="middle">Rules enforced</text>
-              </g>
-
-              <!-- Payment Route Provider -->
-              <g transform="translate(1120,502)">
-                <rect class="box" width="210" height="56" rx="16" fill="url(#gD)"/>
-                <rect class="outline" width="200" height="56" rx="16"/>
-                <text class="boxTitle" x="92" y="26" text-anchor="middle">6) Convert funding → asset</text>
-                <text class="small" x="85" y="42" text-anchor="middle">e.g., card→USDC/BTC</text>
-              </g>
-
-              <!-- Settlement Layer -->
-              <g transform="translate(880,602)">
-                <rect class="box" width="170" height="56" rx="16" fill="url(#gE)"/>
-                <rect class="outline" width="170" height="56" rx="16"/>
-                <text class="boxTitle" x="85" y="26" text-anchor="middle">7) Apply split rules</text>
-                <text class="small" x="85" y="42" text-anchor="middle">settle + proof</text>
-              </g>
-
-              <!-- Merchant -->
-              <g transform="translate(640,702)">
-                <rect class="box" width="170" height="56" rx="16" fill="url(#gF)"/>
-                <rect class="outline" width="170" height="56" rx="16"/>
-                <text class="boxTitle" x="85" y="34" text-anchor="middle">8) Payment received</text>
-              </g>
-            </g>
-
-            <!-- arrows (left→right progression across lanes) -->
-            <path class="arrow" d="M420,130 H540" />
-            <text class="label" x="475" y="120" text-anchor="middle">to checkout</text>
-
-            <path class="arrow" d="M590,230 H690" />
-            <text class="label" x="635" y="218" text-anchor="middle">Prism route</text>
-
-            <path class="arrow" d="M810,330 H900" />
-            <text class="label" x="845" y="318" text-anchor="middle">confirm</text>
-
-            <path class="arrow" d="M1050,430 H1140" />
-            <text class="label" x="1090" y="418" text-anchor="middle">approved</text>
-
-            <path class="arrow" d="M1205,558 V602" />
-            <text class="label" x="1220" y="582">for settlement</text>
-
-            <path class="arrow" d="M1050,630 H810" />
-            <text class="label" x="930" y="616" text-anchor="middle">proof & notify</text>
-
-            <path class="arrow" d="M725,780 V802" class="dash"/>
-            <text class="label" x="760" y="780">credit</text>
-
-            <!-- optional split fan-out from Settlement -->
-            <path class="arrow dash" d="M965,630 H1200 V670" />
-            <text class="label" x="1210" y="666">split to rev-share wallet</text>
-
-            <!-- Merlin AI note -->
-            <g transform="translate(50,805)">
-              <rect class="box" width="850" height="70" rx="18" fill="url(#gNote)"/>
-              <rect class="outline" width="850" height="70" rx="18"/>
-              <text class="boxTitle" x="420" y="30" text-anchor="middle">Merlin AI (parallel): fees & routing • compliance guidance • loyalty (5% Prism APR, merchant % cashback)</text>
-              <text class="small" x="300" y="50" text-anchor="middle">plain-language confirmations & receipts</text>
-            </g>
-          </svg>
+            </svg>
+          </div>
 
         </div>
       </section>
