@@ -11,9 +11,15 @@
 }
 
 input[type="checkbox"] {
+  outline: none;
   width: 16px;
   height: 16px;
   border-radius: 3px;
+}
+
+input[type='checkbox']:checked::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .fab,
