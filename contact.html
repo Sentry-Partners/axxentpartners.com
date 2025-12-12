@@ -74,13 +74,13 @@
         </div>
 
         <!-- Opt-in flags -->
-        <div class="mt-6 space-y-2">
-          <label class="inline-flex items-center gap-2 fade-in opacity-0">
-            <input type="checkbox" id="wantsPhone" class="h-4 w-4" />
+        <div class="mt-4 mb-0 space-y-2">
+          <label class="relative w-full block pl-6 fade-in opacity-0">
+            <input type="checkbox" id="wantsPhone" class="h-4 w-4 absolute left-0 top-0.5" />
             <span class="text-base">Share my phone number for a quick call</span>
           </label>
-          <label class="inline-flex items-center gap-2 fade-in opacity-0">
-            <input type="checkbox" id="wantsIds" class="h-4 w-4" />
+          <label class="relative w-full block pl-6 fade-in opacity-0">
+            <input type="checkbox" id="wantsIds" class="h-4 w-4 absolute left-0 top-0.5" />
             <span class="text-base">Include non-sensitive IDs (e.g., Partner, Vendor, Program)</span>
           </label>
         </div>
@@ -114,8 +114,8 @@
               <option value="evening">Evening</option>
             </select>
           </div>
-          <label class="mt-3 inline-flex items-center gap-2 fade-in opacity-0">
-            <input type="checkbox" name="phone_consent" class="h-4 w-4" />
+          <label class="mt-3 relative w-full block pl-6 fade-in opacity-0">
+            <input type="checkbox" name="phone_consent" class="h-4 w-4 absolute left-0 top-1" />
             <span class="text-base">I consent to being contacted at this number for this inquiry.</span>
           </label>
         </div>
@@ -142,7 +142,7 @@
         </div>
 
         <!-- Netlify reCAPTCHA -->
-        <div class="mt-6 fade-in opacity-0" data-netlify-recaptcha="true"></div>
+        <div class="mt-3 block fade-in opacity-0" data-netlify-recaptcha="true"></div>
 
         <!-- Submit -->
         <button
