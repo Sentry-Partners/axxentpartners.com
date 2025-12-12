@@ -31,6 +31,17 @@
     <script>
       (function () {
         function goFS(el) {
+
+          // iPhone (iOS Safari) - supports only this
+            if (el.webkitEnterFullscreen) {
+              try {
+                el.webkitEnterFullscreen();
+                return;
+              } catch (e) {
+                console.log("iOS fullscreen error:", e);
+              }
+            }
+
           if (el && el.requestFullscreen) return el.requestFullscreen();
           if (el && el.webkitRequestFullscreen) return el.webkitRequestFullscreen(); // Safari
         }
