@@ -200,6 +200,8 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.25rem 0.75rem;
+  -webkit-border-radius: 9999px; 
+  -moz-border-radius: 9999px;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
