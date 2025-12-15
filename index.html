@@ -635,7 +635,7 @@
             id="uvStoryboard"
             aria-label="Storyboard: Universal Value in action"
             data-frame-path="/assets/img/uv-story/frame_"
-            data-frame-ext=".png"
+            data-frame-ext=".webp"
             data-frame-start="1"
             data-frame-pad="2"
             data-frame-count="14"
@@ -644,7 +644,7 @@
             <!-- Static still for first paint + reduced-motion -->
             <div class="relative"><img
               id="uvFrame"
-              src="/assets/img/uv-story/frame_01.png"
+              src="/assets/img/uv-story/frame_01.webp"
               alt="Storyboard frame showing the Universal Value flow"
               class="w-full aspect-video object-cover select-none pointer-events-none fade-in opacity-0"
               decoding="async"
@@ -671,7 +671,7 @@
             <noscript>
               <a
                 class="uv-fs-fallback block p-3 text-center text-sm"
-                href="/assets/img/uv-story/frame_01.png"
+                href="/assets/img/uv-story/frame_01.webp"
               >
                 Open full size
               </a>
@@ -707,7 +707,7 @@
         <div class="grid md:grid-cols-12 gap-8 md:gap-10 items-center">
           <div class="mx-auto md:col-span-5 md:order-1">
             <img
-              src="/assets/img/case-studies/apple-promo.png"
+              src="/assets/img/case-studies/apple-promo.webp"
               alt="Apple® Rewards promotion"
               class="w-full fade-in opacity-0"
             />
@@ -816,7 +816,7 @@
         const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         const path = el.dataset.framePath || "/assets/img/uv-story/frame_";
-        const ext = el.dataset.frameExt || ".png";
+        const ext = el.dataset.frameExt || ".webp";
         const start = parseInt(el.dataset.frameStart || "1", 10);
         const pad = parseInt(el.dataset.framePad || "2", 10);
         const count = parseInt(el.dataset.frameCount || "1", 10);
@@ -826,7 +826,7 @@
         const fn = (n) => {
           const s = String(n).padStart(pad, "0");
           return `${path}${s}${ext}`;
-          // Example yields /assets/img/uv-story/frame_01.png when pad=2
+          // Example yields /assets/img/uv-story/frame_01.webp when pad=2
         };
 
         // Idle on first frame if reduced motion
