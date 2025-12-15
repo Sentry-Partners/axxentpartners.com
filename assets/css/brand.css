@@ -121,7 +121,7 @@ input[type='checkbox']:checked::before {
   text-decoration: none;
 }
 
-.text-menu-active {
+.menu-item-active {
   color: var(--brand-accent-2);
 }
 
@@ -268,6 +268,10 @@ body {
 @media screen and (max-width:767px) {
   body {
     padding-top: 80px;
+  }
+  .menu-item-active {
+    color: var(--brand-fg);
+    background-color: var(--brand-accent-2);
   }
 }
 
