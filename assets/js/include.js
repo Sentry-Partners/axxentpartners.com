@@ -113,7 +113,7 @@ function highlightActiveNav() {
     const href = (a.getAttribute("href") || "").replace(/index\.html$/, "");
     if (href === path || (href === "/" && path === "/")) {
       a.setAttribute("aria-current", "page");
-      a.classList.add("font-semibold", "underline", "underline-offset-4", "text-menu-active");
+      a.classList.add("font-semibold", "underline", "underline-offset-4", "bg-[var(--brand-accent)]");
     }
   });
 }
