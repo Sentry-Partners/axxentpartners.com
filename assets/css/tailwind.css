@@ -1212,6 +1212,10 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
+  .outline-none {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
   .select-none {
     -webkit-user-select: none;
     user-select: none;
@@ -1237,6 +1241,13 @@
         --tw-scale-y: 105%;
         --tw-scale-z: 105%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:bg-\[var\(--brand-accent\)\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--brand-accent);
       }
     }
   }
