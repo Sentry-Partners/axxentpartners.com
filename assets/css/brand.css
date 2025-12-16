@@ -122,7 +122,7 @@ input[type='checkbox']:checked::before {
 }
 
 .menu-item-active {
-  color: var(--brand-accent-2);
+  color: var(--brand-accent);
 }
 
 /* --- Media fullscreen bits you already had --- */
@@ -274,7 +274,7 @@ body {
   }
   .menu-item-active {
     color: var(--brand-fg);
-    background-color: var(--brand-accent-2);
+    background-color: var(--brand-accent);
   }
   /* This triggers when the button is clicked on iPhone */
 .uv-media.is-custom-fullscreen {
