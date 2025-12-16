@@ -149,7 +149,8 @@ input[type='checkbox']:checked::before {
 }
 
 .uv-media:fullscreen,
-.uv-media.is-fullscreen {
+.uv-media.is-fullscreen,
+.uv-media.is-custom-fullscreen {
   background: rgb(0, 50, 100, 0.5);
   border-radius: 0px;
   border: none;
@@ -172,11 +173,13 @@ input[type='checkbox']:checked::before {
   display: none;
 }
 
-.glow-box.is-fullscreen .uv-fs {
+.glow-box.is-fullscreen .uv-fs,
+.glow-box.is-custom-fullscreen .uv-fs {
   display: none;
 }
 
-.glow-box.is-fullscreen .uv-ns {
+.glow-box.is-fullscreen .uv-ns,
+.glow-box.is-custom-fullscreen .uv-ns {
   display: block;
 }
 
@@ -273,6 +276,26 @@ body {
     color: var(--brand-fg);
     background-color: var(--brand-accent-2);
   }
+  /* This triggers when the button is clicked on iPhone */
+.uv-media.is-custom-fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 99999 !important;
+    background: rgb(0, 50, 100, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uv-media.is-custom-fullscreen video,
+.uv-media.is-custom-fullscreen img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
 }
 
 

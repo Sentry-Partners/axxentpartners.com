@@ -634,8 +634,6 @@
           </div>
         </div>
 
-        
-
       </div>
     </section>
 
@@ -818,40 +816,32 @@
       })();
     </script>
     <script>
-      (function () {
+
+const isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
+if (isMobile) {
+(function () {
         function goFS(el) {
-          // Desktop/fullscreen-capable devices
-          if (el.requestFullscreen) return el.requestFullscreen();
-          if (el.webkitRequestFullscreen) return el.webkitRequestFullscreen();
+          if (el && el.requestFullscreen) return el.requestFullscreen();
+          if (el && el.webkitRequestFullscreen) return el.webkitRequestFullscreen(); // Safari
         }
-
-        function isIOS() {
-          return /iPad|iPhone|iPod/.test(navigator.userAgent);
-        }
-
         function wire(container) {
           const btn = container.querySelector(".uv-fs");
           const video = container.querySelector("video");
+ 
+          // NEW: .uv-ns button
           const nsBtn = container.querySelector(".uv-ns");
-
-          // Exit FS button
           if (nsBtn) {
             nsBtn.addEventListener("click", () => {
-              container.classList.remove("is-fullscreen");
-
+              container.classList.remove("is-custom-fullscreen");
+ 
               if (document.fullscreenElement) {
                 document.exitFullscreen().catch(() => {});
               }
-
-              // iOS video only exits fullscreen automatically
-              if (video && video.webkitExitFullscreen) {
-                try { video.webkitExitFullscreen(); } catch (e) {}
-              }
             });
           }
-
+ 
           if (!btn) return;
-
+ 
           btn.addEventListener("click", function (e) {
             e.stopPropagation();
             
@@ -869,20 +859,72 @@
               goFS(video || container);
             }
           });
-
-          // Desktop double-click
+ 
+          // Optional: double-click the media area to fullscreen
           container.addEventListener("dblclick", () => btn.click());
-
-          // Update class on fullscreen change
+ 
+          // Fallback class if FS API isn’t available
           document.addEventListener("fullscreenchange", () => {
-            container.classList.toggle("is-fullscreen", !!document.fullscreenElement);
+            container.classList.toggle("is-custom-fullscreen", !!document.fullscreenElement);
           });
         }
-
+ 
         document.addEventListener("DOMContentLoaded", () => {
           document.querySelectorAll(".uv-media").forEach(wire);
         });
       })();
+}else{
+(function () {
+        function goFS(el) {
+          if (el && el.requestFullscreen) return el.requestFullscreen();
+          if (el && el.webkitRequestFullscreen) return el.webkitRequestFullscreen(); // Safari
+        }
+        function wire(container) {
+          const btn = container.querySelector(".uv-fs");
+          const video = container.querySelector("video");
+ 
+          // NEW: .uv-ns button
+          const nsBtn = container.querySelector(".uv-ns");
+          if (nsBtn) {
+            nsBtn.addEventListener("click", () => {
+              container.classList.remove("is-fullscreen");
+ 
+              if (document.fullscreenElement) {
+                document.exitFullscreen().catch(() => {});
+              }
+            });
+          }
+ 
+          if (!btn) return;
+ 
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            // iOS Safari prefers fullscreen on the <video> element itself
+            if (video && video.webkitEnterFullscreen && !document.fullscreenEnabled) {
+              try {
+                video.webkitEnterFullscreen();
+                return;
+              } catch (err) {}
+            }
+            goFS(video || container);
+          });
+ 
+          // Optional: double-click the media area to fullscreen
+          container.addEventListener("dblclick", () => btn.click());
+ 
+          // Fallback class if FS API isn’t available
+          document.addEventListener("fullscreenchange", () => {
+            container.classList.toggle("is-fullscreen", !!document.fullscreenElement);
+          });
+        }
+ 
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".uv-media").forEach(wire);
+        });
+      })();
+}
+
+      
     </script>
 
   </body>
