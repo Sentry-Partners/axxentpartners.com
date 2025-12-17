@@ -145,7 +145,7 @@
       overflow: auto;
     }
     #uvSiteHeader .uv-panel .uv-panel-in {
-      height: 74vh;
+      padding-bottom: 44px;
       overflow-y: auto;
     }
     #uvSiteHeader .uv-panel a {
@@ -163,6 +163,16 @@
       padding-top: 18px;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       opacity: 0.9;
+    }
+    #uvSiteHeader .mobile-uv-group {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+    }
+    #uvSiteHeader .mobile-uv-group a {
+      border-radius: 0px;
+      margin: 0px;
     }
     #uvSiteHeader.uv-open .uv-overlay {
       opacity: 1;
@@ -229,7 +239,7 @@
     </div>
 
     <!-- Mobile CTA at bottom -->
-    <div class="uv-group">
+    <div class="mobile-uv-group">
       <a class="bg-white text-[var(--brand-bg)] font-medium text-center outline-none" href="/contact.html">Book an Appt.</a>
     </div>
   </nav>
