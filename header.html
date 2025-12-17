@@ -144,9 +144,13 @@
       max-height: calc(100dvh - 80px);
       overflow: auto;
     }
+    #uvSiteHeader .uv-panel .uv-panel-in {
+      height: 79vh;
+      overflow-y: auto;
+    }
     #uvSiteHeader .uv-panel a {
       display: block;
-      padding: 8px 20px;
+      padding: 6px 20px;
       text-decoration: none;
       border-radius: 8px;
       margin: 4px 0px;
@@ -183,23 +187,45 @@
 
 <div class="uv-overlay" id="uvOverlay" style="display: none;"></div>
   <nav id="uvMobilePanel" class="uv-panel" aria-label="Mobile">
-    <a href="/solutions.html" class="hover:bg-[var(--brand-accent)] outline-none">Solutions</a>
-    <a href="/platform.html" class="hover:bg-[var(--brand-accent)] outline-none">Platform</a>
-    <a href="/industries.html" class="hover:bg-[var(--brand-accent)] outline-none">Industries</a>
-    <a href="/results.html" class="hover:bg-[var(--brand-accent)] outline-none">Results</a>
-    <a href="/developers.html" class="hover:bg-[var(--brand-accent)] outline-none">Developers</a>
-    <a href="/about.html" class="hover:bg-[var(--brand-accent)] outline-none">About</a>
-    <!-- Optional: Press -->
-    <!-- <a href="/press/">Press</a> -->
 
-    <!-- Secondary / legal -->
-    <div class="uv-group" aria-label="Legal">
-      <a href="/privacy-policy.html" class="hover:bg-[var(--brand-accent)] outline-none">Privacy Policy</a>
-      <a href="/terms-of-service.html" class="hover:bg-[var(--brand-accent)] outline-none">Terms of Service</a>
-      <a href="/cookie-policy.html" class="hover:bg-[var(--brand-accent)] outline-none">Cookie Policy</a>
-      <a href="/accessibility.html" class="hover:bg-[var(--brand-accent)] outline-none">Accessibility</a>
-      <a href="/security.html" class="hover:bg-[var(--brand-accent)] outline-none">Security &amp; Compliance</a>
-      <a href="/contact.html" class="hover:bg-[var(--brand-accent)] outline-none">Contact</a>
+    <div class="uv-panel-in">
+      <div aria-label="Legal">
+        <h6 class="uppercase p-2 px-4.5 text-[var(--brand-accent-2)] font-semibold">Quick Links</h6>
+        <a href="/solutions.html" class="hover:bg-[var(--brand-accent)] outline-none">Solutions</a>
+        <a href="/platform.html" class="hover:bg-[var(--brand-accent)] outline-none">Platform</a>
+        <a href="/industries.html" class="hover:bg-[var(--brand-accent)] outline-none">Industries</a>
+        <a href="/results.html" class="hover:bg-[var(--brand-accent)] outline-none">Results</a>
+        <a href="/developers.html" class="hover:bg-[var(--brand-accent)] outline-none">Developers</a>
+      </div>
+
+      <!-- Secondary / legal -->
+      <div class="uv-group" aria-label="Legal">
+          <h6 class="uppercase p-2 px-4.5 text-[var(--brand-accent-2)] font-semibold">Loyalty Platform</h6>
+          <a class="hover:bg-[var(--brand-accent)] outline-none" href="/solutions/travel.html">Travel Rewards</a>
+          <a class="hover:bg-[var(--brand-accent)] outline-none" href="/solutions/merchandise.html">Merchandise Rewards</a>
+          <a class="hover:bg-[var(--brand-accent)] outline-none" href="/solutions/gift-cards.html">Gift Card Rewards</a>
+          <a class="hover:bg-[var(--brand-accent)] outline-none" href="/solutions/apple.html">Apple® Rewards</a>
+      </div>
+      
+      <!-- Secondary / legal -->
+      <div class="uv-group" aria-label="Legal">
+        <h6 class="uppercase p-2 px-4.5 text-[var(--brand-accent-2)] font-semibold">Legal</h6>
+        <a href="/privacy-policy.html" class="hover:bg-[var(--brand-accent)] outline-none">Privacy Policy</a>
+        <a href="/terms-of-service.html" class="hover:bg-[var(--brand-accent)] outline-none">Terms of Service</a>
+        <a href="/cookie-policy.html" class="hover:bg-[var(--brand-accent)] outline-none">Cookie Policy</a>
+        <a href="/accessibility.html" class="hover:bg-[var(--brand-accent)] outline-none">Accessibility</a>
+        <a href="/security.html" class="hover:bg-[var(--brand-accent)] outline-none">Security &amp; Compliance</a>
+        <a href="/sitemap.html" class="hover:bg-[var(--brand-accent)] outline-none">Sitemap</a>
+      </div>
+
+      <!-- Secondary / legal -->
+      <div class="uv-group" aria-label="Legal">
+        <h6 class="uppercase p-2 px-4.5 text-[var(--brand-accent-2)] font-semibold">Connect</h6>
+        <a href="/about.html" class="hover:bg-[var(--brand-accent)] outline-none">About</a>
+        <a href="/contact.html" class="hover:bg-[var(--brand-accent)] outline-none">Contact</a>
+        <a href="/assets/brand/presskit.html" class="hover:bg-[var(--brand-accent)] outline-none">Press Kit</a>
+        <a href="mailto:admin@axxentpartners.com" class="hover:bg-[var(--brand-accent)] outline-none">admin@axxentpartners.com</a>
+      </div>
     </div>
 
     <!-- Mobile CTA at bottom -->
